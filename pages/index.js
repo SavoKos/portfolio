@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import Navigation from '../components/UI/Navigation';
+import Hero from '../components/Home/Hero';
+import Navigation from '../components/Navigation';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         />
       </Head>
       <Navigation active='home' />
+      <Hero />
     </S.PageContainer>
   );
 }

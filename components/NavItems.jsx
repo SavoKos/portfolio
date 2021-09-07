@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Router from 'next/router';
 
 function NavItems({ active }) {
   return (
