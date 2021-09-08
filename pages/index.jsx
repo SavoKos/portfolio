@@ -14,7 +14,7 @@ export default function Home() {
           rel='stylesheet'
         />
       </Head>
-      <Navigation active='home' />
+      <Navigation currentPage='home' />
       <Hero />
     </S.PageContainer>
   );

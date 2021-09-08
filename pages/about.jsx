@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation';
 function about() {
   return (
     <S.PageContainer>
-      <Navigation active='about' />
+      <Navigation currentPage='about' />
     </S.PageContainer>
   );
 }

@@ -35,11 +35,30 @@ S.Hero = styled.div`
 `;
 
 S.Content = styled.div`
-  width: 50%;
+  width: 100%;
+  position: relative;
+  z-index: 4;
+
+  @media screen and (min-width: 1300px) {
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1500px) {
+    width: 60%;
+  }
 `;
 
 S.Title = styled.div`
   margin: 2rem 0;
+
+  h1 {
+    font-size: 48px;
+    color: #333333;
+
+    @media screen and (min-width: 768px) {
+      font-size: 64px;
+    }
+  }
 
   span {
     color: ${({ theme }) => theme.colors.orange};
@@ -48,10 +67,21 @@ S.Title = styled.div`
 
 S.Tag = styled.h6`
   color: ${({ theme }) => theme.colors.orange};
+  font-size: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 S.Description = styled.h6`
   color: #828282;
+  position: relative;
+  font-size: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 S.HireBtn = styled.button`
@@ -64,6 +94,7 @@ S.HireBtn = styled.button`
   font-size: 18px;
   margin-top: 5rem;
   cursor: pointer;
+  position: relative;
 `;
 
 S.RingImg = styled.div`
