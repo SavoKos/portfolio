@@ -55,7 +55,7 @@ S.NavItems = styled.div`
     position: static;
     flex-direction: row;
     transform: translateX(0%) !important;
-    width: 100%;
+    width: unset;
     height: unset;
     background-color: transparent;
   }

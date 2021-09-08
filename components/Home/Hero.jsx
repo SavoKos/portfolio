@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { Tag } from '../../Theme';
 
 function Hero() {
   return (
@@ -25,7 +26,6 @@ function Hero() {
     </S.Hero>
   );
 }
-
 // -------------------------------------------------- styling ----------------------------------------------
 const S = {};
 S.Hero = styled.div`
@@ -65,14 +65,7 @@ S.Title = styled.div`
   }
 `;
 
-S.Tag = styled.h6`
-  color: ${({ theme }) => theme.colors.orange};
-  font-size: 18px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-  }
-`;
+S.Tag = styled(Tag)``;
 
 S.Description = styled.h6`
   color: #828282;
@@ -101,8 +94,13 @@ S.RingImg = styled.div`
   position: absolute;
   right: 0;
   bottom: -7rem;
-  min-width: 26.5rem;
-  min-height: 37rem;
+  min-width: 15rem;
+  min-height: 21rem;
+
+  @media screen and (min-width: 500px) {
+    min-width: 26.5rem;
+    min-height: 37rem;
+  }
 `;
 
 export default Hero;

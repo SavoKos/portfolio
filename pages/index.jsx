@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import Hero from '../components/Home/Hero';
+import Specializing from '../components/Home/Specializing';
 import Navigation from '../components/Navigation';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <Navigation currentPage='home' />
       <Hero />
+      <Specializing />
     </S.PageContainer>
   );
 }
