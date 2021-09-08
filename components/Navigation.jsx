@@ -9,32 +9,39 @@ function Navigation({ currentPage }) {
   const [menuActive, setMenuActive] = useState(false);
 
   return (
-    <S.Navigation>
-      <Image
-        src='/logo.png'
-        objectFit='cover'
-        width='50'
-        height='50'
-        onClick={() => Router.push('/')}
-        className='logo'
-      />
-      <NavItems
-        currentPage={currentPage}
-        menuActive={menuActive}
-        setMenuActive={setMenuActive}
-      />
-      <S.ContactBtn>Contact</S.ContactBtn>
-      <Icon
-        type='menu'
-        className='hamburger-menu'
-        onClick={() => setMenuActive((prevActive) => !prevActive)}
-      />
-    </S.Navigation>
+    <S.Container>
+      <S.Navigation>
+        <Image
+          src='/logo.png'
+          objectFit='cover'
+          width='50'
+          height='50'
+          onClick={() => Router.push('/')}
+          className='logo'
+        />
+        <NavItems
+          currentPage={currentPage}
+          menuActive={menuActive}
+          setMenuActive={setMenuActive}
+        />
+        <S.ContactBtn>Contact</S.ContactBtn>
+        <Icon
+          type='menu'
+          className='hamburger-menu'
+          onClick={() => setMenuActive((prevActive) => !prevActive)}
+        />
+      </S.Navigation>
+    </S.Container>
   );
 }
 
 // -------------------------------------------------- styling ----------------------------------------------
 const S = {};
+
+S.Container = styled.div`
+  padding: 3rem 10%;
+`;
+
 S.Navigation = styled.div`
   display: flex;
   width: 100%;

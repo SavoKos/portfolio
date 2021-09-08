@@ -1,18 +1,7 @@
-import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 
 function projects() {
-  return (
-    <S.PageContainer>
-      <Navigation currentPage='projects' />
-    </S.PageContainer>
-  );
+  return <Navigation currentPage='projects' />;
 }
-
-// -------------------------------------------------- styling ----------------------------------------------
-const S = {};
-S.PageContainer = styled.div`
-  padding: 3rem 10%;
-`;
 
 export default projects;

@@ -4,74 +4,90 @@ import Image from 'next/image';
 
 function Specializing() {
   return (
-    <S.Specializing>
-      <S.Tag>Specializing</S.Tag>
-      <h3>What I Do?</h3>
-      <S.Cards>
-        <S.Card>
-          <S.Icon>
-            <S.Ring />
-            <S.Image>
-              <Image
-                src='/rocket.png'
-                layout='fill'
-                objectFit='cover'
-                className='icon-img'
-              />
-            </S.Image>
-          </S.Icon>
+    <S.Container>
+      <S.Specializing>
+        <S.Tag>Specializing</S.Tag>
+        <h3>What I Do?</h3>
+        <S.Cards>
+          <S.Card>
+            <S.Icon>
+              <S.Ring />
+              <S.Image>
+                <Image
+                  src='/rocket.png'
+                  layout='fill'
+                  objectFit='cover'
+                  className='icon-img'
+                />
+              </S.Image>
+            </S.Icon>
 
-          <h5>Performance</h5>
-          <p>
-            Having a fast website is key to keeping people around, which
-            ultimately converts them into customers. Design is useless without
-            performance
-          </p>
-        </S.Card>
-        <S.Card>
-          <S.Icon>
-            <S.Ring />
-            <S.Image className='code'>
-              <Image
-                src='/code.png'
-                layout='fill'
-                objectFit='cover'
-                className='icon-img code'
-              />
-            </S.Image>
-          </S.Icon>
-          <h5>Readable Code</h5>
-          <p>
-            “If a programmer who just joined the development team reads my
-            software, will they be able to understand what I have written here?”
-          </p>
-        </S.Card>
-        <S.Card>
-          <S.Icon>
-            <S.Ring />
-            <S.Image>
-              <Image
-                src='/pencil.png'
-                layout='fill'
-                objectFit='cover'
-                className='icon-img pencil'
-              />
-            </S.Image>
-          </S.Icon>
-          <h5>Modern Design</h5>
-          <p>
-            A website should be designed for the people who will use it, so
-            that's exactly what I do. User focused design should be the primary
-            goal of any website.
-          </p>
-        </S.Card>
-      </S.Cards>
-    </S.Specializing>
+            <h5>Performance</h5>
+            <p>
+              Having a fast website is key to keeping people around, which
+              ultimately converts them into customers. Design is useless without
+              performance
+            </p>
+          </S.Card>
+          <S.Card>
+            <S.Icon>
+              <S.Ring />
+              <S.Image className='code'>
+                <Image
+                  src='/code.png'
+                  layout='fill'
+                  objectFit='cover'
+                  className='icon-img code'
+                />
+              </S.Image>
+            </S.Icon>
+            <h5>Readable Code</h5>
+            <p>
+              “If a programmer who just joined the development team reads my
+              software, will they be able to understand what I have written
+              here?”
+            </p>
+          </S.Card>
+          <S.Card>
+            <S.Icon>
+              <S.Ring />
+              <S.Image>
+                <Image
+                  src='/pencil.png'
+                  layout='fill'
+                  objectFit='cover'
+                  className='icon-img pencil'
+                />
+              </S.Image>
+            </S.Icon>
+            <h5>Modern Design</h5>
+            <p>
+              A website should be designed for the people who will use it, so
+              that's exactly what I do. User focused design should be the
+              primary goal of any website.
+            </p>
+          </S.Card>
+        </S.Cards>
+        <S.DotsImg>
+          <Image
+            src='/specializing-bg.png'
+            objectFit='cover'
+            layout='fill'
+            className='dots'
+          />
+        </S.DotsImg>
+      </S.Specializing>
+    </S.Container>
   );
 }
 
 // -------------------------------------------------- styling ----------------------------------------------
 const S = {};
+
+S.Container = styled.div`
+  padding: 3rem 10%;
+`;
+
 S.Specializing = styled.div`
   padding: 10rem 0;
 
@@ -95,10 +111,13 @@ S.Cards = styled.div`
 
   @media screen and (min-width: 1000px) {
     flex-direction: row;
+    margin-top: 5rem;
   }
 `;
 
 S.Card = styled.div`
+  position: relative;
+  z-index: 3;
   padding: 5rem 1rem 2rem 1rem;
   border-radius: 1rem;
   box-shadow: -1px 11px 20px -7px rgba(0, 0, 0, 0.18);
@@ -106,6 +125,7 @@ S.Card = styled.div`
   -moz-box-shadow: -1px 11px 20px -7px rgba(0, 0, 0, 0.18);
   position: relative;
   margin: 10rem 0;
+  background-color: #fff;
 
   h5 {
     text-align: center;
@@ -131,15 +151,15 @@ S.Card = styled.div`
 `;
 
 S.Image = styled.div`
-  top: -5rem;
-  position: absolute;
+  top: -16rem;
+  position: relative;
   height: 350px;
   width: 350px;
   left: 50%;
   transform: translateX(-50%);
 
   &.code {
-    top: -1rem;
+    top: -12rem;
     height: 200px;
     width: 200px;
   }
@@ -168,6 +188,23 @@ S.Ring = styled.div`
   height: 180px;
   border-radius: 50%;
   margin: auto;
+`;
+
+S.DotsImg = styled.div`
+  position: absolute;
+  bottom: -125rem;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  display: none;
+
+  @media screen and (min-width: 630px) {
+    display: block;
+  }
+
+  @media screen and (min-width: 1000px) {
+    bottom: -75rem;
+  }
 `;
 
 export default Specializing;

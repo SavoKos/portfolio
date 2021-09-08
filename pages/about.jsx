@@ -1,18 +1,7 @@
-import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 
 function about() {
-  return (
-    <S.PageContainer>
-      <Navigation currentPage='about' />
-    </S.PageContainer>
-  );
+  return <Navigation currentPage='about' />;
 }
-
-// -------------------------------------------------- styling ----------------------------------------------
-const S = {};
-S.PageContainer = styled.div`
-  padding: 3rem 10%;
-`;
 
 export default about;
