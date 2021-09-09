@@ -30,13 +30,11 @@ export default function Home() {
 
     const observer = new IntersectionObserver(callback, options);
     const target = document.querySelector('.hero');
-    console.log(target);
     if (!target) return;
 
     observer.observe(target);
   };
 
-  console.log(intersecting);
   return (
     <S.PageContainer>
       <Head>
@@ -50,7 +48,7 @@ export default function Home() {
       <Navigation currentPage='home' />
       <Hero />
       <Specializing />
-      {/* <Showcase /> */}
+      <Showcase />
       <Contact />
       {!intersecting && <ScrollToTop />}
     </S.PageContainer>
