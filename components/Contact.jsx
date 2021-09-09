@@ -8,8 +8,7 @@ function Contact() {
       <S.Contact>
         <S.Details>
           <Tag>Contact</Tag>
-          <h1>Let's Get in</h1>
-          <h1>Touch</h1>
+          <h1>Let's Get in Touch</h1>
           <p>
             Feel free to reach out for
             <br />
@@ -57,26 +56,48 @@ function Contact() {
 const S = {};
 
 S.Container = styled.div`
-  padding: 3rem 10%;
+  padding: 3rem 5%;
   background-image: url('/wave.png');
   background-position-y: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: 400px) {
+    padding: 3rem 10%;
+  }
 `;
 
 S.Contact = styled.div`
   margin-top: 10rem;
-  padding: 10rem 5rem;
+  padding: 3rem 1rem;
   background-color: #fff;
   box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   -moz-box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   display: flex;
-  border-radius: 5rem;
+  border-radius: 2rem;
+  flex-direction: column;
 
   p {
-    margin: 4rem 0;
+    margin: 2rem 0;
     color: #828282;
+
+    @media screen and (min-width: 880px) {
+      margin: 4rem 0;
+    }
+  }
+
+  @media screen and (min-width: 440px) {
+    padding: 10rem 3rem;
+  }
+
+  @media screen and (min-width: 650px) {
+    border-radius: 5rem;
+    padding: 10rem 5rem;
+  }
+
+  @media screen and (min-width: 880px) {
+    flex-direction: row;
   }
 `;
 
@@ -103,6 +124,13 @@ S.Github = styled.div`
 
 S.Details = styled.div`
   width: 100%;
+
+  h1 {
+    font-size: 56px;
+    @media screen and (min-width: 400px) {
+      font-size: 64px;
+    }
+  }
 `;
 
 S.Right = styled.div`
@@ -112,19 +140,48 @@ S.Right = styled.div`
 
 S.Planets = styled.div`
   position: absolute;
-  top: -22rem;
-  right: -22rem;
-  width: 920px;
-  height: 950px;
+  width: 200px;
+  height: 200px;
+  top: -40rem;
+  right: -2rem;
+
+  @media screen and (min-width: 440px) {
+    top: -51rem;
+    right: -5rem;
+  }
+
+  @media screen and (min-width: 480px) {
+    top: -45rem;
+  }
+
+  @media screen and (min-width: 650px) {
+    width: 300px;
+    height: 300px;
+    right: -7rem;
+  }
+
+  @media screen and (min-width: 880px) {
+    top: -13rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 S.Form = styled.div`
-  margin-top: 25rem;
+  margin-top: 5rem;
   width: 100%;
+
+  @media screen and (min-width: 880px) {
+    margin-top: 25rem;
+    flex-direction: row;
+  }
 
   input,
   textarea {
-    width: 80%;
+    width: 100%;
     background-color: #f2f2f2;
     border-radius: 0.5rem;
     padding: 1.5rem;
@@ -133,6 +190,10 @@ S.Form = styled.div`
 
     &:nth-of-type(2) {
       margin: 1rem 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 80%;
     }
   }
 `;

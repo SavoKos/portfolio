@@ -51,7 +51,7 @@ function Specializing() {
           <S.Card>
             <S.Icon>
               <S.Ring />
-              <S.Image>
+              <S.Image className='pencil'>
                 <Image
                   src='/pencil.png'
                   layout='fill'
@@ -151,10 +151,10 @@ S.Card = styled.div`
 `;
 
 S.Image = styled.div`
-  top: -16rem;
+  top: -12rem;
   position: relative;
-  height: 350px;
-  width: 350px;
+  height: 200px;
+  width: 168px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -162,6 +162,12 @@ S.Image = styled.div`
     top: -12rem;
     height: 200px;
     width: 200px;
+  }
+
+  &.pencil {
+    height: 208px;
+    width: 189px;
+    left: 59%;
   }
 
   .icon-img {
