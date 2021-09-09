@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Tag } from '../Theme';
 import Image from 'next/image';
+import Icon from './UI/Icon';
 
 function Contact() {
   return (
@@ -17,13 +18,17 @@ function Contact() {
           </p>
           <S.Info>
             <S.Mail>
-              <Image src='/mail.png' width={35} height={35} />
+              <S.InfoRing>
+                <Icon type='email1' />
+              </S.InfoRing>
               <a href='mailto:savo.kos.sk@gmail.com' target='_blank'>
                 savo.kos.sk@gmail.com
               </a>
             </S.Mail>
             <S.Github>
-              <Image src='/github.png' width={35} height={35} />
+              <S.InfoRing>
+                <Icon type='github' />
+              </S.InfoRing>
               <a href='https://github.com/SavoKos' target='_blank'>
                 github.com/SavoKos
               </a>
@@ -48,6 +53,12 @@ function Contact() {
           </S.Form>
         </S.Right>
       </S.Contact>
+      <p className='copyright'>
+        Copyright © Developed by Savo. Designed by&nbsp;
+        <a href='https://www.behance.net/ameliaq' target='_blank'>
+          Amelia
+        </a>
+      </p>
     </S.Container>
   );
 }
@@ -61,6 +72,21 @@ S.Container = styled.div`
   background-position-y: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .copyright {
+    color: ${({ theme }) => theme.colors.orange};
+    font-size: 16px;
+    margin-top: 5rem;
+
+    a {
+      text-decoration: underline;
+      color: #333333;
+    }
+
+    @media screen and (min-width: 400px) {
+      font-size: 18px;
+    }
+  }
 
   @media screen and (min-width: 400px) {
     padding: 3rem 10%;
@@ -108,6 +134,20 @@ S.Info = styled.div`
   a {
     color: #4f4f4f;
     margin-left: 1rem;
+  }
+`;
+
+S.InfoRing = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: ${({ theme }) => theme.colors.orange};
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+
+  .anticon {
+    font-size: 24px;
   }
 `;
 
