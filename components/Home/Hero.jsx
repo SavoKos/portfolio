@@ -4,7 +4,7 @@ import { Tag } from '../../Theme';
 
 function Hero() {
   return (
-    <S.Container>
+    <S.Container className='hero'>
       <S.Hero>
         <S.Content>
           <S.Tag>Introduction</S.Tag>
@@ -32,13 +32,21 @@ function Hero() {
 const S = {};
 
 S.Container = styled.div`
-  padding: 3rem 10%;
+  padding: 3rem 5%;
+
+  @media screen and (min-width: 400px) {
+    padding: 3rem 10%;
+  }
 `;
 
 S.Hero = styled.div`
-  padding: 10rem 0;
+  padding-bottom: 10rem;
   display: flex;
   align-items: flex-end;
+
+  @media screen and (min-width: 768px) {
+    padding: 10rem 0;
+  }
 `;
 
 S.Content = styled.div`

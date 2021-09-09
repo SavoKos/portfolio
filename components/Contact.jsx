@@ -9,7 +9,9 @@ function Contact() {
       <S.Contact>
         <S.Details>
           <Tag>Contact</Tag>
-          <h1>Let's Get in Touch</h1>
+          <h1>
+            Let's Get in <br /> Touch
+          </h1>
           <p>
             Feel free to reach out for
             <br />
@@ -58,6 +60,7 @@ function Contact() {
         <a href='https://www.behance.net/ameliaq' target='_blank'>
           Amelia
         </a>
+        .
       </p>
     </S.Container>
   );

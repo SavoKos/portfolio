@@ -1,13 +1,42 @@
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Contact from '../components/Contact';
 import Hero from '../components/Home/Hero';
 import Showcase from '../components/Home/Showcase';
 import Specializing from '../components/Home/Specializing';
 import Navigation from '../components/Navigation';
-import Image from 'next/image';
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function Home() {
+  const [intersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    return intersectingHandler();
+  }, []);
+
+  const intersectingHandler = () => {
+    const callback = (entries, _) => {
+      entries.forEach((ent) => {
+        if (ent.isIntersecting) return setIntersecting(true);
+        setIntersecting(false);
+      });
+    };
+
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    const target = document.querySelector('.hero');
+    console.log(target);
+    if (!target) return;
+
+    observer.observe(target);
+  };
+
+  console.log(intersecting);
   return (
     <S.PageContainer>
       <Head>
@@ -23,6 +52,7 @@ export default function Home() {
       <Specializing />
       {/* <Showcase /> */}
       <Contact />
+      {!intersecting && <ScrollToTop />}
     </S.PageContainer>
   );
 }

@@ -85,7 +85,11 @@ function Specializing() {
 const S = {};
 
 S.Container = styled.div`
-  padding: 3rem 10%;
+  padding: 3rem 5%;
+
+  @media screen and (min-width: 400px) {
+    padding: 3rem 10%;
+  }
 `;
 
 S.Specializing = styled.div`
