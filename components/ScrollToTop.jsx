@@ -24,6 +24,7 @@ S.ScrollToTop = styled.div`
   place-items: center;
   color: #fff;
   cursor: pointer;
+  outline: 0;
 
   .anticon {
     font-size: 28px;

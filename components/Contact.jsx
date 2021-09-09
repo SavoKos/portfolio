@@ -98,7 +98,7 @@ S.Container = styled.div`
 
 S.Contact = styled.div`
   margin-top: 10rem;
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
   background-color: #fff;
   box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
@@ -185,16 +185,21 @@ S.Planets = styled.div`
   position: absolute;
   width: 200px;
   height: 200px;
-  top: -40rem;
-  right: -2rem;
+  top: -46rem;
+  right: -1rem;
 
-  @media screen and (min-width: 440px) {
-    top: -51rem;
-    right: -5rem;
+  @media screen and (min-width: 387px) {
+    top: -41rem;
+    right: -2rem;
   }
 
-  @media screen and (min-width: 480px) {
-    top: -45rem;
+  @media screen and (min-width: 400px) {
+    top: -47rem;
+  }
+
+  @media screen and (min-width: 440px) {
+    top: -47rem;
+    right: -5rem;
   }
 
   @media screen and (min-width: 650px) {
