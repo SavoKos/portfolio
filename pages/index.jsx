@@ -44,6 +44,8 @@ export default function Home() {
           href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'
           rel='stylesheet'
         />
+        <title>Front-end Web Developer | Savo Kos</title>
+        <link rel='shortcut icon' type='image/jpg' href='/logo.png' />
       </Head>
       <Navigation currentPage='home' />
       <Hero />

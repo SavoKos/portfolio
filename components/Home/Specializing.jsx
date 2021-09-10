@@ -171,7 +171,11 @@ S.Image = styled.div`
   &.pencil {
     height: 208px;
     width: 189px;
-    left: 59%;
+    left: 54%;
+
+    @media screen and (min-width: 1000px) {
+      left: 59%;
+    }
   }
 
   .icon-img {

@@ -43,10 +43,6 @@ S.Hero = styled.div`
   padding-bottom: 10rem;
   display: flex;
   align-items: flex-end;
-
-  @media screen and (min-width: 768px) {
-    padding: 10rem 0;
-  }
 `;
 
 S.Content = styled.div`

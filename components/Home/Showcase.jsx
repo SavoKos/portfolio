@@ -34,6 +34,13 @@ function Showcase() {
               <S.Details>
                 <h3>Game Portal</h3>
                 <p>Game Project | React (NextJS)</p>
+                <S.Description>
+                  Game portal is the place where you can search and discover
+                  your next favorite game. There are over 245 000 game titles.
+                  Sort and filter games by tags, genres, stores, developers.
+                  Read detailed reviews about games, find similar games and
+                  stores where you can purchase it.
+                </S.Description>
               </S.Details>
               <Icon type='iov-arrow-right' />
             </S.Top>
@@ -237,6 +244,14 @@ S.Mockup = styled.div`
   transform: translate(-50%, -60%);
 
   &.tasty {
+    width: 19rem;
+    height: 10rem;
+
+    @media screen and (min-width: 450px) {
+      width: 24rem;
+      height: 14rem;
+      top: 62%;
+    }
   }
 
   &.moviegeek {
@@ -269,7 +284,7 @@ S.Mockup = styled.div`
       width: 31rem;
       height: 22rem;
       top: 53%;
-      left: 48%;
+      left: 40%;
       transform: translate(-50%, -50%);
     }
 
@@ -283,9 +298,13 @@ S.Mockup = styled.div`
   }
 
   &.excellence {
-    left: 35%;
+    left: 26%;
     width: 23rem;
     height: 23rem;
+
+    @media screen and (min-width: 500px) {
+      left: 35%;
+    }
   }
 
   &.old-portfolio {
@@ -316,7 +335,7 @@ S.Cards = styled.div`
 
 S.Card = styled.div`
   width: 100%;
-  padding: 3rem;
+  padding: 2rem;
   position: relative;
   border-radius: 2rem;
   min-height: 40rem;
@@ -333,7 +352,7 @@ S.Card = styled.div`
   }
 
   &.tasty {
-    background-color: #92ff81;
+    background-color: #80dc71;
   }
 
   &.excellence {
@@ -352,11 +371,12 @@ S.Card = styled.div`
 S.Top = styled.div`
   color: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   .anticon {
     font-size: 48px;
+    opacity: 80%;
   }
 
   h3 {
@@ -366,11 +386,17 @@ S.Top = styled.div`
 
 S.Details = styled.div`
   h3 {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   p {
     font-size: 16px;
+  }
+
+  @media screen and (min-width: 400px) {
+    h3 {
+      font-size: 40px;
+    }
   }
 
   @media screen and (min-width: 1120px) {
@@ -381,6 +407,16 @@ S.Details = styled.div`
     p {
       font-size: 18px;
     }
+  }
+`;
+
+S.Description = styled.p`
+  width: 40%;
+  margin-top: 3rem;
+  display: none;
+
+  @media screen and (min-width: 850px) {
+    display: block;
   }
 `;
 
