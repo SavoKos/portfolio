@@ -5,7 +5,7 @@ import Icon from './UI/Icon';
 
 function Contact() {
   return (
-    <S.Container>
+    <>
       <S.Contact>
         <S.Details>
           <Tag>Contact</Tag>
@@ -62,40 +62,12 @@ function Contact() {
         </a>
         .
       </p>
-    </S.Container>
+    </>
   );
 }
 
 // -------------------------------------------------- styling ----------------------------------------------
 const S = {};
-
-S.Container = styled.div`
-  padding: 3rem 5%;
-  margin-top: 10rem;
-  background-image: url('/wave.png');
-  background-position-y: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .copyright {
-    color: ${({ theme }) => theme.colors.orange};
-    font-size: 16px;
-    margin-top: 5rem;
-
-    a {
-      text-decoration: underline;
-      color: #333333;
-    }
-
-    @media screen and (min-width: 400px) {
-      font-size: 18px;
-    }
-  }
-
-  @media screen and (min-width: 400px) {
-    padding: 3rem 10%;
-  }
-`;
 
 S.Contact = styled.div`
   position: relative;
