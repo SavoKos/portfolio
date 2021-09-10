@@ -22,7 +22,7 @@ function Hero() {
           <S.HireBtn>Hire me</S.HireBtn>
         </S.Content>
         <S.RingImg>
-          <Image src='/ring-hero-home.png' objectFit='cover' layout='fill' />
+          <Image src='/ring-right.png' objectFit='cover' layout='fill' />
         </S.RingImg>
       </S.Hero>
     </S.Container>

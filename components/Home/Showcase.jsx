@@ -7,9 +7,9 @@ function Showcase() {
   return (
     <S.Container>
       <S.Showcase>
-        <S.ProjectsBg>
-          <Image src='/ring-projects-bg.png' layout='fill' objectFit='cover' />
-        </S.ProjectsBg>
+        <S.RingTopLeft>
+          <Image src='/ring-left.png' layout='fill' objectFit='cover' />
+        </S.RingTopLeft>
         <S.Tag>Showcase</S.Tag>
         <h3>Latest Projects</h3>
         <S.Cards>
@@ -153,6 +153,9 @@ function Showcase() {
             </S.Top>
           </S.Card>
         </S.Cards>
+        <S.RingBottomRight>
+          <Image src='/ring-hero-home.png' layout='fill' objectFit='cover' />
+        </S.RingBottomRight>
       </S.Showcase>
     </S.Container>
   );
@@ -186,7 +189,7 @@ S.Tag = styled(Tag)`
   text-align: center;
 `;
 
-S.ProjectsBg = styled.div`
+S.RingTopLeft = styled.div`
   position: absolute;
   min-width: 15rem;
   left: 0;
@@ -195,6 +198,23 @@ S.ProjectsBg = styled.div`
   @media screen and (min-width: 500px) {
     min-width: 26.5rem;
     min-height: 37rem;
+  }
+`;
+
+S.RingBottomRight = styled.div`
+  position: absolute;
+  min-width: 15rem;
+  right: 0;
+  min-height: 21rem;
+  display: none;
+
+  @media screen and (min-width: 500px) {
+    min-width: 26.5rem;
+    min-height: 37rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    display: block;
   }
 `;
 

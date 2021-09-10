@@ -71,6 +71,7 @@ const S = {};
 
 S.Container = styled.div`
   padding: 3rem 5%;
+  margin-top: 10rem;
   background-image: url('/wave.png');
   background-position-y: bottom;
   background-repeat: no-repeat;
@@ -97,6 +98,7 @@ S.Container = styled.div`
 `;
 
 S.Contact = styled.div`
+  position: relative;
   margin-top: 10rem;
   padding: 5rem 1rem;
   background-color: #fff;
