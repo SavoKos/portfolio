@@ -72,7 +72,7 @@ const S = {};
 S.Contact = styled.div`
   position: relative;
   margin-top: 10rem;
-  padding: 5rem 1rem;
+  padding: 5rem 2rem;
   background-color: #fff;
   box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
