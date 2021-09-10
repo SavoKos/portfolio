@@ -79,6 +79,7 @@ S.Top = styled.div`
   h2 {
     font-size: 42px;
     margin-bottom: 5rem;
+    color: #333333;
 
     @media screen and (min-width: 500px) {
       font-size: 56px;
