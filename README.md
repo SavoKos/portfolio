@@ -34,7 +34,6 @@ If you have a business proposal, question, or offer, you can contact me by e-mai
 
 - React (NextJS)
 - Styled Components
-- Bootstrap
 
 ## License
 
