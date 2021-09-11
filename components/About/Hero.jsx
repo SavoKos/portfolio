@@ -16,9 +16,9 @@ function Hero() {
             </h1>
           </S.Title>
           <S.Description>
-            Self-taught developer and student who enjoy developing websites and
-            web applications using latest web technologies. Looking forward to
-            collaborate with you!
+            Self-taught Front-end Web Developer and student who enjoy developing
+            websites and web applications using latest web technologies. Looking
+            forward to collaborate with you!
           </S.Description>
           <S.HireBtn>
             <Icon type='download' />

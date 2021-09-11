@@ -1,17 +1,11 @@
 import styled from 'styled-components';
-import { Tag } from '../../Theme';
 import Image from 'next/image';
 import Icon from '../UI/Icon';
 
-function Showcase() {
+function Projects() {
   return (
     <S.Container>
-      <S.Showcase>
-        <S.RingTopLeft>
-          <Image src='/ring-left.png' layout='fill' objectFit='cover' />
-        </S.RingTopLeft>
-        <S.Tag>Showcase</S.Tag>
-        <h3>Latest Projects</h3>
+      <S.Projects>
         <S.Cards>
           <a
             href='https://gameportal.savokos.com'
@@ -58,14 +52,14 @@ function Showcase() {
             rel='noopener noreferrer'
           >
             <S.Card className='moviegeek'>
-              <S.Circle>
+              <S.DoubleCircle>
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  src='/circle.png'
+                  src='/doublecircle.png'
                   className='circle'
                 />
-              </S.Circle>
+              </S.DoubleCircle>
               <S.Mockup className='moviegeek'>
                 <Image
                   layout='fill'
@@ -78,6 +72,10 @@ function Showcase() {
                 <S.Details>
                   <h3>Movie Geek</h3>
                   <p>Movie Project | HTML CSS JS</p>
+                  <S.Description>
+                    Find upcoming, popular, top rated TV Shows or Movies. Also,
+                    you can find all details about specific Movie or TV Show
+                  </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -90,14 +88,14 @@ function Showcase() {
             rel='noopener noreferrer'
           >
             <S.Card className='tasty'>
-              <S.Circle>
+              <S.DoubleCircle>
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  src='/circle.png'
+                  src='/doublecircle.png'
                   className='circle'
                 />
-              </S.Circle>
+              </S.DoubleCircle>
               <S.Mockup className='tasty'>
                 <Image
                   layout='fill'
@@ -111,6 +109,10 @@ function Showcase() {
                 <S.Details>
                   <h3>Tasty</h3>
                   <p>Restaurant Project | HTML CSS JS</p>
+                  <S.Description>
+                    Nice design of a responsive restaurant website. It has a
+                    fully developed light/dark mode. Mobile Friendly.
+                  </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -123,14 +125,14 @@ function Showcase() {
             rel='noopener noreferrer'
           >
             <S.Card className='old-portfolio'>
-              <S.Circle>
+              <S.DoubleCircle>
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  src='/circle.png'
+                  src='/doublecircle.png'
                   className='circle'
                 />
-              </S.Circle>
+              </S.DoubleCircle>
               <S.Mockup className='old-portfolio'>
                 <Image
                   layout='fill'
@@ -144,6 +146,11 @@ function Showcase() {
                 <S.Details>
                   <h3>Old Portfolio</h3>
                   <p>Portfolio Project | HTML CSS JS</p>
+                  <S.Description>
+                    This was one of my first real projects. It's meant to be my
+                    personal portfolio. But, I don't like it anymore, so I
+                    decided to change it with this one.
+                  </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -156,14 +163,14 @@ function Showcase() {
             rel='noopener noreferrer'
           >
             <S.Card className='excellence'>
-              <S.Circle>
+              <S.DoubleCircle>
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  src='/circle.png'
+                  src='/doublecircle.png'
                   className='circle'
                 />
-              </S.Circle>
+              </S.DoubleCircle>
               <S.Mockup className='excellence'>
                 <Image
                   layout='fill'
@@ -177,16 +184,21 @@ function Showcase() {
                 <S.Details>
                   <h3>Excellence</h3>
                   <p>Bank Project | React (NextJS) & Firebase</p>
+                  <S.Description>
+                    Excellence Holdings is a (fictional) bank, and its idea is
+                    to allow people to manage their credit cards. <br />
+                    Excellence Holdings has many features, like creating new
+                    user, new card, filter transactions (All, Income, Outcome),
+                    transfer money to another user, loan, make deposit and
+                    investment goals
+                  </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
           </a>
         </S.Cards>
-        <S.RingBottomRight>
-          <Image src='/ring-hero-home.png' layout='fill' objectFit='cover' />
-        </S.RingBottomRight>
-      </S.Showcase>
+      </S.Projects>
     </S.Container>
   );
 }
@@ -202,9 +214,7 @@ S.Container = styled.div`
   }
 `;
 
-S.Showcase = styled.div`
-  padding: 10rem 0;
-
+S.Projects = styled.div`
   h3 {
     font-size: 40px;
     text-align: center;
@@ -212,39 +222,6 @@ S.Showcase = styled.div`
     @media screen and (min-width: 500px) {
       font-size: 48px;
     }
-  }
-`;
-
-S.Tag = styled(Tag)`
-  text-align: center;
-`;
-
-S.RingTopLeft = styled.div`
-  position: absolute;
-  min-width: 15rem;
-  left: 0;
-  min-height: 21rem;
-
-  @media screen and (min-width: 500px) {
-    min-width: 26.5rem;
-    min-height: 37rem;
-  }
-`;
-
-S.RingBottomRight = styled.div`
-  position: absolute;
-  min-width: 15rem;
-  right: 0;
-  min-height: 21rem;
-  display: none;
-
-  @media screen and (min-width: 500px) {
-    min-width: 26.5rem;
-    min-height: 37rem;
-  }
-
-  @media screen and (min-width: 1000px) {
-    display: block;
   }
 `;
 
@@ -257,17 +234,19 @@ S.DoubleCircle = styled.div`
   transform: translate(-50%, -50%);
 
   @media screen and (min-width: 600px) {
-    top: 55%;
     width: 25rem;
     height: 22rem;
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 850px) {
+    top: 55%;
+    left: 80%;
+    transform: translate(-85%, -50%);
+  }
+
+  @media screen and (min-width: 1200px) {
     width: 34rem;
     height: 30rem;
-    top: 50%;
-    left: 85%;
-    transform: translate(-85%, -50%);
   }
 `;
 
@@ -289,37 +268,63 @@ S.Mockup = styled.div`
   width: 23rem;
   height: 12rem;
   position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -60%);
+  top: 65%;
+  left: 26%;
+  transform: translate(-50%, -50%);
 
   &.tasty {
     width: 19rem;
     height: 10rem;
+    top: 63%;
+    left: 48%;
 
     @media screen and (min-width: 450px) {
       width: 24rem;
       height: 14rem;
       top: 62%;
     }
+
+    @media screen and (min-width: 600px) {
+      width: 23rem;
+      height: 12rem;
+      top: 63%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 850px) {
+      top: 54%;
+      left: 65%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 31rem;
+      height: 16rem;
+    }
   }
 
   &.moviegeek {
     width: 17rem;
     height: 9rem;
+    top: 63%;
+    left: 52%;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       width: 23rem;
       height: 12rem;
+      top: 61%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    @media screen and (min-width: 750px) {
-      width: 23rem;
-      height: 12rem;
+    @media screen and (min-width: 850px) {
+      top: 50%;
+      left: 66%;
     }
 
-    @media screen and (min-width: 1180px) {
-      top: 62%;
+    @media screen and (min-width: 1200px) {
+      width: 31rem;
+      height: 16rem;
     }
   }
 
@@ -348,31 +353,40 @@ S.Mockup = styled.div`
   }
 
   &.excellence {
-    left: 26%;
     width: 23rem;
     height: 23rem;
 
-    @media screen and (min-width: 500px) {
-      left: 35%;
+    @media screen and (min-width: 850px) {
+      top: 55%;
+      left: 52%;
+    }
+
+    @media screen and (min-width: 1300px) {
+      top: 55%;
+      left: 58%;
     }
   }
 
   &.old-portfolio {
     width: 19rem;
     height: 18rem;
+    top: 62%;
+    left: 51%;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       width: 23rem;
       height: 21rem;
+    }
+
+    @media screen and (min-width: 850px) {
+      top: 55%;
+      left: 68%;
     }
   }
 
   @media screen and (min-width: 1180px) {
     width: 33rem;
     height: 17rem;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
   }
 `;
 
@@ -381,17 +395,8 @@ S.Cards = styled.div`
   margin-top: 3rem;
   justify-content: space-between;
   flex-wrap: wrap;
-
   a {
     width: 100%;
-
-    @media screen and (min-width: 900px) {
-      width: 49%;
-
-      &:nth-of-type(1) {
-        width: 100%;
-      }
-    }
   }
 `;
 
@@ -478,4 +483,4 @@ S.Description = styled.p`
   }
 `;
 
-export default Showcase;
+export default Projects;

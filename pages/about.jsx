@@ -8,7 +8,7 @@ function about({ intersecting }) {
   return (
     <div>
       <Head>
-        <title>Front-end Web Developer | Savo Kos</title>
+        <title>About | Savo Kos</title>
       </Head>
       <Navigation currentPage='about' />
       <Hero />
