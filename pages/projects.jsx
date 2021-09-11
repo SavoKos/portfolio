@@ -61,6 +61,10 @@ S.Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media screen and (min-width: 1300px) {
+    background-size: cover;
+  }
+
   .copyright {
     color: ${({ theme }) => theme.colors.orange};
     font-size: 16px;

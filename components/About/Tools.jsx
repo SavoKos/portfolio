@@ -68,9 +68,12 @@ S.Container = styled.div`
   margin-top: 10rem;
   padding-top: 20rem;
   background-image: url('/about.png');
-  background-position: bottom right;
+  background-position: top right;
   background-repeat: no-repeat;
-  background-size: cover;
+
+  @media screen and (min-width: 1300px) {
+    background-size: cover;
+  }
 
   .copyright {
     color: ${({ theme }) => theme.colors.orange};

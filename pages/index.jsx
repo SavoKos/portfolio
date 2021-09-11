@@ -62,7 +62,10 @@ S.Container = styled.div`
   background-image: url('/wave.png');
   background-position-y: bottom;
   background-repeat: no-repeat;
-  background-size: cover;
+
+  @media screen and (min-width: 1300px) {
+    background-size: cover;
+  }
 
   .copyright {
     color: ${({ theme }) => theme.colors.orange};
