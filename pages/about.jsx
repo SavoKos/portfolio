@@ -36,6 +36,11 @@ function about() {
     <div>
       <Head>
         <title>About | Savo Kos</title>
+        <meta
+          name='description'
+          content='In about page you can find details about Savo Kos. He is Front-end Web Developer. Based in Bosnia and Herzegovina, Prijedor'
+        />
+        <link href='https://savokos.com/about' rel='canonical' />
       </Head>
       <Navigation currentPage='about' />
       <Hero />

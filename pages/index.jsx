@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Contact from '../components/Contact';
@@ -7,6 +6,7 @@ import Showcase from '../components/Home/Showcase';
 import Specializing from '../components/Home/Specializing';
 import Navigation from '../components/Navigation';
 import ScrollToTop from '../components/ScrollToTop';
+import Head from 'next/head';
 
 export default function Home() {
   const [intersecting, setIntersecting] = useState(false);
@@ -39,6 +39,13 @@ export default function Home() {
     <S.PageContainer>
       <Head>
         <title>Front-end Web Developer | Savo Kos</title>
+        <meta
+          name='description'
+          content='My name is Savo Kos. This is my Portfolio Website
+          about Front-End Web Development. I build Websites using JavaScript,
+          HTML, CSS, React. Based in Bosnia and Herzegovina, Prijedor.'
+        />
+        <link href='https://savokos.com' rel='canonical' />
       </Head>
       <Navigation currentPage='home' />
       <Hero />

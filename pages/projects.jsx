@@ -38,6 +38,11 @@ function projects() {
     <div>
       <Head>
         <title>Projects | Savo Kos</title>
+        <meta
+          name='description'
+          content='Projects page, you can find Front-end Web Developer projects made in React, JavaScript, HTML, CSS, Firebase.'
+        />
+        <link href='https://savokos.com/projects' rel='canonical' />
       </Head>
       <Navigation currentPage='projects' />
       <Hero />

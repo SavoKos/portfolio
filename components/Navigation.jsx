@@ -12,6 +12,7 @@ function Navigation({ currentPage }) {
     <S.Container>
       <S.Navigation>
         <Image
+          alt='Savo Kos Logo'
           src='/logo.png'
           objectFit='cover'
           width='50'
