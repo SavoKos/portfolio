@@ -203,6 +203,7 @@ S.Form = styled.div`
 
   input,
   textarea {
+    resize: none;
     width: 100%;
     background-color: #f2f2f2;
     border-radius: 0.5rem;
