@@ -23,12 +23,12 @@
 
 ## Description
 
-    I am Savo Kos, Front-End Web Developer based in Bosnia.
-    My story as a Front-End Web Developer begins when I was 16 years old. That is the first time I came across HTML and CSS, and I fell in love.  I started learning from then on.
+I am Savo Kos, Front-End Web Developer based in Bosnia.
+My story as a Front-End Web Developer begins when I was 16 years old. That is the first time I came across HTML and CSS, and I fell in love.  I started learning from then on.
 
-     I am a Self-taught Developer and student. Currently, I am unemployed, but I know I will find a job because this is the thing I am really passionate about.
+ I am a Self-taught Developer and student. Currently, I am unemployed, but I know I will find a job because this is the thing I am really passionate about.
 
-    If you have a business proposal, question, or offer, you can contact me by e-mail or using the contact form at the end of the page.
+If you have a business proposal, question, or offer, you can contact me by e-mail or using the contact form at the end of the page.
 
 ## Built with
 
