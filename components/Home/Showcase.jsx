@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Tag } from '../../Theme';
 import Image from 'next/image';
 import Icon from '../UI/Icon';
+import Link from '../../Link';
 
 function Showcase() {
   return (
@@ -13,11 +14,7 @@ function Showcase() {
         <S.Tag>Showcase</S.Tag>
         <h3>Latest Projects</h3>
         <S.Cards>
-          <a
-            href='https://gameportal.savokos.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href='https://gameportal.savokos.com'>
             <S.Card className='game-portal'>
               <S.DoubleCircle>
                 <Image
@@ -50,13 +47,9 @@ function Showcase() {
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
-          </a>
+          </Link>
 
-          <a
-            href='https://moviegeek.savokos.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href='https://moviegeek.savokos.com'>
             <S.Card className='moviegeek'>
               <S.Circle>
                 <Image
@@ -82,13 +75,9 @@ function Showcase() {
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
-          </a>
+          </Link>
 
-          <a
-            href='https://tasty.savokos.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href='https://tasty.savokos.com'>
             <S.Card className='tasty'>
               <S.Circle>
                 <Image
@@ -115,13 +104,9 @@ function Showcase() {
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
-          </a>
+          </Link>
 
-          <a
-            href='https://oldportfolio.savokos.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href='https://oldportfolio.savokos.com'>
             <S.Card className='old-portfolio'>
               <S.Circle>
                 <Image
@@ -148,13 +133,9 @@ function Showcase() {
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
-          </a>
+          </Link>
 
-          <a
-            href='https://excellence.savokos.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href='https://excellence.savokos.com'>
             <S.Card className='excellence'>
               <S.Circle>
                 <Image
@@ -181,10 +162,10 @@ function Showcase() {
                 <Icon type='iov-arrow-right' />
               </S.Top>
             </S.Card>
-          </a>
+          </Link>
         </S.Cards>
         <S.RingBottomRight>
-          <Image src='/ring-hero-home.png' layout='fill' objectFit='cover' />
+          <Image src='/ring-right.png' layout='fill' objectFit='cover' />
         </S.RingBottomRight>
       </S.Showcase>
     </S.Container>

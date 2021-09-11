@@ -6,7 +6,7 @@ import Icon from './UI/Icon';
 function Contact() {
   return (
     <>
-      <S.Contact>
+      <S.Contact id='contact'>
         <S.Details>
           <Tag>Contact</Tag>
           <h1>

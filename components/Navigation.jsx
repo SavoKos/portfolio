@@ -24,7 +24,9 @@ function Navigation({ currentPage }) {
           menuActive={menuActive}
           setMenuActive={setMenuActive}
         />
-        <S.ContactBtn>Contact</S.ContactBtn>
+        <a href='#contact'>
+          <S.ContactBtn>Contact</S.ContactBtn>
+        </a>
         <Icon
           type='menu'
           className='hamburger-menu'

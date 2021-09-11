@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from '../../Link';
 import Contact from '../Contact';
 import Icon from '../UI/Icon';
 
@@ -11,27 +12,47 @@ function Tools() {
           Frameworks
         </h2>
         <S.Skills>
-          <S.Skill>
-            <Icon type='Bootstrap' className='bootstrap' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='sass' className='sass' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='Figma' className='figma' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='React' className='react' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='javascript' className='javascript' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='firebase' className='firebase' />
-          </S.Skill>
-          <S.Skill>
-            <Icon type='git' className='git' />
-          </S.Skill>
+          <Link href='https://getbootstrap.com/'>
+            <S.Skill>
+              <Icon type='Bootstrap' className='bootstrap' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://sass-lang.com/'>
+            <S.Skill>
+              <Icon type='sass' className='sass' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://www.figma.com/'>
+            <S.Skill>
+              <Icon type='Figma' className='figma' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://reactjs.org/'>
+            <S.Skill>
+              <Icon type='React' className='react' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://www.javascript.com/'>
+            <S.Skill>
+              <Icon type='javascript' className='javascript' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://firebase.google.com/'>
+            <S.Skill>
+              <Icon type='firebase' className='firebase' />
+            </S.Skill>
+          </Link>
+
+          <Link href='https://git-scm.com/'>
+            <S.Skill>
+              <Icon type='git' className='git' />
+            </S.Skill>
+          </Link>
         </S.Skills>
       </S.Top>
       <Contact />
