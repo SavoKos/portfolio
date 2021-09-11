@@ -151,6 +151,7 @@ S.Github = styled.div`
 
 S.Details = styled.div`
   width: 100%;
+  font-size: 48px;
 
   h1 {
     @media screen and (min-width: 1000px) {
