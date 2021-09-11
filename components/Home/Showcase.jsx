@@ -26,6 +26,7 @@ function Showcase() {
               </S.DoubleCircle>
               <S.Mockup className='game-portal'>
                 <Image
+                  alt='Game Portal project made by Savo Kos using React (NextJS)'
                   layout='fill'
                   objectFit='cover'
                   src='/game-portal.png'
@@ -61,6 +62,7 @@ function Showcase() {
               </S.Circle>
               <S.Mockup className='moviegeek'>
                 <Image
+                  alt='Movie Geek project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
                   src='/moviegeek.png'
@@ -89,6 +91,7 @@ function Showcase() {
               </S.Circle>
               <S.Mockup className='tasty'>
                 <Image
+                  alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
                   src='/tasty.png'
@@ -118,6 +121,7 @@ function Showcase() {
               </S.Circle>
               <S.Mockup className='old-portfolio'>
                 <Image
+                  alt='Project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
                   src='/old-portfolio.png'
@@ -147,6 +151,7 @@ function Showcase() {
               </S.Circle>
               <S.Mockup className='excellence'>
                 <Image
+                  alt='Bank application made by Savo Kos using React (NextJS)'
                   layout='fill'
                   objectFit='cover'
                   src='/excellence.png'
