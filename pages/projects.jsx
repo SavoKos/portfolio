@@ -5,8 +5,35 @@ import Head from 'next/head';
 import Projects from '../components/Projects/Projects';
 import styled from 'styled-components';
 import Contact from '../components/Contact';
+import { useEffect, useState } from 'react';
 
-function projects({ intersecting }) {
+function projects() {
+  const [intersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    return intersectingHandler();
+  }, []);
+
+  const intersectingHandler = () => {
+    const callback = (entries, _) => {
+      entries.forEach((ent) => {
+        if (ent.isIntersecting) return setIntersecting(true);
+        setIntersecting(false);
+      });
+    };
+
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    const target = document.querySelector('.hero');
+    if (!target) return;
+
+    observer.observe(target);
+  };
+
   return (
     <div>
       <Head>
