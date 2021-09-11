@@ -3,13 +3,13 @@
 
 <br>
 
-![Project Image](https://res.cloudinary.com/dicynt7ms/image/upload/v1631366056/important/screencapture-localhost-3000-2021-09-11-15_13_05_gcdyrr.png)
+![Project Image](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386020/important/screencapture-savokos-2021-09-11-20_45_06_x3nesc.png)
 <br>
 
-![Project Image1](https://res.cloudinary.com/dicynt7ms/image/upload/v1631366059/important/screencapture-localhost-3000-projects-2021-09-11-15_13_27_h5xyg6.png)
+![Project Image1](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386015/important/screencapture-savokos-about-2021-09-11-20_45_36_nqodvm.png)
 <br>
 
-![Project Image2](https://res.cloudinary.com/dicynt7ms/image/upload/v1631366054/important/screencapture-localhost-3000-about-2021-09-11-15_13_41_c6rohn.png)
+![Project Image2](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386018/important/screencapture-savokos-projects-2021-09-11-20_45_21_uvqigi.png)
 <br>
 
 ![LiveWebsite](https://res.cloudinary.com/dicynt7ms/image/upload/w_20,h_20/v1630442590/important/NicePng_website-png_187940_pizwnr.png) <span>Live website - <a href="https://savokos.com" target="_blank" rel="noopener noreferrer"> savokos.com</a></span>
