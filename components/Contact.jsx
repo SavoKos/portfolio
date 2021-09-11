@@ -151,9 +151,9 @@ S.Github = styled.div`
 
 S.Details = styled.div`
   width: 100%;
-  font-size: 48px;
 
   h1 {
+    font-size: 48px;
     @media screen and (min-width: 1000px) {
       font-size: 56px;
     }
@@ -174,7 +174,7 @@ S.Planets = styled.div`
 
   @media screen and (min-width: 387px) {
     top: -39rem;
-    right: -2rem;
+    right: -4rem;
   }
 
   @media screen and (min-width: 440px) {

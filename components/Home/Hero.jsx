@@ -40,12 +40,12 @@ S.Container = styled.div`
 `;
 
 S.Hero = styled.div`
-  padding: 5rem 0;
   display: flex;
   align-items: flex-end;
+  padding: 7rem 0;
 
   @media screen and (min-width: 400px) {
-    padding: 10rem 0 5rem 0;
+    padding: 10rem 0 8rem 0;
   }
 `;
 
