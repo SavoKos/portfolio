@@ -16,9 +16,18 @@ function Hero() {
             </h1>
           </S.Title>
           <S.Description>
-            Self-taught Front-end Web Developer and student who enjoy developing
-            websites and web applications using latest web technologies. Looking
-            forward to collaborate with you!
+            I am Savo Kos, Front-End Web Developer based in Bosnia. My story as
+            a Front-End Web Developer begins when I was 16 years old. That is
+            the first time I came across HTML and CSS, and I fell in love. I
+            started learning from then on.
+            <br />
+            <br />
+            I am a Self-taught Developer and student. Currently, I am
+            unemployed, but I know I will find a job because this is the thing I
+            am really passionate about. <br />
+            <br />
+            If you have a business proposal, question, or offer, you can contact
+            me by e-mail or using the contact form at the end of the page.
           </S.Description>
           <S.HireBtn>
             <Icon type='download' />
@@ -120,6 +129,7 @@ S.RingImg = styled.div`
   bottom: -7rem;
   min-width: 15rem;
   min-height: 21rem;
+  opacity: 0.5;
 
   @media screen and (min-width: 500px) {
     min-width: 26.5rem;

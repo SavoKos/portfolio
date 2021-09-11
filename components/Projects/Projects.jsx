@@ -377,7 +377,6 @@ S.Mockup = styled.div`
 
 S.Cards = styled.div`
   display: flex;
-  margin-top: 3rem;
   justify-content: space-between;
   flex-wrap: wrap;
   a {
