@@ -72,7 +72,7 @@ const S = {};
 S.Contact = styled.div`
   position: relative;
   margin-top: 10rem;
-  padding: 5rem 2rem;
+  padding: 5rem 3rem;
   background-color: #fff;
   box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: 1px 1px 25px -1px rgba(0, 0, 0, 0.13);
@@ -81,26 +81,22 @@ S.Contact = styled.div`
   border-radius: 2rem;
   flex-direction: column;
 
+  @media screen and (min-width: 880px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding: 5rem;
+  }
+
   p {
     margin: 2rem 0;
     color: #828282;
+    font-size: 16px;
 
-    @media screen and (min-width: 880px) {
-      margin: 4rem 0;
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
     }
-  }
-
-  @media screen and (min-width: 440px) {
-    padding: 10rem 3rem;
-  }
-
-  @media screen and (min-width: 650px) {
-    border-radius: 5rem;
-    padding: 10rem 5rem;
-  }
-
-  @media screen and (min-width: 880px) {
-    flex-direction: row;
   }
 `;
 
@@ -111,20 +107,34 @@ S.Info = styled.div`
   a {
     color: #4f4f4f;
     margin-left: 1rem;
+    font-size: 14px;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 16px;
+    }
   }
 `;
 
 S.InfoRing = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: ${({ theme }) => theme.colors.orange};
   border-radius: 50%;
   color: #fff;
   display: grid;
   place-items: center;
 
+  @media screen and (min-width: 1000px) {
+    width: 40px;
+    height: 40px;
+
+    .anticon {
+      font-size: 24px;
+    }
+  }
+
   .anticon {
-    font-size: 24px;
+    font-size: 19px;
   }
 `;
 
@@ -143,9 +153,8 @@ S.Details = styled.div`
   width: 100%;
 
   h1 {
-    font-size: 56px;
-    @media screen and (min-width: 400px) {
-      font-size: 64px;
+    @media screen and (min-width: 1000px) {
+      font-size: 56px;
     }
   }
 `;
@@ -159,20 +168,15 @@ S.Planets = styled.div`
   position: absolute;
   width: 200px;
   height: 200px;
-  top: -46rem;
-  right: -1rem;
+  top: -40rem;
+  right: -4rem;
 
   @media screen and (min-width: 387px) {
-    top: -41rem;
+    top: -39rem;
     right: -2rem;
   }
 
-  @media screen and (min-width: 400px) {
-    top: -47rem;
-  }
-
   @media screen and (min-width: 440px) {
-    top: -47rem;
     right: -5rem;
   }
 
@@ -185,11 +189,6 @@ S.Planets = styled.div`
   @media screen and (min-width: 880px) {
     top: -13rem;
   }
-
-  @media screen and (min-width: 1000px) {
-    width: 400px;
-    height: 400px;
-  }
 `;
 
 S.Form = styled.div`
@@ -197,7 +196,7 @@ S.Form = styled.div`
   width: 100%;
 
   @media screen and (min-width: 880px) {
-    margin-top: 25rem;
+    margin-top: 13rem;
     flex-direction: row;
   }
 
@@ -206,12 +205,20 @@ S.Form = styled.div`
     width: 100%;
     background-color: #f2f2f2;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1rem;
     outline: 0;
     border: 0;
 
+    @media screen and (min-width: 1000px) {
+      padding: 1.5rem;
+
+      &:nth-of-type(2) {
+        margin: 1rem 0;
+      }
+    }
+
     &:nth-of-type(2) {
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
 
     @media screen and (min-width: 1200px) {
@@ -224,13 +231,18 @@ S.Btn = styled.button`
   outline: 0;
   border: 0;
   border-radius: 10rem;
-  padding: 1rem 3.5rem;
+  padding: 0.7rem 2.3rem;
   background-color: ${({ theme }) => theme.colors.orange};
   color: #fff;
-  font-size: 18px;
-  margin-top: 5rem;
+  font-size: 16px;
+  margin-top: 3rem;
   cursor: pointer;
   position: relative;
+
+  @media screen and (min-width: 1000px) {
+    padding: 1rem 3rem;
+    font-size: 16px;
+  }
 `;
 
 export default Contact;

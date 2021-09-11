@@ -40,7 +40,7 @@ S.Container = styled.div`
 `;
 
 S.Hero = styled.div`
-  padding-bottom: 10rem;
+  padding: 10rem 0 5rem 0;
   display: flex;
   align-items: flex-end;
 `;
@@ -107,6 +107,7 @@ S.RingImg = styled.div`
   bottom: -7rem;
   min-width: 15rem;
   min-height: 21rem;
+  opacity: 0.5;
 
   @media screen and (min-width: 500px) {
     min-width: 26.5rem;

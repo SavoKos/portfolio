@@ -41,7 +41,11 @@ function Navigation({ currentPage }) {
 const S = {};
 
 S.Container = styled.div`
-  padding: 3rem 10%;
+  padding: 1.7rem 10%;
+  position: fixed;
+  z-index: 5;
+  background-color: #ffffffeb;
+  width: 100%;
 `;
 
 S.Navigation = styled.div`

@@ -46,7 +46,7 @@ S.NavItems = styled.div`
   top: 0;
   height: 100vh;
   justify-content: space-evenly;
-  background-color: #eaf5ff;
+  background-color: #fef0f0;
   width: 100%;
   z-index: 5;
   transition: all ease 0.5s;

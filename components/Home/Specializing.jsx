@@ -93,8 +93,6 @@ S.Container = styled.div`
 `;
 
 S.Specializing = styled.div`
-  padding: 10rem 0;
-
   h3 {
     font-size: 40px;
     text-align: center;
@@ -211,6 +209,7 @@ S.DotsImg = styled.div`
   width: 300px;
   height: 300px;
   display: none;
+  opacity: 0.5;
 
   @media screen and (min-width: 630px) {
     display: block;

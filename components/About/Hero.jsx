@@ -44,7 +44,6 @@ S.Container = styled.div`
 `;
 
 S.Hero = styled.div`
-  padding-bottom: 10rem;
   display: flex;
   align-items: flex-end;
 `;

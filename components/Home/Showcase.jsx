@@ -184,8 +184,6 @@ S.Container = styled.div`
 `;
 
 S.Showcase = styled.div`
-  padding: 10rem 0;
-
   h3 {
     font-size: 40px;
     text-align: center;
@@ -205,6 +203,7 @@ S.RingTopLeft = styled.div`
   min-width: 15rem;
   left: 0;
   min-height: 21rem;
+  opacity: 0.5;
 
   @media screen and (min-width: 500px) {
     min-width: 26.5rem;
@@ -218,6 +217,7 @@ S.RingBottomRight = styled.div`
   right: 0;
   min-height: 21rem;
   display: none;
+  opacity: 0.5;
 
   @media screen and (min-width: 500px) {
     min-width: 26.5rem;
