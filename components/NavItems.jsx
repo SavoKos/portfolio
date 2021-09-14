@@ -3,8 +3,6 @@ import Router from 'next/router';
 import Icon from './UI/Icon';
 
 function NavItems({ currentPage, menuActive, setMenuActive }) {
-  console.log(menuActive);
-
   return (
     <S.NavItems menuActive={menuActive}>
       <Icon
