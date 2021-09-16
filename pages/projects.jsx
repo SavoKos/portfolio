@@ -40,7 +40,7 @@ function projects() {
         <title>Savo Kos | Projects</title>
         <meta
           name='description'
-          content='Projects page, you can find Front-end Web Developer projects made in React, JavaScript, HTML, CSS, Firebase.'
+          content="Savo Kos's Projects page, you can find Front-end Web Developer projects made in React, JavaScript, HTML, CSS, Firebase."
         />
         <link href='https://savokos.com/projects' rel='canonical' />
       </Head>
