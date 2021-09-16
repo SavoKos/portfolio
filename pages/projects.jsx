@@ -37,7 +37,7 @@ function projects() {
   return (
     <div>
       <Head>
-        <title>Projects | Savo Kos</title>
+        <title>Savo Kos | Projects</title>
         <meta
           name='description'
           content='Projects page, you can find Front-end Web Developer projects made in React, JavaScript, HTML, CSS, Firebase.'

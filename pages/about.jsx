@@ -35,7 +35,7 @@ function about() {
   return (
     <div>
       <Head>
-        <title>About | Savo Kos</title>
+        <title>Savo Kos | About</title>
         <meta
           name='description'
           content='In about page you can find details about Savo Kos. He is Front-end Web Developer. Based in Bosnia and Herzegovina, Prijedor'

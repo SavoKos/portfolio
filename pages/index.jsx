@@ -38,10 +38,10 @@ export default function Home() {
   return (
     <S.PageContainer>
       <Head>
-        <title>Front-end Web Developer | Savo Kos</title>
+        <title>Savo Kos | Front-end Web Developer</title>
         <meta
           name='description'
-          content='My name is Savo Kos. I am Front-End Web Developer, this is my Portfolio Website. I build Websites using JavaScript, HTML, CSS, React. Based in Bosnia and Herzegovina, Prijedor.'
+          content='Savo Kos, a Front-End Web Developer from Bosnia and Herzegovina (Prijedor), who enjoys building Responsive Websites using JavaScript, HTML, CSS, React.'
         />
         <link href='https://savokos.com' rel='canonical' />
       </Head>
