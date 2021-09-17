@@ -24,6 +24,8 @@ function Projects() {
               </S.DoubleCircle>
               <S.Mockup className='game-portal'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
                   alt='Game Portal project made by Savo Kos using React (NextJS)'
                   layout='fill'
                   objectFit='cover'
@@ -33,9 +35,9 @@ function Projects() {
               </S.Mockup>
               <S.Top>
                 <S.Details>
-                  <h3>Game Portal</h3>
-                  <p>Game Project | React (NextJS)</p>
-                  <S.Description>
+                  <h3 data-aos='fade-up'>Game Portal</h3>
+                  <p data-aos='fade-up'>Game Project | React (NextJS)</p>
+                  <S.Description data-aos='fade-up'>
                     Game portal is the place where you can search and discover
                     your next favorite game. There are over 245 000 game titles.
                     Sort and filter games by tags, genres, stores, developers.
@@ -60,6 +62,8 @@ function Projects() {
               </S.DoubleCircle>
               <S.Mockup className='moviegeek'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
                   alt='Movie Geek project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
@@ -69,9 +73,9 @@ function Projects() {
               </S.Mockup>
               <S.Top>
                 <S.Details>
-                  <h3>Movie Geek</h3>
-                  <p>Movie Project | HTML CSS JS</p>
-                  <S.Description>
+                  <h3 data-aos='fade-up'>Movie Geek</h3>
+                  <p data-aos='fade-up'>Movie Project | HTML CSS JS</p>
+                  <S.Description data-aos='fade-up'>
                     Find upcoming, popular, top rated TV Shows or Movies. Also,
                     you can find all details about specific Movie or TV Show
                   </S.Description>
@@ -93,6 +97,8 @@ function Projects() {
               </S.DoubleCircle>
               <S.Mockup className='tasty'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
                   alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
@@ -103,9 +109,9 @@ function Projects() {
 
               <S.Top>
                 <S.Details>
-                  <h3>Tasty</h3>
-                  <p>Restaurant Project | HTML CSS JS</p>
-                  <S.Description>
+                  <h3 data-aos='fade-up'>Tasty</h3>
+                  <p data-aos='fade-up'>Restaurant Project | HTML CSS JS</p>
+                  <S.Description data-aos='fade-up'>
                     Nice design of a responsive restaurant website. It has a
                     fully developed light/dark mode. Mobile Friendly.
                   </S.Description>
@@ -127,6 +133,8 @@ function Projects() {
               </S.DoubleCircle>
               <S.Mockup className='old-portfolio'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
                   alt='Project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
@@ -137,9 +145,9 @@ function Projects() {
 
               <S.Top>
                 <S.Details>
-                  <h3>Old Portfolio</h3>
-                  <p>Portfolio Project | HTML CSS JS</p>
-                  <S.Description>
+                  <h3 data-aos='fade-up'>Old Portfolio</h3>
+                  <p data-aos='fade-up'>Portfolio Project | HTML CSS JS</p>
+                  <S.Description data-aos='fade-up'>
                     This was one of my first real projects. It's meant to be my
                     personal portfolio. But, I don't like it anymore, so I
                     decided to change it with this one.
@@ -162,6 +170,8 @@ function Projects() {
               </S.DoubleCircle>
               <S.Mockup className='excellence'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
                   alt='Bank application made by Savo Kos using React (NextJS)'
                   layout='fill'
                   objectFit='cover'
@@ -172,9 +182,11 @@ function Projects() {
 
               <S.Top>
                 <S.Details>
-                  <h3>Excellence</h3>
-                  <p>Bank Project | React (NextJS) & Firebase</p>
-                  <S.Description>
+                  <h3 data-aos='fade-up'>Excellence</h3>
+                  <p data-aos='fade-up'>
+                    Bank Project | React (NextJS) & Firebase
+                  </p>
+                  <S.Description data-aos='fade-up'>
                     Excellence Holdings is a (fictional) bank, and its idea is
                     to allow people to manage their credit cards. <br />
                     Excellence Holdings has many features, like creating new

@@ -4,11 +4,14 @@ import Tools from '../components/About/Tools';
 import Navigation from '../components/Navigation';
 import ScrollToTop from '../components/ScrollToTop';
 import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 function about() {
   const [intersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
+    Aos.init({ duration: 1000 });
     return intersectingHandler();
   }, []);
 

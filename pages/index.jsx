@@ -7,11 +7,14 @@ import Specializing from '../components/Home/Specializing';
 import Navigation from '../components/Navigation';
 import ScrollToTop from '../components/ScrollToTop';
 import Head from 'next/head';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
   const [intersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
+    Aos.init({ duration: 1000 });
     return intersectingHandler();
   }, []);
 

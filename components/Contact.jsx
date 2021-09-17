@@ -8,18 +8,18 @@ function Contact() {
     <>
       <S.Contact id='contact'>
         <S.Details>
-          <Tag>Contact</Tag>
-          <h1>
+          <Tag data-aos='fade-down'>Contact</Tag>
+          <h1 data-aos='fade-down'>
             Let's Get in <br /> Touch
           </h1>
-          <p>
+          <p data-aos='fade-up'>
             Feel free to reach out for
             <br />
             collaborations or just
             <br />a friendly hello!
           </p>
           <S.Info>
-            <S.Mail>
+            <S.Mail data-aos='fade-up'>
               <S.InfoRing>
                 <Icon type='email1' />
               </S.InfoRing>
@@ -27,7 +27,7 @@ function Contact() {
                 savo.kos.sk@gmail.com
               </a>
             </S.Mail>
-            <S.Github>
+            <S.Github data-aos='fade-up'>
               <S.InfoRing>
                 <Icon type='github' />
               </S.InfoRing>
@@ -38,10 +38,10 @@ function Contact() {
           </S.Info>
         </S.Details>
         <S.Right>
-          <S.Planets>
+          <S.Planets data-aos='fade-down'>
             <Image src='/planets.png' layout='fill' objectFit='cover' />
           </S.Planets>
-          <S.Form>
+          <S.Form data-aos='fade-up'>
             <input type='text' placeholder='Name' />
             <input type='mail' placeholder='Email' />
             <textarea
@@ -51,7 +51,7 @@ function Contact() {
               rows='10'
               placeholder='Message'
             ></textarea>
-            <S.Btn>Let's talk!</S.Btn>
+            <S.Btn data-aos='fade-up'>Let's talk!</S.Btn>
           </S.Form>
         </S.Right>
       </S.Contact>

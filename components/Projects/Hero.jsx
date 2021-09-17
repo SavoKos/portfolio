@@ -8,9 +8,11 @@ function Hero() {
     <S.Container className='hero'>
       <S.Hero>
         <S.Content>
-          <S.Tag>My Projects</S.Tag>
+          <S.Tag data-aos='fade-up'>My Projects</S.Tag>
           <S.Title>
-            <h1>Developing modern websites and web applications</h1>
+            <h1 data-aos='fade-up'>
+              Developing modern websites and web applications
+            </h1>
           </S.Title>
         </S.Content>
       </S.Hero>

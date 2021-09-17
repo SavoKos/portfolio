@@ -7,49 +7,49 @@ function Tools() {
   return (
     <S.Container>
       <S.Top>
-        <h2>
+        <h2 data-aos='fade-up'>
           Tools &<br />
           Frameworks
         </h2>
         <S.Skills>
           <Link href='https://getbootstrap.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up'>
               <Icon type='Bootstrap' className='bootstrap' />
             </S.Skill>
           </Link>
 
           <Link href='https://sass-lang.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='200'>
               <Icon type='sass' className='sass' />
             </S.Skill>
           </Link>
 
           <Link href='https://www.figma.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='400'>
               <Icon type='Figma' className='figma' />
             </S.Skill>
           </Link>
 
           <Link href='https://reactjs.org/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='600'>
               <Icon type='React' className='react' />
             </S.Skill>
           </Link>
 
           <Link href='https://www.javascript.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='800'>
               <Icon type='javascript' className='javascript' />
             </S.Skill>
           </Link>
 
           <Link href='https://firebase.google.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='1000'>
               <Icon type='firebase' className='firebase' />
             </S.Skill>
           </Link>
 
           <Link href='https://git-scm.com/'>
-            <S.Skill>
+            <S.Skill data-aos='fade-up' data-aos-delay='1200'>
               <Icon type='git' className='git' />
             </S.Skill>
           </Link>

@@ -6,14 +6,15 @@ function Specializing() {
   return (
     <S.Container>
       <S.Specializing>
-        <S.Tag>Specializing</S.Tag>
-        <h3>What I Do?</h3>
+        <S.Tag data-aos='fade-up'>Specializing</S.Tag>
+        <h3 data-aos='fade-up'>What I Do?</h3>
         <S.Cards>
           <S.Card>
             <S.Icon>
               <S.Ring />
               <S.Image>
                 <Image
+                  data-aos='fade-up'
                   src='/rocket.png'
                   layout='fill'
                   objectFit='cover'
@@ -22,8 +23,10 @@ function Specializing() {
               </S.Image>
             </S.Icon>
 
-            <h5>Performance</h5>
-            <p>
+            <h5 data-aos='zoom-in' data-aos-delay='200'>
+              Performance
+            </h5>
+            <p data-aos='zoom-in' data-aos-delay='200'>
               Having a fast website is key to keeping people around, which
               ultimately converts them into customers. Design is useless without
               performance
@@ -34,6 +37,8 @@ function Specializing() {
               <S.Ring />
               <S.Image className='code'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='200'
                   src='/code.png'
                   layout='fill'
                   objectFit='cover'
@@ -41,8 +46,10 @@ function Specializing() {
                 />
               </S.Image>
             </S.Icon>
-            <h5>Readable Code</h5>
-            <p>
+            <h5 data-aos='zoom-in' data-aos-delay='400'>
+              Readable Code
+            </h5>
+            <p data-aos='zoom-in' data-aos-delay='400'>
               “If a programmer who just joined the development team reads my
               software, will they be able to understand what I have written
               here?”
@@ -53,6 +60,8 @@ function Specializing() {
               <S.Ring />
               <S.Image className='pencil'>
                 <Image
+                  data-aos='fade-up'
+                  data-aos-delay='400'
                   src='/pencil.png'
                   layout='fill'
                   objectFit='cover'
@@ -60,8 +69,10 @@ function Specializing() {
                 />
               </S.Image>
             </S.Icon>
-            <h5>Modern Design</h5>
-            <p>
+            <h5 data-aos='zoom-in' data-aos-delay='600'>
+              Modern Design
+            </h5>
+            <p data-aos='zoom-in' data-aos-delay='600'>
               A website should be designed for the people who will use it, so
               that's exactly what I do. User focused design should be the
               primary goal of any website.

@@ -8,14 +8,14 @@ function Hero() {
     <S.Container className='hero'>
       <S.Hero>
         <S.Content>
-          <S.Tag>About Me</S.Tag>
+          <S.Tag data-aos='fade-up'>About Me</S.Tag>
           <S.Title>
-            <h1>Savo Kos</h1>
-            <h1>
+            <h1 data-aos='fade-up'>Savo Kos</h1>
+            <h1 data-aos='fade-up'>
               <span>Web Developer</span>
             </h1>
           </S.Title>
-          <S.Description>
+          <S.Description data-aos='fade-up'>
             I am Savo Kos, Front-End Web Developer based in Bosnia. My story as
             a Front-End Web Developer begins when I was 16 years old. That is
             the first time I came across HTML and CSS, and I fell in love. I
@@ -29,7 +29,7 @@ function Hero() {
             If you have a business proposal, question, or offer, you can contact
             me by e-mail or using the contact form at the end of the page.
           </S.Description>
-          <S.HireBtn>
+          <S.HireBtn data-aos='fade-up'>
             <Icon type='download' />
             Download CV
           </S.HireBtn>

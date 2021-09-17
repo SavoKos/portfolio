@@ -7,19 +7,19 @@ function Hero() {
     <S.Container className='hero'>
       <S.Hero>
         <S.Content>
-          <S.Tag>Introduction</S.Tag>
+          <S.Tag data-aos='fade-up'>Introduction</S.Tag>
           <S.Title>
-            <h1>Hello, I'm Savo.</h1>
-            <h1>
+            <h1 data-aos='fade-up'>Hello, I'm Savo.</h1>
+            <h1 data-aos='fade-up'>
               I'm a <span>Web developer</span>.
             </h1>
           </S.Title>
-          <S.Description>
+          <S.Description data-aos='fade-up'>
             Self-taught Front-end Web Developer and student who enjoy developing
             websites and web applications using latest web technologies. Looking
             forward to collaborate with you!
           </S.Description>
-          <S.HireBtn>Hire me</S.HireBtn>
+          <S.HireBtn data-aos='fade-up'>Hire me</S.HireBtn>
         </S.Content>
         <S.RingImg>
           <Image src='/ring-right.png' objectFit='cover' layout='fill' />

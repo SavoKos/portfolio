@@ -6,11 +6,14 @@ import Projects from '../components/Projects/Projects';
 import styled from 'styled-components';
 import Contact from '../components/Contact';
 import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 function projects() {
   const [intersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
+    Aos.init({ duration: 1000 });
     return intersectingHandler();
   }, []);
 
