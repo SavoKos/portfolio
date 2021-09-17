@@ -96,7 +96,7 @@ function Showcase() {
               <S.Mockup className='tasty'>
                 <Image
                   data-aos='fade-up'
-                  data-aos-delay='300'
+                  data-aos-delay='600'
                   alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
                   layout='fill'
                   objectFit='cover'
@@ -107,8 +107,12 @@ function Showcase() {
 
               <S.Top>
                 <S.Details>
-                  <h3 data-aos='fade-up'>Tasty</h3>
-                  <p data-aos='fade-up'>Restaurant Project | HTML CSS JS</p>
+                  <h3 data-aos='fade-up' data-aos-delay='400'>
+                    Tasty
+                  </h3>
+                  <p data-aos='fade-up' data-aos-delay='400'>
+                    Restaurant Project | HTML CSS JS
+                  </p>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -160,7 +164,7 @@ function Showcase() {
               <S.Mockup className='excellence'>
                 <Image
                   data-aos='fade-up'
-                  data-aos-delay='300'
+                  data-aos-delay='600'
                   alt='Bank application made by Savo Kos using React (NextJS)'
                   layout='fill'
                   objectFit='cover'
@@ -171,8 +175,10 @@ function Showcase() {
 
               <S.Top>
                 <S.Details>
-                  <h3 data-aos='fade-up'>Excellence</h3>
-                  <p data-aos='fade-up'>
+                  <h3 data-aos='fade-up' data-aos-delay='400'>
+                    Excellence
+                  </h3>
+                  <p data-aos='fade-up' data-aos-delay='400'>
                     Bank Project | React (NextJS) & Firebase
                   </p>
                 </S.Details>
@@ -337,11 +343,16 @@ S.Mockup = styled.div`
     }
 
     @media screen and (min-width: 850px) {
-      width: 43rem;
-      height: 31rem;
+      width: 32rem;
+      height: 23rem;
       top: 50%;
       left: 60%;
       transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 1180px) {
+      width: 43rem;
+      height: 31rem;
     }
   }
 

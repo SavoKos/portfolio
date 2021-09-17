@@ -346,11 +346,16 @@ S.Mockup = styled.div`
     }
 
     @media screen and (min-width: 850px) {
-      width: 43rem;
-      height: 31rem;
+      width: 32rem;
+      height: 23rem;
       top: 50%;
       left: 60%;
       transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 1180px) {
+      width: 43rem;
+      height: 31rem;
     }
   }
 
