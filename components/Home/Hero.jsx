@@ -9,9 +9,9 @@ function Hero() {
         <S.Content>
           <S.Tag data-aos='fade-up'>Introduction</S.Tag>
           <S.Title>
-            <h1 data-aos='fade-up'>Hello, I'm Savo.</h1>
+            <h1 data-aos='fade-up'>Hello, I am Savo Kos.</h1>
             <h1 data-aos='fade-up'>
-              I'm a <span>Web developer</span>.
+              I am a <span>Web developer</span>.
             </h1>
           </S.Title>
           <S.Description data-aos='fade-up'>
