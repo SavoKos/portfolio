@@ -6,7 +6,7 @@ import Link from '../../Link';
 
 function Showcase() {
   return (
-    <S.Container>
+    <S.Container className='showcase'>
       <S.Showcase>
         <S.RingTopLeft>
           <Image src='/ring-left.png' layout='fill' objectFit='cover' />

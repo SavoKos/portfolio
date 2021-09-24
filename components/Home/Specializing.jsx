@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Specializing() {
   return (
-    <S.Container>
+    <S.Container className='specializing'>
       <S.Specializing>
         <S.Tag data-aos='fade-up'>Specializing</S.Tag>
         <h3 data-aos='fade-up'>What I Do?</h3>

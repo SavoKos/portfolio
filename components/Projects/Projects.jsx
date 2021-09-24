@@ -5,7 +5,7 @@ import Link from '../../Link';
 
 function Projects() {
   return (
-    <S.Container>
+    <S.Container className='projects'>
       <S.Projects>
         <S.Cards>
           <Link
