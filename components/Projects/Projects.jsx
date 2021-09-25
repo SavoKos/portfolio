@@ -42,7 +42,7 @@ function Projects() {
                     your next favorite game. There are over 245 000 game titles.
                     Sort and filter games by tags, genres, stores, developers.
                     Read detailed reviews about games, find similar games and
-                    stores where you can purchase it.
+                    stores where you can purchase them.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -113,7 +113,7 @@ function Projects() {
                   <p data-aos='fade-up'>Restaurant Project | HTML CSS JS</p>
                   <S.Description data-aos='fade-up'>
                     Nice design of a responsive restaurant website. It has a
-                    fully developed light/dark mode. Mobile Friendly.
+                    fully developed light/dark mode. Mobile-Friendly.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -191,8 +191,8 @@ function Projects() {
                     to allow people to manage their credit cards. <br />
                     Excellence Holdings has many features, like creating new
                     user, new card, filter transactions (All, Income, Outcome),
-                    transfer money to another user, loan, make deposit and
-                    investment goals
+                    transfer money to another user, loan, make a deposit and
+                    investment goals.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />

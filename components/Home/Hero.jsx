@@ -15,9 +15,9 @@ function Hero() {
             </h1>
           </S.Title>
           <S.Description data-aos='fade-up'>
-            Self-taught Front-end Web Developer and student who enjoy developing
-            websites and web applications using latest web technologies. Looking
-            forward to collaborate with you!
+            Self-taught Front-end Web Developer and student who enjoys
+            developing websites and web applications using the latest web
+            technologies. Looking forward to collaborating with you!
           </S.Description>
           <S.HireBtn data-aos='fade-up'>Hire me</S.HireBtn>
         </S.Content>

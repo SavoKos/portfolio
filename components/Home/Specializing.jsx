@@ -74,7 +74,7 @@ function Specializing() {
             </h5>
             <p data-aos='zoom-in' data-aos-delay='600'>
               A website should be designed for the people who will use it, so
-              that's exactly what I do. User focused design should be the
+              that's exactly what I do. User-focused design should be the
               primary goal of any website.
             </p>
           </S.Card>

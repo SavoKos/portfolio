@@ -44,7 +44,7 @@ function Showcase() {
                     your next favorite game. There are over 245 000 game titles.
                     Sort and filter games by tags, genres, stores, developers.
                     Read detailed reviews about games, find similar games and
-                    stores where you can purchase it.
+                    stores where you can purchase them.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
