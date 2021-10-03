@@ -209,10 +209,10 @@ function Projects() {
 const S = {};
 
 S.Container = styled.div`
-  padding: 3rem 5%;
+  padding: 0rem 5%;
 
   @media screen and (min-width: 400px) {
-    padding: 3rem 10%;
+    padding: 0rem 10%;
   }
 `;
 
