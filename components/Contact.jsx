@@ -2,11 +2,39 @@ import styled from 'styled-components';
 import { Tag } from '../Theme';
 import Image from 'next/image';
 import Icon from './UI/Icon';
+import { useForm, ValidationError } from '@formspree/react';
+import toast, { Toaster } from 'react-hot-toast';
+import { useEffect, useState } from 'react';
 
 function Contact() {
+  const [submitState, setSubmitState] = useForm('xdoyjzwj');
+  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  console.log(submitState);
+
+  console.log(message);
+
+  useEffect(() => {
+    console.log(submitState.succeeded);
+    if (submitState.succeeded) {
+      setEmail('');
+      setMessage('');
+      setName('');
+      notification();
+    }
+  }, [submitState.succeeded]);
+
+  const notification = () =>
+    toast.success(
+      'Thank you for getting in touch! Your submission is recieved and I will contact you soon.',
+      { style: { textAlign: 'center' }, position: 'bottom-left' }
+    );
+
   return (
     <>
       <S.Contact id='contact'>
+        <Toaster toastOptions={{ duration: 5000 }} />
         <S.Details>
           <Tag data-aos='fade-down'>Contact</Tag>
           <h1 data-aos='fade-down'>
@@ -41,17 +69,53 @@ function Contact() {
           <S.Planets data-aos='fade-down'>
             <Image src='/planets.png' layout='fill' objectFit='cover' />
           </S.Planets>
-          <S.Form data-aos='fade-up'>
-            <input type='text' placeholder='Name' />
-            <input type='mail' placeholder='Email' />
+          <S.Form data-aos='fade-up' onSubmit={setSubmitState}>
+            <input
+              type='text'
+              placeholder='Name'
+              name='name'
+              id='name'
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              required
+            />
+            <ValidationError prefix='Name' field='name' />
+            <input
+              type='email'
+              placeholder='Email'
+              name='_replyto'
+              id='email'
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              required
+            />
+            <ValidationError
+              prefix='Email'
+              field='email'
+              errors={submitState.errors}
+            />
             <textarea
-              name=''
-              id=''
+              id='message'
               cols='30'
               rows='10'
               placeholder='Message'
+              name='message'
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+              required
             ></textarea>
-            <S.Btn data-aos='fade-up'>Let's talk!</S.Btn>
+            <ValidationError
+              prefix='Message'
+              field='message'
+              errors={submitState.errors}
+            />
+            <S.Btn
+              data-aos='fade-up'
+              type='submit'
+              disabled={submitState.submitting}
+            >
+              Let's talk!
+            </S.Btn>
           </S.Form>
         </S.Right>
       </S.Contact>
@@ -192,7 +256,7 @@ S.Planets = styled.div`
   }
 `;
 
-S.Form = styled.div`
+S.Form = styled.form`
   margin-top: 5rem;
   width: 100%;
 
