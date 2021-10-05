@@ -41,7 +41,7 @@ function about() {
         <title>Savo Kos | About</title>
         <meta
           name='description'
-          content='Details about Savo Kos. He is Front-end Web Developer. Based in Bosnia and Herzegovina, Prijedor'
+          content='Savo Kos, a Front-End Web Developer from Bosnia and Herzegovina, Prijedor, who enjoys building Responsive Websites using JavaScript, HTML, CSS, React.'
         />
         <link href='https://savokos.com/about' rel='canonical' />
       </Head>

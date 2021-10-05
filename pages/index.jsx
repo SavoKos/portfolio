@@ -44,7 +44,7 @@ export default function Home() {
         <title>Savo Kos | Front-end Web Developer</title>
         <meta
           name='description'
-          content='Savo Kos, a Front-End Web Developer from Bosnia and Herzegovina (Prijedor), who enjoys building Responsive Websites using JavaScript, HTML, CSS, React.'
+          content='Savo Kos, a Front-End Web Developer from Bosnia and Herzegovina, Prijedor, who enjoys building Responsive Websites using JavaScript, HTML, CSS, React.'
         />
         <link href='https://savokos.com' rel='canonical' />
       </Head>
