@@ -29,10 +29,12 @@ function Hero() {
             If you have a business proposal, question, or offer, you can contact
             me by e-mail or using the contact form at the end of the page.
           </S.Description>
-          <S.HireBtn data-aos='fade-up'>
-            <Icon type='download' />
-            Download CV
-          </S.HireBtn>
+          <a href='/CV.pdf' target='_blank' download rel='noopener noreferrer'>
+            <S.HireBtn data-aos='fade-up'>
+              <Icon type='download' />
+              Download CV
+            </S.HireBtn>
+          </a>
         </S.Content>
         <S.RingImg>
           <Image src='/ring-right.png' objectFit='cover' layout='fill' />

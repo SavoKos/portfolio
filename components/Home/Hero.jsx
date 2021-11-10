@@ -19,7 +19,9 @@ function Hero() {
             developing websites and web applications using the latest web
             technologies. Looking forward to collaborating with you!
           </S.Description>
-          <S.HireBtn data-aos='fade-up'>Hire me</S.HireBtn>
+          <a href='#contact'>
+            <S.HireBtn data-aos='fade-up'>Hire me</S.HireBtn>
+          </a>
         </S.Content>
         <S.RingImg>
           <Image src='/ring-right.png' objectFit='cover' layout='fill' />
