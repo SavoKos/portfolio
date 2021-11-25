@@ -85,8 +85,8 @@ function Projects() {
             </S.Card>
           </Link>
 
-          <Link href='https://tasty.savokos.com'>
-            <S.Card className='tasty'>
+          <Link href='https://greenery.savokos.com'>
+            <S.Card className='greenery'>
               <S.DoubleCircle>
                 <Image
                   layout='fill'
@@ -95,62 +95,30 @@ function Projects() {
                   className='circle'
                 />
               </S.DoubleCircle>
-              <S.Mockup className='tasty'>
+              <S.Mockup className='greenery'>
                 <Image
                   data-aos='fade-up'
                   data-aos-delay='300'
-                  alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
+                  alt='Project made by Savo Kos using React(NextJS), Redux & Firebase'
                   layout='fill'
                   objectFit='cover'
-                  src='/tasty.png'
+                  src='/greenery.png'
                   className='circle'
                 />
               </S.Mockup>
 
               <S.Top>
                 <S.Details>
-                  <h3 data-aos='fade-up'>Tasty</h3>
-                  <p data-aos='fade-up'>Restaurant Project | HTML CSS JS</p>
+                  <h3 data-aos='fade-up'>Greenery</h3>
+                  <p data-aos='fade-up'>
+                    Plants Store Project | React(NextJS), Redux & Firebase
+                  </p>
                   <S.Description data-aos='fade-up'>
-                    Nice design of a responsive restaurant website. It has a
-                    fully developed light/dark mode. Mobile-Friendly.
-                  </S.Description>
-                </S.Details>
-                <Icon type='iov-arrow-right' />
-              </S.Top>
-            </S.Card>
-          </Link>
-
-          <Link href='https://oldportfolio.savokos.com'>
-            <S.Card className='old-portfolio'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
-              <S.Mockup className='old-portfolio'>
-                <Image
-                  data-aos='fade-up'
-                  data-aos-delay='300'
-                  alt='Project made by Savo Kos using JavaScript, HTML and CSS'
-                  layout='fill'
-                  objectFit='cover'
-                  src='/old-portfolio.png'
-                  className='circle'
-                />
-              </S.Mockup>
-
-              <S.Top>
-                <S.Details>
-                  <h3 data-aos='fade-up'>Old Portfolio</h3>
-                  <p data-aos='fade-up'>Portfolio Project | HTML CSS JS</p>
-                  <S.Description data-aos='fade-up'>
-                    This was one of my first real projects. It's meant to be my
-                    personal portfolio. But, I don't like it anymore, so I
-                    decided to change it with this one.
+                    Greenery is E-Commerce website where you can find different
+                    kinds of plants. Sort, filter them, change their size,
+                    quantity, add them to the cart and wishlist. Also, you can
+                    make an account and log in, log out and finish the purschase
+                    in the checkout.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -193,6 +161,42 @@ function Projects() {
                     user, new card, filter transactions (All, Income, Outcome),
                     transfer money to another user, loan, make a deposit and
                     investment goals.
+                  </S.Description>
+                </S.Details>
+                <Icon type='iov-arrow-right' />
+              </S.Top>
+            </S.Card>
+          </Link>
+
+          <Link href='https://tasty.savokos.com'>
+            <S.Card className='tasty'>
+              <S.DoubleCircle>
+                <Image
+                  layout='fill'
+                  objectFit='cover'
+                  src='/doublecircle.png'
+                  className='circle'
+                />
+              </S.DoubleCircle>
+              <S.Mockup className='tasty'>
+                <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
+                  alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
+                  layout='fill'
+                  objectFit='cover'
+                  src='/tasty.png'
+                  className='circle'
+                />
+              </S.Mockup>
+
+              <S.Top>
+                <S.Details>
+                  <h3 data-aos='fade-up'>Tasty</h3>
+                  <p data-aos='fade-up'>Restaurant Project | HTML CSS JS</p>
+                  <S.Description data-aos='fade-up'>
+                    Nice design of a responsive restaurant website. It has a
+                    fully developed light/dark mode. Mobile-Friendly.
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -374,15 +378,15 @@ S.Mockup = styled.div`
     }
   }
 
-  &.old-portfolio {
+  &.greenery {
     width: 19rem;
-    height: 18rem;
+    height: 11rem;
     top: 62%;
     left: 51%;
 
     @media screen and (min-width: 600px) {
-      width: 23rem;
-      height: 21rem;
+      width: 28rem;
+      height: 16rem;
     }
 
     @media screen and (min-width: 850px) {
@@ -425,15 +429,15 @@ S.Card = styled.div`
   }
 
   &.tasty {
-    background-color: #80dc71;
+    background-color: #ff8181;
   }
 
   &.excellence {
     background-color: #2985f2;
   }
 
-  &.old-portfolio {
-    background-color: #8dbbc5;
+  &.greenery {
+    background-color: #80dc71;
   }
 `;
 

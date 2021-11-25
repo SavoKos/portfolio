@@ -83,8 +83,8 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://tasty.savokos.com'>
-            <S.Card className='tasty'>
+          <Link href='https://greenery.savokos.com'>
+            <S.Card className='greenery'>
               <S.Circle>
                 <Image
                   layout='fill'
@@ -93,58 +93,24 @@ function Showcase() {
                   className='circle'
                 />
               </S.Circle>
-              <S.Mockup className='tasty'>
-                <Image
-                  data-aos='fade-up'
-                  data-aos-delay='600'
-                  alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
-                  layout='fill'
-                  objectFit='cover'
-                  src='/tasty.png'
-                  className='circle'
-                />
-              </S.Mockup>
-
-              <S.Top>
-                <S.Details>
-                  <h3 data-aos='fade-up' data-aos-delay='400'>
-                    Tasty
-                  </h3>
-                  <p data-aos='fade-up' data-aos-delay='400'>
-                    Restaurant Project | HTML CSS JS
-                  </p>
-                </S.Details>
-                <Icon type='iov-arrow-right' />
-              </S.Top>
-            </S.Card>
-          </Link>
-
-          <Link href='https://oldportfolio.savokos.com'>
-            <S.Card className='old-portfolio'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
-              <S.Mockup className='old-portfolio'>
+              <S.Mockup className='greenery'>
                 <Image
                   data-aos='fade-up'
                   data-aos-delay='300'
-                  alt='Project made by Savo Kos using JavaScript, HTML and CSS'
+                  alt='Project made by Savo Kos using React(NextJS), Redux & Firebase'
                   layout='fill'
                   objectFit='cover'
-                  src='/old-portfolio.png'
+                  src='/greenery.png'
                   className='circle'
                 />
               </S.Mockup>
 
               <S.Top>
                 <S.Details>
-                  <h3 data-aos='fade-up'>Old Portfolio</h3>
-                  <p data-aos='fade-up'>Portfolio Project | HTML CSS JS</p>
+                  <h3 data-aos='fade-up'>Greenery</h3>
+                  <p data-aos='fade-up'>
+                    Plants Store Project | React(NextJS), Redux & Firebase
+                  </p>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -180,6 +146,42 @@ function Showcase() {
                   </h3>
                   <p data-aos='fade-up' data-aos-delay='400'>
                     Bank Project | React (NextJS) & Firebase
+                  </p>
+                </S.Details>
+                <Icon type='iov-arrow-right' />
+              </S.Top>
+            </S.Card>
+          </Link>
+
+          <Link href='https://tasty.savokos.com'>
+            <S.Card className='tasty'>
+              <S.Circle>
+                <Image
+                  layout='fill'
+                  objectFit='cover'
+                  src='/circle.png'
+                  className='circle'
+                />
+              </S.Circle>
+              <S.Mockup className='tasty'>
+                <Image
+                  data-aos='fade-up'
+                  data-aos-delay='600'
+                  alt='Tasty Restaurant project made by Savo Kos using JavaScript, HTML and CSS'
+                  layout='fill'
+                  objectFit='cover'
+                  src='/tasty.png'
+                  className='circle'
+                />
+              </S.Mockup>
+
+              <S.Top>
+                <S.Details>
+                  <h3 data-aos='fade-up' data-aos-delay='400'>
+                    Tasty
+                  </h3>
+                  <p data-aos='fade-up' data-aos-delay='400'>
+                    Restaurant Project | HTML CSS JS
                   </p>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -366,13 +368,13 @@ S.Mockup = styled.div`
     }
   }
 
-  &.old-portfolio {
+  &.greenery {
     width: 19rem;
-    height: 18rem;
+    height: 11rem;
 
     @media screen and (min-width: 500px) {
-      width: 23rem;
-      height: 21rem;
+      width: 25rem;
+      height: 15rem;
     }
   }
 
@@ -423,15 +425,15 @@ S.Card = styled.div`
   }
 
   &.tasty {
-    background-color: #80dc71;
+    background-color: #ff8181;
   }
 
   &.excellence {
     background-color: #2985f2;
   }
 
-  &.old-portfolio {
-    background-color: #8dbbc5;
+  &.greenery {
+    background-color: #80dc71;
   }
 `;
 
