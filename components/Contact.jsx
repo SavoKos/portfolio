@@ -119,13 +119,7 @@ function Contact() {
           </S.Form>
         </S.Right>
       </S.Contact>
-      <p className='copyright'>
-        Copyright © Developed by Savo. Designed by&nbsp;
-        <a href='https://www.behance.net/ameliaq' target='_blank'>
-          Amelia
-        </a>
-        .
-      </p>
+      <p className='copyright'>Copyright © Developed by Savo. .</p>
     </>
   );
 }
