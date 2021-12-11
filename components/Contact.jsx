@@ -119,7 +119,7 @@ function Contact() {
           </S.Form>
         </S.Right>
       </S.Contact>
-      <p className='copyright'>Copyright © Developed by Savo. .</p>
+      <p className='copyright'>Copyright © Developed by Savo.</p>
     </>
   );
 }
