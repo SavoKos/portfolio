@@ -3,13 +3,13 @@
 
 <br>
 
-![Project Image](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386020/important/screencapture-savokos-2021-09-11-20_45_06_x3nesc.png)
+![Project Image](https://res.cloudinary.com/dicynt7ms/image/upload/v1639313637/important/1_ihsyin.png)
 <br>
 
-![Project Image1](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386015/important/screencapture-savokos-about-2021-09-11-20_45_36_nqodvm.png)
+![Project Image1](https://res.cloudinary.com/dicynt7ms/image/upload/v1639313633/important/2_x6pk6w.png)
 <br>
 
-![Project Image2](https://res.cloudinary.com/dicynt7ms/image/upload/v1631386018/important/screencapture-savokos-projects-2021-09-11-20_45_21_uvqigi.png)
+![Project Image2](https://res.cloudinary.com/dicynt7ms/image/upload/v1639313635/important/3_wnno7k.png)
 <br>
 
 ![LiveWebsite](https://res.cloudinary.com/dicynt7ms/image/upload/w_20,h_20/v1630442590/important/NicePng_website-png_187940_pizwnr.png) <span>Live website - <a href="https://savokos.com" target="_blank" rel="noopener noreferrer"> savokos.com</a></span>
@@ -24,9 +24,9 @@
 ## Description
 
 I am Savo Kos, Front-End Web Developer based in Bosnia.
-My story as a Front-End Web Developer begins when I was 16 years old. That is the first time I came across HTML and CSS, and I fell in love.  I started learning from then on.
+My story as a Front-End Web Developer begins when I was 16 years old. That is the first time I came across HTML and CSS, and I fell in love. I started learning from then on.
 
- I am a Self-taught Developer and student. Currently, I am unemployed, but I know I will find a job because this is the thing I am really passionate about.
+I am a Self-taught Developer and student. Currently, I am unemployed, but I know I will find a job because this is the thing I am really passionate about.
 
 If you have a business proposal, question, or offer, you can contact me by e-mail or using the contact form at the end of the page.
 
