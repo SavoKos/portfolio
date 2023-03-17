@@ -9,6 +9,50 @@ function Projects() {
       <S.Projects>
         <S.Cards>
           <Link
+            href='https://kobalt.savokos.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <S.Card className='kobalt'>
+              <S.DoubleCircle>
+                <Image
+                  layout='fill'
+                  objectFit='cover'
+                  src='/doublecircle.png'
+                  className='circle'
+                />
+              </S.DoubleCircle>
+              <S.Mockup className='kobalt'>
+                <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
+                  alt='Kobalt project made by Savo Kos using NextJS, NodeJS, MongoDB'
+                  layout='fill'
+                  objectFit='cover'
+                  src='/kobalt.png'
+                />
+              </S.Mockup>
+              <S.Top>
+                <S.Details>
+                  <h3 data-aos='fade-up'>Kobalt</h3>
+                  <p data-aos='fade-up'>
+                    Kobalt | NextJS, NodeJS, MongoDB, Express
+                  </p>
+                  <S.Description data-aos='fade-up'>
+                    Kobalt will get you anything you want to your doorstep. You
+                    order online, you'll have it! Kobalt has many features:
+                    Register/Login, Edit user data, Reset password, Filter food,
+                    Add to cart, Buy food, Leave review, Subscribe to
+                    newsletter, Delete account, View prevous orders. Admin:
+                    Delete food, Delete whole category (along with food)
+                  </S.Description>
+                </S.Details>
+                <Icon type='iov-arrow-right' />
+              </S.Top>
+            </S.Card>
+          </Link>
+
+          <Link
             href='https://gameportal.savokos.com'
             target='_blank'
             rel='noopener noreferrer'
@@ -309,31 +353,6 @@ S.Mockup = styled.div`
     }
   }
 
-  &.moviegeek {
-    width: 17rem;
-    height: 9rem;
-    top: 63%;
-    left: 52%;
-
-    @media screen and (min-width: 600px) {
-      width: 23rem;
-      height: 12rem;
-      top: 61%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    @media screen and (min-width: 850px) {
-      top: 50%;
-      left: 66%;
-    }
-
-    @media screen and (min-width: 1200px) {
-      width: 31rem;
-      height: 16rem;
-    }
-  }
-
   &.game-portal {
     width: 21rem;
     height: 15rem;
@@ -360,6 +379,60 @@ S.Mockup = styled.div`
     @media screen and (min-width: 1180px) {
       width: 43rem;
       height: 31rem;
+    }
+  }
+
+  &.moviegeek {
+    width: 17rem;
+    height: 9rem;
+    top: 63%;
+    left: 52%;
+
+    @media screen and (min-width: 600px) {
+      width: 23rem;
+      height: 12rem;
+      top: 61%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 850px) {
+      top: 50%;
+      left: 66%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 31rem;
+      height: 16rem;
+    }
+  }
+
+  &.kobalt {
+    width: 18rem;
+    height: 12rem;
+    top: 58%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: 500px) {
+      width: 22rem;
+      height: 16rem;
+      top: 57%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 850px) {
+      width: 28rem;
+      height: 18rem;
+      top: 50%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 1180px) {
+      width: 36rem;
+      height: 26rem;
     }
   }
 
@@ -418,6 +491,11 @@ S.Card = styled.div`
   min-height: 40rem;
   cursor: pointer;
   margin-top: 2rem;
+
+  &.kobalt {
+    width: 100%;
+    background-color: rgb(244, 107, 69);
+  }
 
   &.game-portal {
     width: 100%;

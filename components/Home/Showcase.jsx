@@ -14,8 +14,12 @@ function Showcase() {
         <S.Tag data-aos='fade-up'>Showcase</S.Tag>
         <h3 data-aos='fade-up'>Latest Projects</h3>
         <S.Cards>
-          <Link href='https://gameportal.savokos.com'>
-            <S.Card className='game-portal'>
+          <Link
+            href='https://kobalt.savokos.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <S.Card className='kobalt'>
               <S.DoubleCircle>
                 <Image
                   layout='fill'
@@ -24,27 +28,29 @@ function Showcase() {
                   className='circle'
                 />
               </S.DoubleCircle>
-              <S.Mockup className='game-portal'>
+              <S.Mockup className='kobalt'>
                 <Image
                   data-aos='fade-up'
                   data-aos-delay='300'
-                  alt='Game Portal project made by Savo Kos using React (NextJS)'
+                  alt='Kobalt project made by Savo Kos using NextJS, NodeJS, MongoDB'
                   layout='fill'
                   objectFit='cover'
-                  src='/game-portal.png'
-                  className='circle'
+                  src='/kobalt.png'
                 />
               </S.Mockup>
               <S.Top>
                 <S.Details>
-                  <h3 data-aos='fade-up'>Game Portal</h3>
-                  <p data-aos='fade-up'>Game Project | React (NextJS)</p>
+                  <h3 data-aos='fade-up'>Kobalt</h3>
+                  <p data-aos='fade-up'>
+                    Kobalt | NextJS, NodeJS, MongoDB, Express
+                  </p>
                   <S.Description data-aos='fade-up'>
-                    Game portal is the place where you can search and discover
-                    your next favorite game. There are over 245 000 game titles.
-                    Sort and filter games by tags, genres, stores, developers.
-                    Read detailed reviews about games, find similar games and
-                    stores where you can purchase them.
+                    Kobalt will get you anything you want to your doorstep. You
+                    order online, you'll have it! Kobalt has many features:
+                    Register/Login, Edit user data, Reset password, Filter food,
+                    Add to cart, Buy food, Leave review, Subscribe to
+                    newsletter, Delete account, View prevous orders. Admin:
+                    Delete food, Delete whole category (along with food)
                   </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
@@ -111,6 +117,44 @@ function Showcase() {
                   <p data-aos='fade-up'>
                     Plants Store Project | React(NextJS), Redux & Firebase
                   </p>
+                </S.Details>
+                <Icon type='iov-arrow-right' />
+              </S.Top>
+            </S.Card>
+          </Link>
+
+          <Link href='https://gameportal.savokos.com'>
+            <S.Card className='game-portal'>
+              <S.Circle>
+                <Image
+                  layout='fill'
+                  objectFit='cover'
+                  src='/circle.png'
+                  className='circle'
+                />
+              </S.Circle>
+              <S.Mockup className='game-portal'>
+                <Image
+                  data-aos='fade-up'
+                  data-aos-delay='300'
+                  alt='Game Portal project made by Savo Kos using React (NextJS)'
+                  layout='fill'
+                  objectFit='cover'
+                  src='/game-portal.png'
+                  className='circle'
+                />
+              </S.Mockup>
+              <S.Top>
+                <S.Details>
+                  <h3 data-aos='fade-up'>Game Portal</h3>
+                  <p data-aos='fade-up'>Game Project | React (NextJS)</p>
+                  <S.Description data-aos='fade-up'>
+                    Game portal is the place where you can search and discover
+                    your next favorite game. There are over 245 000 game titles.
+                    Sort and filter games by tags, genres, stores, developers.
+                    Read detailed reviews about games, find similar games and
+                    stores where you can purchase them.
+                  </S.Description>
                 </S.Details>
                 <Icon type='iov-arrow-right' />
               </S.Top>
@@ -329,6 +373,35 @@ S.Mockup = styled.div`
     }
   }
 
+  &.kobalt {
+    width: 18rem;
+    height: 12rem;
+    top: 58%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: 500px) {
+      width: 22rem;
+      height: 16rem;
+      top: 57%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 850px) {
+      width: 28rem;
+      height: 18rem;
+      top: 50%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (min-width: 1180px) {
+      width: 36rem;
+      height: 26rem;
+    }
+  }
+
   &.game-portal {
     width: 21rem;
     height: 15rem;
@@ -399,7 +472,8 @@ S.Cards = styled.div`
     @media screen and (min-width: 900px) {
       width: 49%;
 
-      &:nth-of-type(1) {
+      &:nth-of-type(1),
+      &:nth-of-type(4) {
         width: 100%;
       }
     }
@@ -414,6 +488,11 @@ S.Card = styled.div`
   min-height: 40rem;
   cursor: pointer;
   margin-top: 2rem;
+
+  &.kobalt {
+    width: 100%;
+    background-color: rgb(244, 107, 69);
+  }
 
   &.game-portal {
     width: 100%;
