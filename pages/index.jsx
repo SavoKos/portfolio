@@ -46,7 +46,7 @@ export default function Home() {
           name='description'
           content='Savo Kos, a Front-End Web Developer from Bosnia and Herzegovina, Prijedor, who enjoys building Responsive Websites using JavaScript, HTML, CSS, React.'
         />
-        <link href='https://savokos.com' rel='canonical' />
+        <link href='https://savo-kos.com' rel='canonical' />
       </Head>
       <Navigation currentPage='home' />
       <Hero />
