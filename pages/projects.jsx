@@ -45,7 +45,7 @@ function projects() {
           name='description'
           content="Savo Kos's Projects page, you can find Front-end Web Developer projects made in React, JavaScript, HTML, CSS, Firebase."
         />
-        <link href='https://savo-kos.com/projects' rel='canonical' />
+        <link href='https://savokos.com/projects' rel='canonical' />
       </Head>
       <Navigation currentPage='projects' />
       <Hero />

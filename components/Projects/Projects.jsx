@@ -9,7 +9,7 @@ function Projects() {
       <S.Projects>
         <S.Cards>
           <Link
-            href='https://kobalt.savo-kos.com'
+            href='https://kobalt.savokos.com'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -53,7 +53,7 @@ function Projects() {
           </Link>
 
           <Link
-            href='https://gameportal.savo-kos.com'
+            href='https://gameportal.savokos.com'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -94,7 +94,7 @@ function Projects() {
             </S.Card>
           </Link>
 
-          <Link href='https://moviegeek.savo-kos.com'>
+          <Link href='https://moviegeek.savokos.com'>
             <S.Card className='moviegeek'>
               <S.DoubleCircle>
                 <Image
@@ -129,7 +129,7 @@ function Projects() {
             </S.Card>
           </Link>
 
-          <Link href='https://greenery.savo-kos.com'>
+          <Link href='https://greenery.savokos.com'>
             <S.Card className='greenery'>
               <S.DoubleCircle>
                 <Image
@@ -170,7 +170,7 @@ function Projects() {
             </S.Card>
           </Link>
 
-          <Link href='https://excellence.savo-kos.com'>
+          <Link href='https://excellence.savokos.com'>
             <S.Card className='excellence'>
               <S.DoubleCircle>
                 <Image
@@ -212,7 +212,7 @@ function Projects() {
             </S.Card>
           </Link>
 
-          <Link href='https://tasty.savo-kos.com'>
+          <Link href='https://tasty.savokos.com'>
             <S.Card className='tasty'>
               <S.DoubleCircle>
                 <Image

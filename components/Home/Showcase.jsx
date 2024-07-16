@@ -15,7 +15,7 @@ function Showcase() {
         <h3 data-aos='fade-up'>Latest Projects</h3>
         <S.Cards>
           <Link
-            href='https://kobalt.savo-kos.com'
+            href='https://kobalt.savokos.com'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -58,7 +58,7 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://moviegeek.savo-kos.com'>
+          <Link href='https://moviegeek.savokos.com'>
             <S.Card className='moviegeek'>
               <S.Circle>
                 <Image
@@ -89,7 +89,7 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://greenery.savo-kos.com'>
+          <Link href='https://greenery.savokos.com'>
             <S.Card className='greenery'>
               <S.Circle>
                 <Image
@@ -123,7 +123,7 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://gameportal.savo-kos.com'>
+          <Link href='https://gameportal.savokos.com'>
             <S.Card className='game-portal'>
               <S.Circle>
                 <Image
@@ -161,7 +161,7 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://excellence.savo-kos.com'>
+          <Link href='https://excellence.savokos.com'>
             <S.Card className='excellence'>
               <S.Circle>
                 <Image
@@ -197,7 +197,7 @@ function Showcase() {
             </S.Card>
           </Link>
 
-          <Link href='https://tasty.savo-kos.com'>
+          <Link href='https://tasty.savokos.com'>
             <S.Card className='tasty'>
               <S.Circle>
                 <Image

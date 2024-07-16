@@ -1,3 +1,3 @@
-Sitemap: https://savo-kos.com/sitemap.xml
+Sitemap: https://savokos.com/sitemap.xml
 User-agent:*
 Disallow:
