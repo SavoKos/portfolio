@@ -12,12 +12,8 @@ function Contact() {
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  console.log(submitState);
-
-  console.log(message);
 
   useEffect(() => {
-    console.log(submitState.succeeded);
     if (submitState.succeeded) {
       setEmail('');
       setMessage('');
