@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import Link from '../../Link';
 import Contact from '../Contact';
-import Icon from '../UI/Icon';
-
+import { FaBootstrap } from 'react-icons/fa';
+import { IoLogoSass } from 'react-icons/io';
+import { FaGitAlt } from 'react-icons/fa';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { IoLogoFirebase } from 'react-icons/io5';
+import { FaReact } from 'react-icons/fa';
+import { FaFigma } from 'react-icons/fa';
 function Tools() {
   return (
     <S.Container>
@@ -14,43 +19,43 @@ function Tools() {
         <S.Skills>
           <Link href='https://getbootstrap.com/'>
             <S.Skill data-aos='fade-up'>
-              <Icon type='Bootstrap' className='bootstrap' />
+              <FaBootstrap className='bootstrap icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://sass-lang.com/'>
             <S.Skill data-aos='fade-up' data-aos-delay='200'>
-              <Icon type='sass' className='sass' />
+              <IoLogoSass className='sass icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://www.figma.com/'>
             <S.Skill data-aos='fade-up' data-aos-delay='400'>
-              <Icon type='Figma' className='figma' />
+              <FaFigma className='figma icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://reactjs.org/'>
             <S.Skill data-aos='fade-up' data-aos-delay='600'>
-              <Icon type='React' className='react' />
+              <FaReact type='React' className='react icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://www.javascript.com/'>
             <S.Skill data-aos='fade-up' data-aos-delay='800'>
-              <Icon type='javascript' className='javascript' />
+              <IoLogoJavascript className='javascript icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://firebase.google.com/'>
             <S.Skill data-aos='fade-up' data-aos-delay='1000'>
-              <Icon type='firebase' className='firebase' />
+              <IoLogoFirebase className='firebase icon' />
             </S.Skill>
           </Link>
 
           <Link href='https://git-scm.com/'>
             <S.Skill data-aos='fade-up' data-aos-delay='1200'>
-              <Icon type='git' className='git' />
+              <FaGitAlt className='git icon' />
             </S.Skill>
           </Link>
         </S.Skills>
@@ -133,9 +138,10 @@ S.Skills = styled.div`
 S.Skill = styled.div`
   border-radius: 50%;
 
-  .anticon {
+  .icon {
     font-size: 4rem;
     position: relative;
+    color: #333;
 
     @media screen and (min-width: 450px) {
       font-size: 5rem;

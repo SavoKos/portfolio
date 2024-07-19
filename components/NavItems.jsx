@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import Router from 'next/router';
-import Icon from './UI/Icon';
+import { IoClose } from 'react-icons/io5';
 
 function NavItems({ currentPage, menuActive, setMenuActive }) {
   return (
     <S.NavItems menuActive={menuActive}>
-      <Icon
-        type='searchclose'
-        className='close'
-        onClick={() => setMenuActive(false)}
-      />
+      <IoClose className='close' onClick={() => setMenuActive(false)} />
       <S.NavItem
         currentPage={currentPage === 'home'}
         onClick={() => Router.push('/')}

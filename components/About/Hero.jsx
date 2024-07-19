@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Tag } from '../../Theme';
-import Icon from '../UI/Icon';
+import { FiDownload } from 'react-icons/fi';
 
 function Hero() {
   return (
@@ -31,7 +31,7 @@ function Hero() {
           </S.Description>
           <a href='/CV.pdf' target='_blank' download rel='noopener noreferrer'>
             <S.HireBtn data-aos='fade-up'>
-              <Icon type='download' />
+              <FiDownload className='icon' />
               Download CV
             </S.HireBtn>
           </a>
@@ -119,7 +119,7 @@ S.HireBtn = styled.button`
   cursor: pointer;
   position: relative;
 
-  .anticon {
+  .icon {
     margin-right: 1rem;
     font-size: 22px;
   }

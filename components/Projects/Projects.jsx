@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import Icon from '../UI/Icon';
 import Link from '../../Link';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 function Projects() {
   return (
@@ -47,7 +47,7 @@ function Projects() {
                     Delete food, Delete whole category (along with food)
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -89,7 +89,7 @@ function Projects() {
                     stores where you can purchase them.
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -124,7 +124,7 @@ function Projects() {
                     you can find all details about specific Movie or TV Show
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -165,7 +165,7 @@ function Projects() {
                     in the checkout.
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -207,7 +207,7 @@ function Projects() {
                     investment goals.
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -243,7 +243,7 @@ function Projects() {
                     fully developed light/dark mode. Mobile-Friendly.
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -525,7 +525,7 @@ S.Top = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 
-  .anticon {
+  .icon {
     font-size: 48px;
     opacity: 80%;
   }

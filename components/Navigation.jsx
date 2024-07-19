@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import NavItems from './NavItems';
-import Icon from './UI/Icon';
 import { useState } from 'react';
 import Router from 'next/router';
+import { IoMenuOutline } from 'react-icons/io5';
 
 function Navigation({ currentPage }) {
   const [menuActive, setMenuActive] = useState(false);
@@ -28,8 +28,7 @@ function Navigation({ currentPage }) {
         <a href='#contact'>
           <S.ContactBtn>Contact</S.ContactBtn>
         </a>
-        <Icon
-          type='menu'
+        <IoMenuOutline
           className='hamburger-menu'
           onClick={() => setMenuActive((prevActive) => !prevActive)}
         />

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Tag } from '../../Theme';
 import Image from 'next/image';
-import Icon from '../UI/Icon';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+
 import Link from '../../Link';
 
 function Showcase() {
@@ -53,7 +54,7 @@ function Showcase() {
                     Delete food, Delete whole category (along with food)
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -84,7 +85,7 @@ function Showcase() {
                   <h3 data-aos='fade-up'>Movie Geek</h3>
                   <p data-aos='fade-up'>Movie Project | HTML CSS JS</p>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -118,7 +119,7 @@ function Showcase() {
                     Plants Store Project | React(NextJS), Redux & Firebase
                   </p>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -156,7 +157,7 @@ function Showcase() {
                     stores where you can purchase them.
                   </S.Description>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -192,7 +193,7 @@ function Showcase() {
                     Bank Project | React (NextJS) & Firebase
                   </p>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -228,7 +229,7 @@ function Showcase() {
                     Restaurant Project | HTML CSS JS
                   </p>
                 </S.Details>
-                <Icon type='iov-arrow-right' />
+                <MdOutlineKeyboardArrowRight className='icon' />
               </S.Top>
             </S.Card>
           </Link>
@@ -522,7 +523,7 @@ S.Top = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 
-  .anticon {
+  .icon {
     font-size: 48px;
     opacity: 80%;
   }

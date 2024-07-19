@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Icon from './UI/Icon';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 function ScrollToTop() {
   return (
     <S.ScrollToTop onClick={() => window.scrollTo(0, 0)}>
-      <Icon type='iov-arrow-up' />
+      <MdOutlineKeyboardArrowUp className='icon' />
     </S.ScrollToTop>
   );
 }
@@ -26,7 +26,7 @@ S.ScrollToTop = styled.div`
   cursor: pointer;
   outline: 0;
 
-  .anticon {
+  .icon {
     font-size: 28px;
   }
 `;

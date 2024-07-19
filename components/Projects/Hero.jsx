@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import { Tag } from '../../Theme';
-import Icon from '../UI/Icon';
 
 function Hero() {
   return (

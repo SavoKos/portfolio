@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { Tag } from '../Theme';
 import Image from 'next/image';
-import Icon from './UI/Icon';
 import { useForm, ValidationError } from '@formspree/react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
+import { MdOutlineMailOutline } from 'react-icons/md';
+import { FaGithub } from 'react-icons/fa';
 
 function Contact() {
   const [submitState, setSubmitState] = useForm('xdoyjzwj');
@@ -49,7 +50,7 @@ function Contact() {
           <S.Info>
             <S.Mail data-aos='fade-up'>
               <S.InfoRing>
-                <Icon type='email1' />
+                <MdOutlineMailOutline />
               </S.InfoRing>
               <a href='mailto:savo.kos.sk@gmail.com' target='_blank'>
                 savo.kos.sk@gmail.com
@@ -57,7 +58,7 @@ function Contact() {
             </S.Mail>
             <S.Github data-aos='fade-up'>
               <S.InfoRing>
-                <Icon type='github' />
+                <FaGithub />
               </S.InfoRing>
               <a href='https://github.com/SavoKos' target='_blank'>
                 github.com/SavoKos
