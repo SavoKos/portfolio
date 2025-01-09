@@ -22,9 +22,7 @@ function Hero() {
             started learning from then on.
             <br />
             <br />
-            I am a Self-taught Developer and student. Currently, I am
-            unemployed, but I know I will find a job because this is the thing I
-            am really passionate about. <br />
+            I am a Self-taught Developer and student. <br />
             <br />
             If you have a business proposal, question, or offer, you can contact
             me by e-mail or using the contact form at the end of the page.

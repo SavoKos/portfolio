@@ -130,9 +130,13 @@ S.Skills = styled.div`
   width: 100%;
   justify-content: space-between;
 
+  a{
+    color: unset
+  }
   @media screen and (min-width: 1100px) {
     margin-left: 3rem;
   }
+
 `;
 
 S.Skill = styled.div`
@@ -141,7 +145,25 @@ S.Skill = styled.div`
   .icon {
     font-size: 4rem;
     position: relative;
-    color: #333;
+
+    &.bootstrap{
+      color: rgb(129,10,249);
+    }
+    &.sass{
+      color: #C76494;
+    }
+    &.react{
+      color: rgb(94,211,243);
+    }
+    &.javascript{
+      color: #EFD81D;
+    }
+    &.firebase{
+      color: #ED7B16;
+    }
+    &.git{
+      color: rgb(232,78,49);
+    }
 
     @media screen and (min-width: 450px) {
       font-size: 5rem;
