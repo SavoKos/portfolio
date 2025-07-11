@@ -241,7 +241,7 @@ const ProjectsPage = () => {
         >
           <div className="stats-grid">
             <div className="stat-card glass">
-              <h3 className="gradient-text">{projects.length}</h3>
+              <h3 className="gradient-text">6</h3>
               <p>Projects Completed</p>
             </div>
             <div className="stat-card glass">
@@ -265,35 +265,61 @@ const ProjectsPage = () => {
 
 const Container = styled.div`
   min-height: 100vh;
-  background: #000000;
+  width: 100vw;
+  background: #000;
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 `;
 
 const HeroSection = styled.section`
   min-height: 50vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 8rem 2rem 4rem;
-
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 120vw;
+    height: 120vh;
+    background: radial-gradient(circle at 60% 40%, #7877c6 0%, transparent 70%),
+      radial-gradient(circle at 30% 80%, #ff77c6 0%, transparent 70%),
+      radial-gradient(circle at 80% 20%, #78dbff 0%, transparent 70%);
+    opacity: 0.22;
+    filter: blur(80px) saturate(1.2);
+    z-index: 0;
+    pointer-events: none;
+    animation: bgGradientMove 18s ease-in-out infinite alternate;
+  }
   .hero-content {
     max-width: 800px;
-
+    z-index: 2;
+    position: relative;
     h1 {
       font-size: 3.5rem;
       margin: 2rem 0;
       line-height: 1.2;
-
+      font-weight: 800;
+      letter-spacing: -1.5px;
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 2.5rem;
       }
     }
-
     .hero-description {
       font-size: 1.25rem;
       line-height: 1.6;
       color: ${({ theme }) => theme.colors.textSecondary};
       margin-bottom: 2rem;
+      font-weight: 500;
     }
   }
 `;
@@ -303,58 +329,213 @@ const Badge = styled.div`
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(120, 119, 198, 0.13);
   border: 1px solid rgba(120, 119, 198, 0.3);
   border-radius: 50px;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
 `;
 
 const ProjectsSection = styled.section`
-  padding: 4rem 2rem;
+  padding: 5rem 2rem 4rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
-
+  z-index: 2;
+  position: relative;
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-
+    gap: 2.5rem;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-template-columns: 1fr;
+    }
+  }
+  .project-card {
+    border-radius: 22px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+    background: rgba(255,255,255,0.09);
+    box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
+    backdrop-filter: blur(14px);
+    &:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(120, 119, 198, 0.18);
+      filter: brightness(1.08);
+    }
+    .project-image {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
+      padding: 20px;
+      .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+      }
+    }
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,rgba(18,18,28,0.0),rgba(120,119,198,0.13));
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      .project-links {
+        display: flex;
+        gap: 1.2rem;
+      }
+    }
+    &:hover .project-overlay {
+      opacity: 1;
+    }
+    .project-content {
+      padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .project-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          background: ${({ theme }) => theme.gradients.primary};
+          color: white;
+          font-size: 1.5rem;
+        }
+        h3 {
+          font-size: 2rem;
+          font-weight: 800;
+          margin: 0;
+          letter-spacing: -1px;
+        }
+      }
+      .project-description {
+        color: ${({ theme }) => theme.colors.textSecondary};
+        font-size: 1.15rem;
+        margin: 1.2rem 0 1.5rem 0;
+        font-weight: 500;
+      }
+      .project-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 1.2rem;
+        .tech-tag {
+          background: rgba(120,119,198,0.13);
+          color: ${({ theme }) => theme.colors.primary};
+          font-weight: 600;
+          font-size: 0.98rem;
+          padding: 0.4rem 1rem;
+          border-radius: 8px;
+        }
+      }
+      .project-features {
+        margin-bottom: 1.2rem;
+        h4 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+        ul {
+          padding-left: 1.2rem;
+          li {
+            color: ${({ theme }) => theme.colors.textSecondary};
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+          }
+        }
+      }
+      .project-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: ${({ theme }) => theme.gradients.primary};
+        border: none;
+        border-radius: 14px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        font-family: inherit;
+        font-size: 1.08rem;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          transform: translateY(-2px) scale(1.04);
+          box-shadow: 0 10px 30px rgba(120, 119, 198, 0.4);
+          filter: brightness(1.08);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(120deg,rgba(255,255,255,0.08),rgba(120,119,198,0.08));
+          opacity: 0.5;
+          pointer-events: none;
+          border-radius: 14px;
+        }
+      }
     }
   }
 `;
 
 const StatsSection = styled.section`
-  padding: 4rem 2rem;
-  max-width: 1200px;
+  padding: 5rem 2rem 4rem 2rem;
+  max-width: 1400px;
   margin: 0 auto;
-
+  z-index: 2;
+  position: relative;
   .stats-container {
     .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 2rem;
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
-
     .stat-card {
       text-align: center;
-      padding: 2rem;
-      border-radius: 16px;
-      transition: all 0.3s ease;
-
+      padding: 2.5rem 1.5rem;
+      border-radius: 18px;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      background: rgba(255,255,255,0.09);
+      box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
+      backdrop-filter: blur(12px);
+      flex: 1;
+      min-width: 200px;
       h3 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 0.7rem;
+        letter-spacing: -1px;
       }
-
       p {
         color: ${({ theme }) => theme.colors.textSecondary};
-        font-size: 1.1rem;
+        font-size: 1.18rem;
+        font-weight: 600;
+      }
+      &:hover {
+        transform: translateY(-5px) scale(1.05);
+        filter: brightness(1.08);
+        box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
       }
     }
   }

@@ -120,7 +120,7 @@ const ContactPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="contact-item glass"
+                  className="contact-item"
                 >
                   <div className="contact-icon">
                     {info.icon}
@@ -154,7 +154,7 @@ const ContactPage = () => {
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="social-link glass"
+                    className="social-link"
                   >
                     {social.icon}
                     <span>{social.title}</span>
@@ -171,7 +171,7 @@ const ContactPage = () => {
             viewport={{ once: true }}
             className="contact-form"
           >
-            <div className="form-container glass">
+            <div className="form-container">
               <h3 className="gradient-text">Send Message</h3>
               
               <form onSubmit={handleSubmit}>
@@ -254,35 +254,61 @@ const ContactPage = () => {
 
 const Container = styled.div`
   min-height: 100vh;
-  background: #000000;
+  width: 100vw;
+  background: #000;
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 `;
 
 const HeroSection = styled.section`
   min-height: 50vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 8rem 2rem 4rem;
-
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 120vw;
+    height: 120vh;
+    background: radial-gradient(circle at 60% 40%, #7877c6 0%, transparent 70%),
+      radial-gradient(circle at 30% 80%, #ff77c6 0%, transparent 70%),
+      radial-gradient(circle at 80% 20%, #78dbff 0%, transparent 70%);
+    opacity: 0.22;
+    filter: blur(80px) saturate(1.2);
+    z-index: 0;
+    pointer-events: none;
+    animation: bgGradientMove 18s ease-in-out infinite alternate;
+  }
   .hero-content {
     max-width: 800px;
-
+    z-index: 2;
+    position: relative;
     h1 {
       font-size: 3.5rem;
       margin: 2rem 0;
       line-height: 1.2;
-
+      font-weight: 800;
+      letter-spacing: -1.5px;
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 2.5rem;
       }
     }
-
     .hero-description {
       font-size: 1.25rem;
       line-height: 1.6;
       color: ${({ theme }) => theme.colors.textSecondary};
       margin-bottom: 2rem;
+      font-weight: 500;
     }
   }
 `;
@@ -292,197 +318,143 @@ const Badge = styled.div`
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(120, 119, 198, 0.1);
+  background: rgba(120, 119, 198, 0.13);
   border: 1px solid rgba(120, 119, 198, 0.3);
   border-radius: 50px;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
 `;
 
 const ContactSection = styled.section`
-  padding: 4rem 2rem;
+    .social-grid{
+      display: flex;
+      flex-direction: column;
+    }
+
+  padding: 5rem 2rem 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-
+  z-index: 2;
+  position: relative;
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
   }
-
   .contact-info {
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.7rem;
+      margin-bottom: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
-
     > p {
-      font-size: 1.1rem;
+      font-size: 1.18rem;
       line-height: 1.7;
       color: ${({ theme }) => theme.colors.textSecondary};
       margin-bottom: 3rem;
+      font-weight: 500;
     }
   }
-
   .contact-details {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 3rem;
+
+
   }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: ${({ theme }) => theme.gradients.primary};
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .contact-text {
-      h4 {
-        font-size: 1.1rem;
-        margin-bottom: 0.25rem;
-        color: ${({ theme }) => theme.colors.text};
-      }
-
-      a, span {
-        color: ${({ theme }) => theme.colors.textSecondary};
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: ${({ theme }) => theme.colors.primary};
-        }
-      }
-    }
-  }
-
-  .social-links {
-    h4 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: ${({ theme }) => theme.colors.text};
-    }
-
-    .social-grid {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      color: ${({ theme }) => theme.colors.textSecondary};
-      text-decoration: none;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.text};
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-  }
-
   .contact-form {
+    background: rgba(255,255,255,0.09);
+    box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      padding: 1.5rem 1rem;
+    }
     .form-container {
-      padding: 2rem;
-      border-radius: 20px;
-
       h3 {
         font-size: 1.8rem;
         margin-bottom: 2rem;
+        font-weight: 700;
         text-align: center;
       }
     }
-
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
     .form-group {
-      margin-bottom: 1.5rem;
-
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
       label {
-        display: block;
-        margin-bottom: 0.5rem;
         font-weight: 600;
-        color: ${({ theme }) => theme.colors.text};
-      }
-
-      input, textarea {
-        width: 100%;
-        padding: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        color: ${({ theme }) => theme.colors.text};
         font-size: 1rem;
-        transition: all 0.3s ease;
-
-        &::placeholder {
-          color: ${({ theme }) => theme.colors.textSecondary};
-        }
-
-        &:focus {
-          outline: none;
-          border-color: ${({ theme }) => theme.colors.primary};
-          background: rgba(255, 255, 255, 0.1);
-        }
-      }
-
-      textarea {
-        resize: vertical;
-        min-height: 120px;
+        color: ${({ theme }) => theme.colors.textSecondary};
+        margin-bottom: 0.3rem;
       }
     }
-
-    .submit-btn {
+    input, textarea {
       width: 100%;
-      display: flex;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      font-size: 1.08rem;
+      font-family: inherit;
+      font-weight: 500;
+      transition: border 0.3s cubic-bezier(0.4,0,0.2,1);
+      &:focus {
+        border-color: #a855f7;
+        outline: none;
+      }
+    }
+    button {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 0.5rem;
-      padding: 1rem 2rem;
+      padding: 1.1rem 2.3rem;
       background: ${({ theme }) => theme.gradients.primary};
       border: none;
-      border-radius: 12px;
+      border-radius: 16px;
       color: white;
-      font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-
-      &:not(:disabled):hover {
-        transform: translateY(-2px);
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      font-family: inherit;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      &:hover {
+        transform: translateY(-2px) scale(1.04);
         box-shadow: 0 10px 30px rgba(120, 119, 198, 0.4);
+        filter: brightness(1.08);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg,rgba(255,255,255,0.08),rgba(120,119,198,0.08));
+        opacity: 0.5;
+        pointer-events: none;
+        border-radius: 16px;
       }
     }
   }
