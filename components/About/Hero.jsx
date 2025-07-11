@@ -34,9 +34,6 @@ function Hero() {
             </S.HireBtn>
           </a>
         </S.Content>
-        <S.RingImg>
-          <Image src='/ring-right.png' objectFit='cover' layout='fill' />
-        </S.RingImg>
       </S.Hero>
     </S.Container>
   );

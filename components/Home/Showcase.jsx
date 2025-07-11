@@ -9,9 +9,6 @@ function Showcase() {
   return (
     <S.Container className='showcase'>
       <S.Showcase>
-        <S.RingTopLeft>
-          <Image src='/ring-left.png' layout='fill' objectFit='cover' />
-        </S.RingTopLeft>
         <S.Tag data-aos='fade-up'>Showcase</S.Tag>
         <h3 data-aos='fade-up'>Latest Projects</h3>
         <S.Cards>
@@ -21,14 +18,6 @@ function Showcase() {
             rel='noopener noreferrer'
           >
             <S.Card className='kobalt'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
               <S.Mockup className='kobalt'>
                 <Image
                   data-aos='fade-up'
@@ -61,14 +50,7 @@ function Showcase() {
 
           <Link href='https://moviegeek.savokos.com'>
             <S.Card className='moviegeek'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
+             
               <S.Mockup className='moviegeek'>
                 <Image
                   data-aos='fade-up'
@@ -77,7 +59,7 @@ function Showcase() {
                   layout='fill'
                   objectFit='cover'
                   src='/moviegeek.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
               <S.Top>
@@ -92,14 +74,7 @@ function Showcase() {
 
           <Link href='https://greenery.savokos.com'>
             <S.Card className='greenery'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
+            
               <S.Mockup className='greenery'>
                 <Image
                   data-aos='fade-up'
@@ -108,7 +83,7 @@ function Showcase() {
                   layout='fill'
                   objectFit='cover'
                   src='/greenery.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -126,14 +101,7 @@ function Showcase() {
 
           <Link href='https://gameportal.savokos.com'>
             <S.Card className='game-portal'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
+        
               <S.Mockup className='game-portal'>
                 <Image
                   data-aos='fade-up'
@@ -142,7 +110,7 @@ function Showcase() {
                   layout='fill'
                   objectFit='cover'
                   src='/game-portal.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
               <S.Top>
@@ -164,14 +132,7 @@ function Showcase() {
 
           <Link href='https://excellence.savokos.com'>
             <S.Card className='excellence'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
+             
               <S.Mockup className='excellence'>
                 <Image
                   data-aos='fade-up'
@@ -180,7 +141,7 @@ function Showcase() {
                   layout='fill'
                   objectFit='cover'
                   src='/excellence.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -200,14 +161,7 @@ function Showcase() {
 
           <Link href='https://tasty.savokos.com'>
             <S.Card className='tasty'>
-              <S.Circle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/circle.png'
-                  className='circle'
-                />
-              </S.Circle>
+            
               <S.Mockup className='tasty'>
                 <Image
                   data-aos='fade-up'
@@ -216,7 +170,7 @@ function Showcase() {
                   layout='fill'
                   objectFit='cover'
                   src='/tasty.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -234,9 +188,6 @@ function Showcase() {
             </S.Card>
           </Link>
         </S.Cards>
-        <S.RingBottomRight>
-          <Image src='/ring-right.png' layout='fill' objectFit='cover' />
-        </S.RingBottomRight>
       </S.Showcase>
     </S.Container>
   );
@@ -299,42 +250,7 @@ S.RingBottomRight = styled.div`
   }
 `;
 
-S.DoubleCircle = styled.div`
-  width: 18rem;
-  height: 16rem;
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 600px) {
-    top: 55%;
-    width: 25rem;
-    height: 22rem;
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 34rem;
-    height: 30rem;
-    top: 50%;
-    left: 85%;
-    transform: translate(-85%, -50%);
-  }
-`;
-
-S.Circle = styled.div`
-  width: 18rem;
-  height: 18rem;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-
-  @media screen and (min-width: 550px) {
-    width: 26rem;
-    height: 26rem;
-  }
-`;
 
 S.Mockup = styled.div`
   width: 23rem;

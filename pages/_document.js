@@ -16,12 +16,12 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
+        styles: [
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </>,
+        ],
       };
     } finally {
       sheet.seal();
@@ -30,15 +30,12 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'
-            rel='stylesheet'
-          />
-          <link rel='shortcut icon' type='image/jpg' href='/logo.png' />
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content="Savo Kos - Front-End Web Developer Portfolio" />
+          <meta name="keywords" content="web developer, frontend, react, nextjs, portfolio" />
+          <meta name="author" content="Savo Kos" />
         </Head>
         <body>
           <Main />

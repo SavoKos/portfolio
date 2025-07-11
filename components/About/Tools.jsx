@@ -72,7 +72,6 @@ S.Container = styled.div`
   padding: 3rem 5%;
   margin-top: 10rem;
   padding-top: 20rem;
-  background-image: url('/about.png');
   background-position: top right;
   background-repeat: no-repeat;
 

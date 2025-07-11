@@ -14,14 +14,7 @@ function Projects() {
             rel='noopener noreferrer'
           >
             <S.Card className='kobalt'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+              
               <S.Mockup className='kobalt'>
                 <Image
                   data-aos='fade-up'
@@ -58,14 +51,7 @@ function Projects() {
             rel='noopener noreferrer'
           >
             <S.Card className='game-portal'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+              
               <S.Mockup className='game-portal'>
                 <Image
                   data-aos='fade-up'
@@ -74,7 +60,6 @@ function Projects() {
                   layout='fill'
                   objectFit='cover'
                   src='/game-portal.png'
-                  className='circle'
                 />
               </S.Mockup>
               <S.Top>
@@ -96,14 +81,7 @@ function Projects() {
 
           <Link href='https://moviegeek.savokos.com'>
             <S.Card className='moviegeek'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+              
               <S.Mockup className='moviegeek'>
                 <Image
                   data-aos='fade-up'
@@ -112,7 +90,7 @@ function Projects() {
                   layout='fill'
                   objectFit='cover'
                   src='/moviegeek.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
               <S.Top>
@@ -131,14 +109,7 @@ function Projects() {
 
           <Link href='https://greenery.savokos.com'>
             <S.Card className='greenery'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+             
               <S.Mockup className='greenery'>
                 <Image
                   data-aos='fade-up'
@@ -147,7 +118,7 @@ function Projects() {
                   layout='fill'
                   objectFit='cover'
                   src='/greenery.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -172,14 +143,7 @@ function Projects() {
 
           <Link href='https://excellence.savokos.com'>
             <S.Card className='excellence'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+            
               <S.Mockup className='excellence'>
                 <Image
                   data-aos='fade-up'
@@ -188,7 +152,7 @@ function Projects() {
                   layout='fill'
                   objectFit='cover'
                   src='/excellence.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -214,14 +178,7 @@ function Projects() {
 
           <Link href='https://tasty.savokos.com'>
             <S.Card className='tasty'>
-              <S.DoubleCircle>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  src='/doublecircle.png'
-                  className='circle'
-                />
-              </S.DoubleCircle>
+            
               <S.Mockup className='tasty'>
                 <Image
                   data-aos='fade-up'
@@ -230,7 +187,7 @@ function Projects() {
                   layout='fill'
                   objectFit='cover'
                   src='/tasty.png'
-                  className='circle'
+                  
                 />
               </S.Mockup>
 
@@ -275,44 +232,7 @@ S.Projects = styled.div`
   }
 `;
 
-S.DoubleCircle = styled.div`
-  width: 18rem;
-  height: 16rem;
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 600px) {
-    width: 25rem;
-    height: 22rem;
-  }
-
-  @media screen and (min-width: 850px) {
-    top: 55%;
-    left: 80%;
-    transform: translate(-85%, -50%);
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 34rem;
-    height: 30rem;
-  }
-`;
-
-S.Circle = styled.div`
-  width: 18rem;
-  height: 18rem;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-
-  @media screen and (min-width: 550px) {
-    width: 26rem;
-    height: 26rem;
-  }
-`;
 
 S.Mockup = styled.div`
   width: 23rem;

@@ -79,14 +79,6 @@ function Specializing() {
             </p>
           </S.Card>
         </S.Cards>
-        <S.DotsImg>
-          <Image
-            src='/specializing-bg.png'
-            objectFit='cover'
-            layout='fill'
-            className='dots'
-          />
-        </S.DotsImg>
       </S.Specializing>
     </S.Container>
   );

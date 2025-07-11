@@ -63,9 +63,6 @@ function Contact() {
           </S.Info>
         </S.Details>
         <S.Right>
-          <S.Planets data-aos='fade-down'>
-            <Image src='/planets.png' layout='fill' objectFit='cover' />
-          </S.Planets>
           <S.Form data-aos='fade-up' onSubmit={setSubmitState}>
             <input
               type='text'
@@ -220,32 +217,7 @@ S.Right = styled.div`
   width: 100%;
 `;
 
-S.Planets = styled.div`
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: -40rem;
-  right: -4rem;
 
-  @media screen and (min-width: 387px) {
-    top: -39rem;
-    right: -4rem;
-  }
-
-  @media screen and (min-width: 440px) {
-    right: -5rem;
-  }
-
-  @media screen and (min-width: 650px) {
-    width: 300px;
-    height: 300px;
-    right: -7rem;
-  }
-
-  @media screen and (min-width: 880px) {
-    top: -13rem;
-  }
-`;
 
 S.Form = styled.form`
   margin-top: 5rem;
