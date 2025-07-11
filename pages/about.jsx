@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Download, Calendar, MapPin, GraduationCap, Code, Zap, Sparkles, Award } from 'lucide-react';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
+import SEO from '../components/SEO';
+import SEOOptimizer from '../components/SEOOptimizer';
 import Image from 'next/image';
 
 const AboutPage = () => {
@@ -42,8 +44,59 @@ const AboutPage = () => {
   ];
 
   return (
-    <Container>
-      <Navigation />
+    <>
+      <SEO 
+        title="About Savo Kos - Expert Front-End Developer | React, Next.js Specialist"
+        description="Learn about Savo Kos - Expert Front-End Developer from Bosnia and Herzegovina. Specializing in React, Next.js, and modern web technologies with 3+ years of experience creating exceptional digital experiences."
+        keywords={[
+          'about savo kos',
+          'front-end developer biography',
+          'react developer experience',
+          'next.js developer portfolio',
+          'web developer bosnia',
+          'prijedor web developer',
+          'self-taught developer',
+          'freelance web developer',
+          'react.js specialist',
+          'next.js specialist',
+          'javascript expert',
+          'typescript developer',
+          'node.js developer',
+          'mongodb developer',
+          'web development experience',
+          'front-end development skills',
+          'ui/ux design experience',
+          'responsive design expert',
+          'performance optimization',
+          'modern web technologies',
+          'web development journey',
+          'developer background',
+          'coding experience',
+          'programming skills'
+        ]}
+        url="/about"
+        type="website"
+      />
+      <SEOOptimizer 
+        pageType="about"
+        primaryKeyword="about savo kos"
+        secondaryKeywords={[
+          'front-end developer biography',
+          'react developer experience',
+          'next.js developer portfolio',
+          'web developer bosnia',
+          'prijedor web developer',
+          'self-taught developer',
+          'freelance web developer',
+          'react.js specialist',
+          'next.js specialist',
+          'javascript expert'
+        ]}
+        contentLength="long"
+        targetAudience="clients"
+      />
+      <Container>
+        <Navigation />
       
       <HeroSection>
         <motion.div
@@ -252,6 +305,7 @@ const AboutPage = () => {
         </motion.div>
       </ValuesSection>
     </Container>
+    </>
   );
 };
 

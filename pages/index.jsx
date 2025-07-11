@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail, Code, Zap, Sparkles, Database, Globe, Smartphone, Palette } from 'lucide-react';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
+import SEO from '../components/SEO';
+import SEOOptimizer from '../components/SEOOptimizer';
 import Image from 'next/image';
 
 const HomePage = () => {
@@ -49,8 +51,69 @@ const HomePage = () => {
   ];
 
   return (
-    <Container>
-      <Navigation />
+    <>
+      <SEO 
+        title="Expert Front-End Developer | React, Next.js, Modern Web Development"
+        description="Hire Savo Kos - Expert Front-End Developer specializing in React, Next.js, and modern web technologies. Creating exceptional digital experiences with cutting-edge web development solutions. 100% client satisfaction guaranteed."
+        keywords={[
+          'front-end developer',
+          'react developer',
+          'next.js developer', 
+          'web developer',
+          'javascript developer',
+          'typescript developer',
+          'ui/ux developer',
+          'responsive web design',
+          'modern web development',
+          'hire web developer',
+          'freelance web developer',
+          'react.js development',
+          'next.js development',
+          'node.js development',
+          'mongodb development',
+          'express.js development',
+          'tailwind css development',
+          'styled-components development',
+          'web performance optimization',
+          'seo optimization',
+          'mobile-first design',
+          'progressive web apps',
+          'frontend development services',
+          'web application development',
+          'custom web development',
+          'e-commerce development',
+          'food delivery platform',
+          'gaming platform development',
+          'movie discovery platform',
+          'banking application development',
+          'restaurant website development',
+          'plant e-commerce platform',
+          'bosnia and herzegovina web developer',
+          'prijedor web developer'
+        ]}
+        url="/"
+        type="website"
+      />
+      <SEOOptimizer 
+        pageType="home"
+        primaryKeyword="front-end developer"
+        secondaryKeywords={[
+          'react developer',
+          'next.js developer',
+          'web developer',
+          'javascript developer',
+          'typescript developer',
+          'ui/ux developer',
+          'responsive web design',
+          'modern web development',
+          'hire web developer',
+          'freelance web developer'
+        ]}
+        contentLength="long"
+        targetAudience="businesses"
+      />
+      <Container>
+        <Navigation />
       
       <HeroSection>
         <HeroContent>
@@ -72,7 +135,7 @@ const HomePage = () => {
             className="gradient-text gradient-animate"
             style={{ fontSize: '4rem', fontWeight: 800, letterSpacing: '-2px', lineHeight: 1.1 }}
           >
-            Hi, I'm <span className="gradient-text-blue">Savo Kos</span>
+            Expert <span className="gradient-text-blue">Front-End Developer</span>
           </motion.h1>
 
           <motion.p
@@ -82,8 +145,8 @@ const HomePage = () => {
             className="hero-description"
             style={{ fontSize: '1.5rem', color: 'rgba(255,255,255,0.85)', maxWidth: 700, margin: '0 auto', marginBottom: 32 }}
           >
-            I craft exceptional digital experiences with modern web technologies.<br />
-            Passionate about creating beautiful, functional, and user-centric applications that make a difference.
+            Specializing in <strong>React, Next.js, and modern web technologies</strong>.<br />
+            Creating exceptional digital experiences with cutting-edge web development solutions that drive results.
           </motion.p>
 
           <motion.div
@@ -133,8 +196,8 @@ const HomePage = () => {
           viewport={{ once: true }}
           className="services-container"
         >
-          <h2 className="gradient-text">Services I Offer</h2>
-          <p className="services-subtitle">Comprehensive web development solutions tailored to your needs</p>
+          <h2 className="gradient-text">Professional Web Development Services</h2>
+          <p className="services-subtitle">Comprehensive front-end development solutions with React, Next.js, and modern web technologies</p>
           <div className="services-grid">
             {services.map((service, index) => (
               <motion.div
@@ -170,7 +233,7 @@ const HomePage = () => {
           viewport={{ once: true }}
           className="skills-container"
         >
-          <h2 className="gradient-text">Technologies I Work With</h2>
+          <h2 className="gradient-text">Expert Front-End Technologies</h2>
           <div className="skills-grid">
             {skills.map((skill, index) => (
               <motion.div
@@ -227,8 +290,8 @@ const HomePage = () => {
           viewport={{ once: true }}
           className="cta-container"
         >
-          <h2 className="gradient-text">Ready to Start Your Project?</h2>
-          <p>Let's work together to bring your vision to life with cutting-edge web technologies and stunning design.</p>
+          <h2 className="gradient-text">Ready to Hire an Expert Front-End Developer?</h2>
+          <p>Let's work together to bring your vision to life with cutting-edge React, Next.js, and modern web technologies. Get a professional web development solution that drives results.</p>
           <div className="cta-buttons">
             <PrimaryButton>
               <span>Get In Touch</span>
@@ -242,6 +305,7 @@ const HomePage = () => {
         </motion.div>
       </CTASection>
     </Container>
+    </>
   );
 };
 

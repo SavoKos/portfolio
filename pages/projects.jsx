@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, Code, Zap, Sparkles, Globe, Database } from 'lucide-react';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
+import SEO from '../components/SEO';
+import SEOOptimizer from '../components/SEOOptimizer';
 import Image from 'next/image';
 
 const ProjectsPage = () => {
@@ -112,8 +114,68 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <Container>
-      <Navigation />
+    <>
+      <SEO 
+        title="Web Development Portfolio | React, Next.js Projects by Savo Kos"
+        description="Explore my web development portfolio featuring React, Next.js, and modern web technologies. View projects including Kobalt food delivery platform, Game Portal, Movie Geek, and more. Expert front-end development solutions."
+        keywords={[
+          'web development portfolio',
+          'react projects',
+          'next.js projects',
+          'front-end developer portfolio',
+          'web developer projects',
+          'react.js portfolio',
+          'next.js portfolio',
+          'javascript projects',
+          'typescript projects',
+          'node.js projects',
+          'mongodb projects',
+          'express.js projects',
+          'food delivery platform',
+          'e-commerce development',
+          'gaming platform',
+          'movie discovery platform',
+          'banking application',
+          'restaurant website',
+          'plant e-commerce',
+          'kobalt project',
+          'game portal project',
+          'movie geek project',
+          'greenery project',
+          'excellence project',
+          'tasty project',
+          'web application development',
+          'custom web development',
+          'responsive web design',
+          'modern web applications',
+          'full-stack development',
+          'front-end development projects',
+          'web development showcase',
+          'developer portfolio examples'
+        ]}
+        url="/projects"
+        type="website"
+      />
+      <SEOOptimizer 
+        pageType="portfolio"
+        primaryKeyword="web development portfolio"
+        secondaryKeywords={[
+          'react projects',
+          'next.js projects',
+          'front-end developer portfolio',
+          'web developer projects',
+          'react.js portfolio',
+          'next.js portfolio',
+          'javascript projects',
+          'typescript projects',
+          'node.js projects',
+          'mongodb projects'
+        ]}
+        contentLength="long"
+        targetAudience="clients"
+      />
+      <Container>
+        <Navigation />
       
       <HeroSection>
         <motion.div
@@ -260,6 +322,7 @@ const ProjectsPage = () => {
         </motion.div>
       </StatsSection>
     </Container>
+    </>
   );
 };
 

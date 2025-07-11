@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
+import SEO from '../components/SEO';
+import SEOOptimizer from '../components/SEOOptimizer';
 import { useState } from 'react';
 
 const ContactPage = () => {
@@ -71,8 +73,60 @@ const ContactPage = () => {
   ];
 
   return (
-    <Container>
-      <Navigation />
+    <>
+      <SEO 
+        title="Contact Savo Kos - Expert Front-End Developer | Hire Me for Your Project"
+        description="Contact Savo Kos - Expert Front-End Developer specializing in React, Next.js, and modern web technologies. Get in touch for professional web development services, project inquiries, and collaboration opportunities."
+        keywords={[
+          'contact savo kos',
+          'hire front-end developer',
+          'react developer contact',
+          'next.js developer contact',
+          'web developer contact',
+          'freelance web developer',
+          'hire web developer',
+          'web development services',
+          'react development services',
+          'next.js development services',
+          'front-end development contact',
+          'web application development',
+          'custom web development',
+          'responsive web design',
+          'modern web technologies',
+          'web development consultation',
+          'project inquiry',
+          'developer collaboration',
+          'web development quote',
+          'front-end development quote',
+          'react development quote',
+          'next.js development quote',
+          'web developer bosnia',
+          'prijedor web developer',
+          'bosnia and herzegovina web developer'
+        ]}
+        url="/contact"
+        type="website"
+      />
+      <SEOOptimizer 
+        pageType="contact"
+        primaryKeyword="contact savo kos"
+        secondaryKeywords={[
+          'hire front-end developer',
+          'react developer contact',
+          'next.js developer contact',
+          'web developer contact',
+          'freelance web developer',
+          'hire web developer',
+          'web development services',
+          'react development services',
+          'next.js development services',
+          'front-end development contact'
+        ]}
+        contentLength="medium"
+        targetAudience="businesses"
+      />
+      <Container>
+        <Navigation />
       
       <HeroSection>
         <motion.div
@@ -249,6 +303,7 @@ const ContactPage = () => {
         </div>
       </ContactSection>
     </Container>
+    </>
   );
 };
 
