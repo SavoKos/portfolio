@@ -277,7 +277,6 @@ Update content in respective page components:
 - **Phone**: +387 65 583 865
 - **Location**: Prijedor, Bosnia and Herzegovina
 - **GitHub**: [github.com/savokos](https://github.com/savokos)
-- **LinkedIn**: [linkedin.com/in/savokos](https://linkedin.com/in/savokos)
 
 ### 📄 License
 

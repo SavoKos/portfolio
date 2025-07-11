@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, MessageSquare } from 'lucide-react';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 import SEO from '../components/SEO';
@@ -64,12 +64,6 @@ const ContactPage = () => {
       url: 'https://github.com/savokos',
       color: '#333'
     },
-    {
-      icon: <Linkedin size={24} />,
-      title: 'LinkedIn',
-      url: 'https://linkedin.com/in/savokos',
-      color: '#0077b5'
-    }
   ];
 
   return (

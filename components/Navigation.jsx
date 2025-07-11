@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, User, Briefcase, Mail, Github, Linkedin, Sparkles } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, Mail, Github } from 'lucide-react';
 import styled from 'styled-components';
 
 const Navigation = () => {
@@ -41,7 +41,6 @@ const Navigation = () => {
   ];
   const socialLinks = [
     { href: 'https://github.com/savokos', icon: <Github size={20} />, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/savokos', icon: <Linkedin size={20} />, label: 'LinkedIn' },
   ];
 
   return (

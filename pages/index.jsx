@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Mail, Code, Zap, Sparkles, Database, Globe, Smartphone, Palette } from 'lucide-react';
+import { ArrowRight, Download, Github, Mail, Code, Zap, Sparkles, Database, Globe, Smartphone, Palette } from 'lucide-react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Navigation from '../components/Navigation';
@@ -68,7 +68,6 @@ const HomePage = () => {
 
   const socialLinks = [
     { href: 'https://github.com/savokos', icon: <Github size={24} />, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/savokos', icon: <Linkedin size={24} />, label: 'LinkedIn' },
     { href: 'mailto:savo.kos.sk@gmail.com', icon: <Mail size={24} />, label: 'Email' },
   ];
 

@@ -53,7 +53,6 @@ export default class MyDocument extends Document {
           
           {/* DNS Prefetch for performance */}
           <link key="dns-github" rel="dns-prefetch" href="https://github.com" />
-          <link key="dns-linkedin" rel="dns-prefetch" href="https://linkedin.com" />
           <link key="dns-vercel" rel="dns-prefetch" href="https://vercel.com" />
           
           {/* Critical CSS and Fonts */}
@@ -82,7 +81,6 @@ export default class MyDocument extends Document {
                 "image": "https://savokos.com/portrait.jpg",
                 "sameAs": [
                   "https://github.com/savokos",
-                  "https://linkedin.com/in/savokos"
                 ],
                 "worksFor": {
                   "@type": "Organization",
@@ -137,7 +135,6 @@ export default class MyDocument extends Document {
                 },
                 "sameAs": [
                   "https://github.com/savokos",
-                  "https://linkedin.com/in/savokos"
                 ]
               })
             }}

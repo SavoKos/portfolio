@@ -91,12 +91,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <url>
-    <loc>https://linkedin.com/in/savokos</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
 </urlset>

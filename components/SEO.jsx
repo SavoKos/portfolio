@@ -150,7 +150,6 @@ const SEO = ({
                 "image": "https://savokos.com/portrait.jpg",
                 "sameAs": [
                   "https://github.com/savokos",
-                  "https://linkedin.com/in/savokos"
                 ],
                 "knowsAbout": [
                   "React.js",

@@ -96,13 +96,6 @@ export default function handler(req, res) {
     <priority>0.7</priority>
   </url>
   
-  <url>
-    <loc>https://linkedin.com/in/savokos</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
 </urlset>`;
 
   res.setHeader('Content-Type', 'application/xml');
