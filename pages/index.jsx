@@ -2,12 +2,34 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail, Code, Zap, Sparkles, Database, Globe, Smartphone, Palette } from 'lucide-react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 import Navigation from '../components/Navigation';
 import SEO from '../components/SEO';
 import SEOOptimizer from '../components/SEOOptimizer';
 import Image from 'next/image';
 
 const HomePage = () => {
+  const router = useRouter();
+  
+  const handleViewWork = () => {
+    router.push('/projects');
+  };
+  
+  const handleDownloadCV = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/CV.pdf';
+    link.download = 'Savo_Kos_CV.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
+  const handleGetInTouch = () => {
+    router.push('/contact');
+  };
+  
   const skills = [
     { name: 'React', icon: <Code size={20} /> },
     { name: 'Next.js', icon: <Zap size={20} /> },
@@ -47,7 +69,7 @@ const HomePage = () => {
   const socialLinks = [
     { href: 'https://github.com/savokos', icon: <Github size={24} />, label: 'GitHub' },
     { href: 'https://linkedin.com/in/savokos', icon: <Linkedin size={24} />, label: 'LinkedIn' },
-    { href: 'mailto:savo@savokos.com', icon: <Mail size={24} />, label: 'Email' },
+    { href: 'mailto:savo.kos.sk@gmail.com', icon: <Mail size={24} />, label: 'Email' },
   ];
 
   return (
@@ -156,14 +178,18 @@ const HomePage = () => {
             className="hero-actions"
             style={{ justifyContent: 'center' }}
           >
-            <PrimaryButton>
-              <span>View My Work</span>
-              <ArrowRight size={20} />
-            </PrimaryButton>
-            <SecondaryButton>
-              <Download size={20} />
-              <span>Download CV</span>
-            </SecondaryButton>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <PrimaryButton onClick={handleViewWork}>
+                <span>View My Work</span>
+                <ArrowRight size={20} />
+              </PrimaryButton>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <SecondaryButton onClick={handleDownloadCV}>
+                <Download size={20} />
+                <span>Download CV</span>
+              </SecondaryButton>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -293,14 +319,18 @@ const HomePage = () => {
           <h2 className="gradient-text">Ready to Hire an Expert Front-End Developer?</h2>
           <p>Let's work together to bring your vision to life with cutting-edge React, Next.js, and modern web technologies. Get a professional web development solution that drives results.</p>
           <div className="cta-buttons">
-            <PrimaryButton>
-              <span>Get In Touch</span>
-              <Mail size={20} />
-            </PrimaryButton>
-            <SecondaryButton>
-              <span>View Portfolio</span>
-              <ArrowRight size={20} />
-            </SecondaryButton>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <PrimaryButton onClick={handleGetInTouch}>
+                <span>Get In Touch</span>
+                <Mail size={20} />
+              </PrimaryButton>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <SecondaryButton onClick={handleViewWork}>
+                <span>View Portfolio</span>
+                <ArrowRight size={20} />
+              </SecondaryButton>
+            </motion.div>
           </div>
         </motion.div>
       </CTASection>

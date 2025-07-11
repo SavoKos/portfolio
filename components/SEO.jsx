@@ -57,6 +57,7 @@ const SEO = ({
   return (
     <Head>
       {/* Primary Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={enhancedDescription} />
@@ -128,12 +129,13 @@ const SEO = ({
       <meta name="business:contact_data:phone_number" content="+387601234567" />
       <meta name="business:contact_data:email" content="savo@savokos.com" />
       
-      {/* Page-specific structured data */}
-      {type === 'website' && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+             {/* Page-specific structured data */}
+       {type === 'website' && (
+         <script
+           key="webpage-schema"
+           type="application/ld+json"
+           dangerouslySetInnerHTML={{
+             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": fullTitle,
@@ -177,12 +179,13 @@ const SEO = ({
         />
       )}
       
-      {/* Service Schema for specific pages */}
-      {(url === '/services' || url === '/') && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+             {/* Service Schema for specific pages */}
+       {(url === '/services' || url === '/') && (
+         <script
+           key="service-schema"
+           type="application/ld+json"
+           dangerouslySetInnerHTML={{
+             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "Front-End Web Development Services",
@@ -216,12 +219,13 @@ const SEO = ({
         />
       )}
       
-      {/* Portfolio Schema for projects page */}
-      {url === '/projects' && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+             {/* Portfolio Schema for projects page */}
+       {url === '/projects' && (
+         <script
+           key="portfolio-schema"
+           type="application/ld+json"
+           dangerouslySetInnerHTML={{
+             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ItemList",
               "name": "Web Development Portfolio",

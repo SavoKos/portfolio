@@ -42,7 +42,7 @@ const nextConfig = {
     ];
   },
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Removed due to critters dependency issues
   },
   compress: true,
   poweredByHeader: false,

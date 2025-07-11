@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -17,10 +18,10 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: [
-          <>
+          <React.Fragment key="styled-components-styles">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>,
+          </React.Fragment>,
         ],
       };
     } finally {
@@ -34,41 +35,41 @@ export default class MyDocument extends Document {
         <Head>
           {/* Primary Meta Tags */}
           <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           
           {/* Favicon and App Icons */}
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="manifest" href="/site.webmanifest" />
+          <link key="favicon" rel="icon" href="/favicon.ico" />
+          <link key="apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link key="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link key="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link key="manifest" rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#7877c6" />
           
           {/* Preconnect to external domains for performance */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link rel="preconnect" href="https://www.google-analytics.com" />
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link key="preconnect-fonts" rel="preconnect" href="https://fonts.googleapis.com" />
+          <link key="preconnect-fonts-gstatic" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link key="preconnect-ga" rel="preconnect" href="https://www.google-analytics.com" />
+          <link key="preconnect-gtm" rel="preconnect" href="https://www.googletagmanager.com" />
           
           {/* DNS Prefetch for performance */}
-          <link rel="dns-prefetch" href="https://github.com" />
-          <link rel="dns-prefetch" href="https://linkedin.com" />
-          <link rel="dns-prefetch" href="https://vercel.com" />
+          <link key="dns-github" rel="dns-prefetch" href="https://github.com" />
+          <link key="dns-linkedin" rel="dns-prefetch" href="https://linkedin.com" />
+          <link key="dns-vercel" rel="dns-prefetch" href="https://vercel.com" />
           
           {/* Critical CSS and Fonts */}
-          <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link key="preload-font" rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
           
           {/* Security Headers */}
           <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;" />
           
           {/* Global SEO Meta Tags */}
-          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-          <meta name="googlebot" content="index, follow" />
-          <meta name="bingbot" content="index, follow" />
+          <meta key="robots" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          <meta key="googlebot" name="googlebot" content="index, follow" />
+          <meta key="bingbot" name="bingbot" content="index, follow" />
           
           {/* Schema.org Structured Data - Person */}
           <script
+            key="person-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -112,6 +113,7 @@ export default class MyDocument extends Document {
           
           {/* Organization Schema */}
           <script
+            key="organization-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -143,6 +145,7 @@ export default class MyDocument extends Document {
           
           {/* WebSite Schema */}
           <script
+            key="website-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -166,6 +169,7 @@ export default class MyDocument extends Document {
           
           {/* BreadcrumbList Schema */}
           <script
+            key="breadcrumb-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -207,10 +211,12 @@ export default class MyDocument extends Document {
           
           {/* Google Analytics */}
           <script
+            key="ga-script"
             async
             src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
           />
           <script
+            key="ga-config"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];

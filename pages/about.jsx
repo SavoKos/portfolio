@@ -149,7 +149,14 @@ const AboutPage = () => {
               applications that users love to interact with.
             </p>
             
-            <DownloadButton>
+            <DownloadButton onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/CV.pdf';
+              link.download = 'Savo_Kos_CV.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}>
               <Download size={20} />
               <span>Download CV</span>
             </DownloadButton>

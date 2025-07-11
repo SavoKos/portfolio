@@ -1,28 +1,36 @@
 import styled from 'styled-components';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { IoClose } from 'react-icons/io5';
 
 function NavItems({ currentPage, menuActive, setMenuActive }) {
+  const router = useRouter();
+  
   return (
     <S.NavItems menuActive={menuActive}>
       <IoClose className='close' onClick={() => setMenuActive(false)} />
       <S.NavItem
         currentPage={currentPage === 'home'}
-        onClick={() => Router.push('/')}
+        onClick={() => router.push('/')}
       >
         Home
       </S.NavItem>
       <S.NavItem
         currentPage={currentPage === 'projects'}
-        onClick={() => Router.push('/projects')}
+        onClick={() => router.push('/projects')}
       >
         Projects
       </S.NavItem>
       <S.NavItem
         currentPage={currentPage === 'about'}
-        onClick={() => Router.push('/about')}
+        onClick={() => router.push('/about')}
       >
         About
+      </S.NavItem>
+      <S.NavItem
+        currentPage={currentPage === 'contact'}
+        onClick={() => router.push('/contact')}
+      >
+        Contact
       </S.NavItem>
     </S.NavItems>
   );
@@ -40,7 +48,7 @@ S.NavItems = styled.div`
   top: 0;
   height: 100vh;
   justify-content: space-evenly;
-  background-color: #fef0f0;
+  background-color: rgba(0, 0, 0, 0.95);
   width: 100%;
   z-index: 5;
   transition: all ease 0.5s;
@@ -59,7 +67,7 @@ S.NavItems = styled.div`
     left: 2rem;
     top: 2rem;
     font-size: 36px;
-    color: ${({ theme }) => theme.colors.orange};
+    color: ${({ theme }) => theme.colors.primary};
     cursor: pointer;
 
     @media screen and (min-width: 768px) {
@@ -71,7 +79,7 @@ S.NavItems = styled.div`
 S.NavItem = styled.a`
   margin: 0 2rem;
   color: ${({ currentPage, theme }) =>
-    currentPage ? theme.colors.orange : '#4f4f4f'};
+    currentPage ? theme.colors.primary : 'rgba(255, 255, 255, 0.7)'};
   position: relative;
   transition: all ease 0.3s;
   font-size: 24px;
@@ -98,7 +106,7 @@ S.NavItem = styled.a`
       content: '';
       width: 100%;
       height: 2px;
-      background-color: ${({ theme }) => theme.colors.orange50};
+      background-color: ${({ theme }) => theme.colors.primary};
       bottom: 0;
       left: 0;
       position: absolute;

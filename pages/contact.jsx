@@ -40,14 +40,14 @@ const ContactPage = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      value: 'savo@savokos.com',
-      link: 'mailto:savo@savokos.com'
+      value: 'savo.kos.sk@gmail.com',
+      link: 'mailto:savo.kos.sk@gmail.com'
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      value: '+387 60 123 4567',
-      link: 'tel:+387601234567'
+      value: '+387 65 583 865',
+      link: 'tel:+38765583865'
     },
     {
       icon: <MapPin size={24} />,
@@ -452,6 +452,12 @@ const ContactSection = styled.section`
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+    }
+
+    .submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
     .form-group {
       display: flex;
