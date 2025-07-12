@@ -1,10 +1,24 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, User, Briefcase, Mail, Github } from 'lucide-react';
 import styled from 'styled-components';
+
+// Throttle function for scroll events
+const throttle = (func, limit) => {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+};
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +26,21 @@ const Navigation = () => {
   const navRef = useRef(null);
   const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+  const handleScroll = useCallback(
+    throttle(() => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 30);
       if (navRef.current) {
-        navRef.current.style.backdropFilter = window.scrollY > 30 ? 'blur(18px) saturate(1.2)' : 'blur(0px)';
+        navRef.current.style.backdropFilter = scrollY > 30 ? 'blur(12px) saturate(1.1)' : 'blur(0px)';
       }
-    };
-    window.addEventListener('scroll', handleScroll);
+    }, 16), // ~60fps
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const getActivePage = () => {
     const pathname = router.pathname;
@@ -49,10 +68,11 @@ const Navigation = () => {
         <Logo>
           <Link href="/">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               className="gradient-text gradient-animate micro-pop"
               style={{ fontSize: '1.6rem', fontWeight: '800', letterSpacing: '-1px' }}
+              transition={{ duration: 0.2 }}
             >
               Savo Kos
             </motion.div>
@@ -63,10 +83,10 @@ const Navigation = () => {
             <NavItem key={item.href}>
               <Link href={item.href}>
                 <motion.div
-                  whileHover={{ y: -2, scale: 1.08 }}
+                  whileHover={{ y: -1, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`nav-link micro-fadein ${activePage === item.id ? 'active' : ''}`}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -75,7 +95,7 @@ const Navigation = () => {
                       layoutId="activeIndicator"
                       className="active-indicator"
                       initial={false}
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
                     />
                   )}
                 </motion.div>
@@ -87,9 +107,10 @@ const Navigation = () => {
               <SocialLink key={social.href}>
                 <a href={social.href} target="_blank" rel="noopener noreferrer">
                   <motion.div
-                    whileHover={{ scale: 1.13, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.08, y: -1 }}
+                    whileTap={{ scale: 0.92 }}
                     className="social-icon hover-glow micro-pop"
+                    transition={{ duration: 0.2 }}
                   >
                     {social.icon}
                   </motion.div>
@@ -101,7 +122,7 @@ const Navigation = () => {
         <MobileMenuButton onClick={() => setIsOpen(!isOpen)}>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             className="menu-icon"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,19 +132,19 @@ const Navigation = () => {
       <AnimatePresence>
         {isOpen && (
           <MobileMenu
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
           >
             {navItems.map((item, index) => (
               <MobileNavItem key={item.href}>
                 <Link href={item.href} onClick={() => setIsOpen(false)}>
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ x: 10, scale: 1.08 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ x: 5, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`mobile-nav-link micro-fadein ${activePage === item.id ? 'active' : ''}`}
                   >
@@ -138,11 +159,11 @@ const Navigation = () => {
                 <MobileSocialLink key={social.href}>
                   <a href={social.href} target="_blank" rel="noopener noreferrer">
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
+                      initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: (navItems.length + index) * 0.1 }}
-                      whileHover={{ scale: 1.13 }}
-                      whileTap={{ scale: 0.9 }}
+                      transition={{ delay: (navItems.length + index) * 0.05 }}
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.92 }}
                       className="mobile-social-icon hover-glow micro-pop"
                     >
                       {social.icon}
@@ -166,9 +187,10 @@ const NavContainer = styled.nav`
   z-index: 1000;
   background: rgba(18, 18, 28, 0.82);
   box-shadow: 0 2px 24px 0 rgba(120,119,198,0.08);
-  backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.1);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.4s, box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s;
+  will-change: backdrop-filter;
 `;
 
 const NavContent = styled.div`
@@ -207,13 +229,14 @@ const NavItem = styled.div`
     gap: 0.5rem;
     padding: 0.85rem 1.5rem;
     border-radius: 14px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     color: ${({ theme }) => theme.colors.textSecondary};
     font-weight: 600;
     font-size: 1.08rem;
     position: relative;
     overflow: hidden;
     background: transparent;
+    will-change: transform, background, color;
     &:hover {
       color: ${({ theme }) => theme.colors.text};
       background: rgba(255,255,255,0.06);
@@ -256,8 +279,9 @@ const SocialLink = styled.div`
     border-radius: 12px;
     background: rgba(255,255,255,0.07);
     color: ${({ theme }) => theme.colors.textSecondary};
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    will-change: transform, background, color;
     &:hover {
       background: ${({ theme }) => theme.gradients.primary};
       color: white;
@@ -274,8 +298,8 @@ const MobileMenuButton = styled.button`
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
   .menu-icon {
     display: flex;
     align-items: center;
@@ -284,11 +308,12 @@ const MobileMenuButton = styled.button`
     height: 40px;
     border-radius: 10px;
     background: rgba(255,255,255,0.07);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    will-change: transform, background;
   }
   &:hover .menu-icon {
     background: rgba(255,255,255,0.13);
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: block;
@@ -301,7 +326,7 @@ const MobileMenu = styled(motion.div)`
   left: 0;
   right: 0;
   background: rgba(18,18,28,0.98);
-  backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.1);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 1.5rem;
   display: flex;
@@ -320,11 +345,12 @@ const MobileNavItem = styled.div`
     gap: 1rem;
     padding: 1.25rem;
     border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     color: ${({ theme }) => theme.colors.textSecondary};
     font-weight: 600;
     position: relative;
     overflow: hidden;
+    will-change: transform, background, color;
     &:hover {
       color: ${({ theme }) => theme.colors.text};
       background: rgba(255,255,255,0.07);
@@ -343,7 +369,7 @@ const MobileNavItem = styled.div`
       width: 3px;
       background: ${({ theme }) => theme.gradients.primary};
       transform: scaleY(0);
-      transition: transform 0.3s ease;
+      transition: transform 0.2s ease;
     }
     &.active::before {
       transform: scaleY(1);
@@ -370,8 +396,9 @@ const MobileSocialLink = styled.div`
     border-radius: 12px;
     background: rgba(255,255,255,0.07);
     color: ${({ theme }) => theme.colors.textSecondary};
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    will-change: transform, background, color;
     &:hover {
       background: ${({ theme }) => theme.gradients.primary};
       color: white;

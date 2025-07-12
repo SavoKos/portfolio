@@ -42,54 +42,48 @@ const SEOOptimizer = ({
         }
       };
 
-      // Add FAQ schema for better featured snippets
+      // Add service-specific schema only for relevant pages
       if (pageType === 'services' || pageType === 'home') {
-        structuredData.mainEntity = {
-          ...structuredData.mainEntity,
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Web Development Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "React Development",
-                  "description": "Custom React applications with modern best practices"
-                }
-              },
-              {
-                "@type": "Offer", 
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Next.js Development",
-                  "description": "Full-stack Next.js applications with server-side rendering"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service", 
-                  "name": "Responsive Web Design",
-                  "description": "Mobile-first responsive design for all devices"
-                }
+        structuredData.mainEntity.hasOfferCatalog = {
+          "@type": "OfferCatalog",
+          "name": "Web Development Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "React Development",
+                "description": "Custom React applications with modern best practices"
               }
-            ]
-          }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Next.js Development",
+                "description": "Full-stack Next.js applications with server-side rendering"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service", 
+                "name": "Responsive Web Design",
+                "description": "Mobile-first responsive design for all devices"
+              }
+            }
+          ]
         };
       }
 
-      // Add FAQ schema for better featured snippets
+      // Add contact schema only for contact page
       if (pageType === 'contact') {
-        structuredData.mainEntity = {
-          ...structuredData.mainEntity,
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "email": "savo@savokos.com",
-            "telephone": "+387601234567",
-            "availableLanguage": "English"
-          }
+        structuredData.mainEntity.contactPoint = {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "savo@savokos.com",
+          "telephone": "+387601234567",
+          "availableLanguage": "English"
         };
       }
 
@@ -99,7 +93,9 @@ const SEOOptimizer = ({
       document.head.appendChild(script);
 
       return () => {
-        document.head.removeChild(script);
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
+        }
       };
     };
 
@@ -149,62 +145,20 @@ const SEOOptimizer = ({
       document.head.appendChild(script);
 
       return () => {
-        document.head.removeChild(script);
-      };
-    };
-
-    // Add local business schema for local SEO
-    const addLocalBusinessSchema = () => {
-      const localBusinessData = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Savo Kos - Web Development",
-        "description": "Expert Front-End Developer specializing in React, Next.js, and modern web technologies",
-        "url": "https://savokos.com",
-        "telephone": "+387601234567",
-        "email": "savo@savokos.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Prijedor",
-          "addressCountry": "Bosnia and Herzegovina"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 44.9794,
-          "longitude": 16.7144
-        },
-        "openingHours": "Mo-Su 09:00-18:00",
-        "priceRange": "$$",
-        "serviceArea": {
-          "@type": "Country",
-          "name": "Worldwide"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Web Development Services"
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
         }
       };
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(localBusinessData);
-      document.head.appendChild(script);
-
-      return () => {
-        document.head.removeChild(script);
-      };
     };
 
-    // Initialize all SEO optimizations
+    // Initialize SEO optimizations
     const cleanup1 = addStructuredData();
     const cleanup2 = addBreadcrumbs();
-    const cleanup3 = addLocalBusinessSchema();
 
     // Cleanup function
     return () => {
       cleanup1();
       cleanup2();
-      cleanup3();
     };
   }, [pageType, primaryKeyword, secondaryKeywords, contentLength, targetAudience]);
 

@@ -113,6 +113,29 @@ const ProjectsPage = () => {
     }
   ];
 
+  // Optimized animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardHover = {
+    hover: { 
+      y: -5, 
+      scale: 1.02,
+      transition: { duration: 0.2, ease: "easeOut" }
+    }
+  };
+
   return (
     <>
       <SEO 
@@ -179,9 +202,9 @@ const ProjectsPage = () => {
       
       <HeroSection>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="hero-content"
         >
           <Badge>
@@ -201,14 +224,18 @@ const ProjectsPage = () => {
       </HeroSection>
 
       <ProjectsSection>
-        <div className="projects-grid">
+        <motion.div 
+          className="projects-grid"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              variants={fadeInUp}
+              whileHover="hover"
               className="project-card glass"
             >
               <div className="project-image">
@@ -218,6 +245,7 @@ const ProjectsPage = () => {
                   width={400}
                   height={250}
                   className="project-img"
+                  priority={index < 2}
                 />
                 <div className="project-overlay">
                   <div className="project-links">
@@ -225,9 +253,10 @@ const ProjectsPage = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       className="project-link"
+                      transition={{ duration: 0.2 }}
                     >
                       <ExternalLink size={20} />
                       <span>Live Demo</span>
@@ -237,9 +266,10 @@ const ProjectsPage = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         className="project-link"
+                        transition={{ duration: 0.2 }}
                       >
                         <Github size={20} />
                         <span>Code</span>
@@ -281,8 +311,9 @@ const ProjectsPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-cta"
-                  whileHover={{ x: 5 }}
+                  whileHover={{ x: 3 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <span>View Project</span>
                   <ArrowRight size={20} />
@@ -290,15 +321,15 @@ const ProjectsPage = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </ProjectsSection>
 
       <StatsSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="stats-container"
         >
           <div className="stats-grid">
@@ -357,11 +388,12 @@ const HeroSection = styled.section`
     background: radial-gradient(circle at 60% 40%, #7877c6 0%, transparent 70%),
       radial-gradient(circle at 30% 80%, #ff77c6 0%, transparent 70%),
       radial-gradient(circle at 80% 20%, #78dbff 0%, transparent 70%);
-    opacity: 0.22;
-    filter: blur(80px) saturate(1.2);
+    opacity: 0.18;
+    filter: blur(60px) saturate(1.1);
     z-index: 0;
     pointer-events: none;
-    animation: bgGradientMove 18s ease-in-out infinite alternate;
+    animation: bgGradientMove 20s ease-in-out infinite alternate;
+    will-change: transform;
   }
   .hero-content {
     max-width: 800px;
@@ -405,170 +437,194 @@ const Badge = styled.div`
 `;
 
 const ProjectsSection = styled.section`
-  padding: 5rem 2rem 4rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  z-index: 2;
+  padding: 4rem 2rem 6rem 2rem;
+  width: 100vw;
+  margin: 0;
+  left: 50%;
+  right: 50%;
   position: relative;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: transparent;
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2.5rem;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
   .project-card {
-    border-radius: 22px;
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
     background: rgba(255,255,255,0.09);
     box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
-    backdrop-filter: blur(14px);
-    &:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 20px 40px rgba(120, 119, 198, 0.18);
-      filter: brightness(1.08);
-    }
+    backdrop-filter: blur(12px);
+    will-change: transform, filter, box-shadow;
     .project-image {
       position: relative;
       overflow: hidden;
-      height: 250px;
-      padding: 20px;
       .project-img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
       }
-    }
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg,rgba(18,18,28,0.0),rgba(120,119,198,0.13));
-      opacity: 0;
-      transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      .project-links {
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.8);
         display: flex;
-        gap: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        .project-links {
+          display: flex;
+          gap: 1rem;
+          @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+          .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: ${({ theme }) => theme.gradients.primary};
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            &:hover {
+              filter: brightness(1.1);
+            }
+          }
+        }
       }
-    }
-    &:hover .project-overlay {
-      opacity: 1;
+      &:hover {
+        .project-img {
+          transform: scale(1.05);
+        }
+        .project-overlay {
+          opacity: 1;
+        }
+      }
     }
     .project-content {
-      padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+      padding: 2rem;
       .project-header {
         display: flex;
         align-items: center;
         gap: 1rem;
+        margin-bottom: 1rem;
         .project-icon {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 44px;
-          height: 44px;
+          width: 50px;
+          height: 50px;
           border-radius: 12px;
           background: ${({ theme }) => theme.gradients.primary};
           color: white;
-          font-size: 1.5rem;
         }
         h3 {
-          font-size: 2rem;
-          font-weight: 800;
+          font-size: 1.5rem;
+          font-weight: 700;
           margin: 0;
-          letter-spacing: -1px;
         }
       }
       .project-description {
         color: ${({ theme }) => theme.colors.textSecondary};
-        font-size: 1.15rem;
-        margin: 1.2rem 0 1.5rem 0;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
         font-weight: 500;
       }
       .project-technologies {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-bottom: 1.2rem;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
         .tech-tag {
+          padding: 0.25rem 0.75rem;
           background: rgba(120,119,198,0.13);
-          color: ${({ theme }) => theme.colors.primary};
+          border: 1px solid rgba(120,119,198,0.3);
+          border-radius: 20px;
+          font-size: 0.85rem;
           font-weight: 600;
-          font-size: 0.98rem;
-          padding: 0.4rem 1rem;
-          border-radius: 8px;
+          color: ${({ theme }) => theme.colors.primary};
         }
       }
       .project-features {
-        margin-bottom: 1.2rem;
+        margin-bottom: 2rem;
         h4 {
           font-size: 1.1rem;
           font-weight: 700;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.75rem;
+          color: ${({ theme }) => theme.colors.text};
         }
         ul {
-          padding-left: 1.2rem;
+          list-style: none;
+          padding: 0;
           li {
             color: ${({ theme }) => theme.colors.textSecondary};
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            &:before {
+              content: '✓';
+              color: ${({ theme }) => theme.colors.primary};
+              font-weight: bold;
+              margin-right: 0.5rem;
+            }
           }
         }
       }
       .project-cta {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 0.5rem;
         padding: 1rem 2rem;
         background: ${({ theme }) => theme.gradients.primary};
-        border: none;
-        border-radius: 14px;
         color: white;
+        border-radius: 12px;
         font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-        font-family: inherit;
-        font-size: 1.08rem;
-        letter-spacing: 0.5px;
-        position: relative;
-        overflow: hidden;
+        transition: all 0.2s ease;
+        will-change: transform;
         &:hover {
-          transform: translateY(-2px) scale(1.04);
-          box-shadow: 0 10px 30px rgba(120, 119, 198, 0.4);
-          filter: brightness(1.08);
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(120deg,rgba(255,255,255,0.08),rgba(120,119,198,0.08));
-          opacity: 0.5;
-          pointer-events: none;
-          border-radius: 14px;
+          filter: brightness(1.1);
         }
       }
+    }
+    &:hover {
+      transform: translateY(-5px) scale(1.02);
+      filter: brightness(1.05);
+      box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
     }
   }
 `;
 
 const StatsSection = styled.section`
   padding: 5rem 2rem 4rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  z-index: 2;
+  width: 100vw;
+  margin: 0;
+  left: 50%;
+  right: 50%;
   position: relative;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: transparent;
   .stats-container {
     .stats-grid {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         flex-wrap: wrap;
         justify-content: center;
@@ -578,12 +634,13 @@ const StatsSection = styled.section`
       text-align: center;
       padding: 2.5rem 1.5rem;
       border-radius: 18px;
-      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
       background: rgba(255,255,255,0.09);
       box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
       backdrop-filter: blur(12px);
       flex: 1;
       min-width: 200px;
+      will-change: transform, filter, box-shadow;
       h3 {
         font-size: 3.2rem;
         font-weight: 800;
@@ -596,182 +653,12 @@ const StatsSection = styled.section`
         font-weight: 600;
       }
       &:hover {
-        transform: translateY(-5px) scale(1.05);
-        filter: brightness(1.08);
+        transform: translateY(-3px) scale(1.03);
+        filter: brightness(1.05);
         box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
       }
     }
   }
-`;
-
-// Add these styles to the existing styled components
-const projectCardStyles = `
-  .project-card {
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(120, 119, 198, 0.2);
-    }
-  }
-
-  .project-image {
-    position: relative;
-    overflow: hidden;
-    height: 250px;
-
-    .project-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-
-      .project-links {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .project-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        background: ${({ theme }) => theme.gradients.primary};
-        color: white;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(120, 119, 198, 0.4);
-        }
-      }
-    }
-
-    &:hover .project-overlay {
-      opacity: 1;
-    }
-
-    &:hover .project-img {
-      transform: scale(1.1);
-    }
-  }
-
-  .project-content {
-    padding: 2rem;
-
-    .project-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-
-      .project-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: ${({ theme }) => theme.gradients.primary};
-        color: white;
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-    }
-
-    .project-description {
-      color: ${({ theme }) => theme.colors.textSecondary};
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-technologies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-
-      .tech-tag {
-        padding: 0.25rem 0.75rem;
-        background: rgba(120, 119, 198, 0.1);
-        border: 1px solid rgba(120, 119, 198, 0.3);
-        border-radius: 20px;
-        font-size: 0.8rem;
-        color: ${({ theme }) => theme.colors.primary};
-        font-weight: 500;
-      }
-    }
-
-    .project-features {
-      margin-bottom: 2rem;
-
-      h4 {
-        font-size: 1.1rem;
-        margin-bottom: 0.75rem;
-        color: ${({ theme }) => theme.colors.text};
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          color: ${({ theme }) => theme.colors.textSecondary};
-          font-size: 0.9rem;
-          margin-bottom: 0.5rem;
-          padding-left: 1rem;
-          position: relative;
-
-          &:before {
-            content: '•';
-            color: ${({ theme }) => theme.colors.primary};
-            position: absolute;
-            left: 0;
-          }
-        }
-      }
-    }
-
-    .project-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: ${({ theme }) => theme.colors.primary};
-      font-weight: 600;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.secondary};
-      }
-    }
-  }
-`;
-
-// Apply the project card styles
-const ProjectCard = styled.div`
-  ${projectCardStyles}
 `;
 
 export default ProjectsPage;

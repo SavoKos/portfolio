@@ -5,7 +5,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: background 0.4s cubic-bezier(0.4,0,0.2,1), color 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 
 html, body {
@@ -27,8 +26,9 @@ body::before {
   pointer-events: none;
   background: linear-gradient(120deg, #7877c6 0%, #a855f7 50%, #06b6d4 100%);
   opacity: 0.18;
-  filter: blur(80px) saturate(1.2);
-  animation: bgGradientMove 18s ease-in-out infinite alternate;
+  filter: blur(60px) saturate(1.1);
+  animation: bgGradientMove 20s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 body::after {
@@ -41,12 +41,13 @@ body::after {
     radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.13) 0%, transparent 60%),
     radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.10) 0%, transparent 60%);
   opacity: 0.7;
-  filter: blur(40px);
+  filter: blur(30px);
+  will-change: transform;
 }
 
 @keyframes bgGradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(10px) translateY(10px); }
 }
 
 a {
@@ -94,31 +95,33 @@ a {
   background-clip: text;
 }
 
-/* Glass morphism */
+/* Glass morphism - optimized */
 .glass {
   background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
   border: 1px solid rgba(255,255,255,0.10);
   box-shadow: 0 8px 32px rgba(120,119,198,0.10), 0 1.5px 8px rgba(0,0,0,0.10);
+  will-change: transform;
 }
 
 .glass-dark {
   background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
   border: 1px solid rgba(255,255,255,0.10);
+  will-change: transform;
 }
 
-/* Animations */
+/* Animations - optimized */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 20px rgba(120, 119, 198, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(120, 119, 198, 0.6); }
+  50% { box-shadow: 0 0 30px rgba(120, 119, 198, 0.5); }
 }
 
 @keyframes gradient-shift {
@@ -128,39 +131,46 @@ a {
 }
 
 .float-animation {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 3s ease-in-out infinite;
+  will-change: box-shadow;
 }
 
 .gradient-animate {
   background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  animation: gradient-shift 4s ease infinite;
+  will-change: background-position;
 }
 
 /* Parallax utility */
 .parallax {
   will-change: transform;
-  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* Micro-animations */
+/* Micro-animations - optimized */
 .micro-fadein {
   opacity: 0;
-  animation: microFadeIn 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  animation: microFadeIn 0.6s cubic-bezier(0.4,0,0.2,1) forwards;
+  will-change: opacity;
 }
+
 @keyframes microFadeIn {
   to { opacity: 1; }
 }
 
 .micro-pop {
-  animation: microPop 0.5s cubic-bezier(0.4,0,0.2,1);
+  animation: microPop 0.4s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
 }
+
 @keyframes microPop {
   0% { transform: scale(0.95); }
-  60% { transform: scale(1.05); }
+  60% { transform: scale(1.03); }
   100% { transform: scale(1); }
 }
 
@@ -179,4 +189,27 @@ a {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float-animation,
+  .pulse-glow,
+  .gradient-animate {
+    animation: none !important;
+  }
 }

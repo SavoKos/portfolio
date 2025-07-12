@@ -71,6 +71,29 @@ const HomePage = () => {
     { href: 'mailto:savo.kos.sk@gmail.com', icon: <Mail size={24} />, label: 'Email' },
   ];
 
+  // Optimized animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardHover = {
+    hover: { 
+      y: -5, 
+      scale: 1.02,
+      transition: { duration: 0.2, ease: "easeOut" }
+    }
+  };
+
   return (
     <>
       <SEO 
@@ -139,9 +162,9 @@ const HomePage = () => {
       <HeroSection>
         <HeroContent>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             <Badge>
               <Sparkles size={16} />
@@ -150,9 +173,9 @@ const HomePage = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="gradient-text gradient-animate"
             style={{ fontSize: '4rem', fontWeight: 800, letterSpacing: '-2px', lineHeight: 1.1 }}
           >
@@ -160,9 +183,9 @@ const HomePage = () => {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="hero-description"
             style={{ fontSize: '1.5rem', color: 'rgba(255,255,255,0.85)', maxWidth: 700, margin: '0 auto', marginBottom: 32 }}
           >
@@ -171,19 +194,19 @@ const HomePage = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="hero-actions"
             style={{ justifyContent: 'center' }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <PrimaryButton onClick={handleViewWork}>
                 <span>View My Work</span>
                 <ArrowRight size={20} />
               </PrimaryButton>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <SecondaryButton onClick={handleDownloadCV}>
                 <Download size={20} />
                 <span>Download CV</span>
@@ -192,18 +215,19 @@ const HomePage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="social-links"
             style={{ justifyContent: 'center' }}
           >
             {socialLinks.map((social, index) => (
               <SocialLink key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
                 <motion.div
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.08, y: -1 }}
+                  whileTap={{ scale: 0.92 }}
                   className="social-icon"
+                  transition={{ duration: 0.2 }}
                 >
                   {social.icon}
                 </motion.div>
@@ -215,25 +239,28 @@ const HomePage = () => {
 
       <ServicesSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="services-container"
         >
           <h2 className="gradient-text">Professional Web Development Services</h2>
           <p className="services-subtitle">Comprehensive front-end development solutions with React, Next.js, and modern web technologies</p>
-          <div className="services-grid">
+          <motion.div 
+            className="services-grid"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="service-card glass"
-              >
+                              <motion.div
+                  key={service.title}
+                  variants={fadeInUp}
+                  whileHover="hover"
+                  className="service-card glass"
+                >
                 <div className="service-icon">
                   {service.icon}
                 </div>
@@ -246,44 +273,47 @@ const HomePage = () => {
                 </ul>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </ServicesSection>
 
       <SkillsSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="skills-container"
         >
           <h2 className="gradient-text">Expert Front-End Technologies</h2>
-          <div className="skills-grid">
+          <motion.div 
+            className="skills-grid"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="skill-card glass"
-              >
+                              <motion.div
+                  key={skill.name}
+                  variants={fadeInUp}
+                  whileHover="hover"
+                  className="skill-card glass"
+                >
                 {skill.icon}
                 <span>{skill.name}</span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </SkillsSection>
 
       <StatsSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="stats-container"
         >
           <div className="stats-grid">
@@ -309,22 +339,22 @@ const HomePage = () => {
 
       <CTASection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="cta-container"
         >
           <h2 className="gradient-text">Ready to Hire an Expert Front-End Developer?</h2>
           <p>Let's work together to bring your vision to life with cutting-edge React, Next.js, and modern web technologies. Get a professional web development solution that drives results.</p>
           <div className="cta-buttons">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <PrimaryButton onClick={handleGetInTouch}>
                 <span>Get In Touch</span>
                 <Mail size={20} />
               </PrimaryButton>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <SecondaryButton onClick={handleViewWork}>
                 <span>View Portfolio</span>
                 <ArrowRight size={20} />
@@ -371,11 +401,12 @@ const HeroSection = styled.section`
     background: radial-gradient(circle at 60% 40%, #7877c6 0%, transparent 70%),
       radial-gradient(circle at 30% 80%, #ff77c6 0%, transparent 70%),
       radial-gradient(circle at 80% 20%, #78dbff 0%, transparent 70%);
-    opacity: 0.22;
-    filter: blur(80px) saturate(1.2);
+    opacity: 0.18;
+    filter: blur(60px) saturate(1.1);
     z-index: 0;
     pointer-events: none;
-    animation: bgGradientMove 18s ease-in-out infinite alternate;
+    animation: bgGradientMove 20s ease-in-out infinite alternate;
+    will-change: transform;
   }
 `;
 
@@ -397,6 +428,11 @@ const HeroContent = styled.div`
     gap: 1.5rem;
     margin: 2.5rem 0 0 0;
     justify-content: center;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
   .social-links {
     display: flex;
@@ -438,17 +474,18 @@ const PrimaryButton = styled.button`
   color: white;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   box-shadow: ${({ theme }) => theme.shadows.glow};
   font-family: inherit;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow, filter;
   &:hover {
-    transform: translateY(-2px) scale(1.04);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 30px rgba(120, 119, 198, 0.4);
-    filter: brightness(1.08);
+    filter: brightness(1.05);
   }
   &::after {
     content: '';
@@ -472,17 +509,18 @@ const SecondaryButton = styled.button`
   color: ${({ theme }) => theme.colors.text};
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   font-family: inherit;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  will-change: transform, background, border-color, filter;
   &:hover {
     background: rgba(255,255,255,0.09);
     border-color: rgba(255,255,255,0.3);
-    transform: translateY(-2px) scale(1.04);
-    filter: brightness(1.08);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.05);
   }
   &::after {
     content: '';
@@ -505,14 +543,15 @@ const SocialLink = styled.a`
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.07);
     color: ${({ theme }) => theme.colors.textSecondary};
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
     box-shadow: 0 2px 12px 0 rgba(120,119,198,0.08);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    will-change: transform, background, color, box-shadow, filter;
     &:hover {
       background: ${({ theme }) => theme.gradients.primary};
       color: white;
       box-shadow: ${({ theme }) => theme.shadows.glow};
-      filter: brightness(1.08);
+      filter: brightness(1.05);
     }
   }
 `;
@@ -551,7 +590,7 @@ const HeroVisual = styled.div`
     border-radius: 12px;
     font-weight: 600;
     font-size: 0.9rem;
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
 
     &.card-1 {
       top: -20px;
@@ -612,10 +651,11 @@ const ServicesSection = styled.section`
     padding: 2.5rem 2rem;
     border-radius: 20px;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
     background: rgba(255,255,255,0.09);
     box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
     backdrop-filter: blur(12px);
+    will-change: transform, filter, box-shadow;
     .service-icon {
       display: flex;
       align-items: center;
@@ -653,8 +693,8 @@ const ServicesSection = styled.section`
       }
     }
     &:hover {
-      transform: translateY(-8px) scale(1.02);
-      filter: brightness(1.08);
+      transform: translateY(-5px) scale(1.02);
+      filter: brightness(1.05);
       box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
     }
   }
@@ -744,19 +784,20 @@ const SkillsSection = styled.section`
     gap: 1.2rem;
     padding: 2.2rem 1.2rem;
     border-radius: 18px;
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
     cursor: pointer;
     background: rgba(255,255,255,0.09);
     box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
     backdrop-filter: blur(12px);
+    will-change: transform, filter, box-shadow;
     span {
       font-weight: 700;
       font-size: 1.08rem;
       letter-spacing: 0.2px;
     }
     &:hover {
-      transform: translateY(-5px) scale(1.05);
-      filter: brightness(1.08);
+      transform: translateY(-3px) scale(1.03);
+      filter: brightness(1.05);
       box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
     }
   }
@@ -789,12 +830,13 @@ const StatsSection = styled.section`
       text-align: center;
       padding: 2.5rem 1.5rem;
       border-radius: 18px;
-      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
       background: rgba(255,255,255,0.09);
       box-shadow: 0 2px 16px 0 rgba(120,119,198,0.08);
       backdrop-filter: blur(12px);
       flex: 1;
       min-width: 200px;
+      will-change: transform, filter, box-shadow;
       h3 {
         font-size: 3.2rem;
         font-weight: 800;
@@ -807,8 +849,8 @@ const StatsSection = styled.section`
         font-weight: 600;
       }
       &:hover {
-        transform: translateY(-5px) scale(1.05);
-        filter: brightness(1.08);
+        transform: translateY(-3px) scale(1.03);
+        filter: brightness(1.05);
         box-shadow: 0 10px 30px rgba(120, 119, 198, 0.13);
       }
     }
