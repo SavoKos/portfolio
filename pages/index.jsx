@@ -386,7 +386,7 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0 2rem;
+  padding: 8rem 2rem 4rem;
   max-width: 100vw;
   overflow: hidden;
   z-index: 1;

@@ -100,9 +100,9 @@ const AboutPage = () => {
       
       <HeroSection>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="hero-content"
         >
           <Badge>
@@ -125,10 +125,10 @@ const AboutPage = () => {
       <AboutSection>
         <div className="about-grid">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="about-content"
           >
             <h2 className="gradient-text">My Story</h2>
@@ -163,10 +163,10 @@ const AboutPage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="about-image"
           >
             <div className="image-container glass">
@@ -184,10 +184,10 @@ const AboutPage = () => {
 
       <ExperienceSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="experience-container"
         >
           <h2 className="gradient-text">Experience & Education</h2>
@@ -196,10 +196,10 @@ const AboutPage = () => {
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="timeline-item glass"
               >
                 <div className="timeline-icon">
@@ -219,10 +219,10 @@ const AboutPage = () => {
 
       <SkillsSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="skills-container"
         >
           <h2 className="gradient-text">Technical Skills</h2>
@@ -231,10 +231,10 @@ const AboutPage = () => {
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="skill-item glass"
               >
                 <div className="skill-header">
@@ -245,8 +245,8 @@ const AboutPage = () => {
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: index * 0.05 }}
+                    viewport={{ once: true, margin: "-50px" }}
                     className="skill-progress"
                   />
                 </div>
@@ -258,20 +258,20 @@ const AboutPage = () => {
 
       <ValuesSection>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="values-container"
         >
           <h2 className="gradient-text">What I Value</h2>
           
           <div className="values-grid">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
               className="value-card glass"
             >
               <div className="value-icon">
@@ -282,10 +282,10 @@ const AboutPage = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true, margin: "-50px" }}
               className="value-card glass"
             >
               <div className="value-icon">
@@ -296,10 +296,10 @@ const AboutPage = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, margin: "-50px" }}
               className="value-card glass"
             >
               <div className="value-icon">
@@ -318,17 +318,17 @@ const AboutPage = () => {
 
 const Container = styled.div`
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: #000;
-  overflow-x: hidden;
   position: relative;
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
 `;
 
 const HeroSection = styled.section`
   min-height: 60vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -342,8 +342,8 @@ const HeroSection = styled.section`
     position: absolute;
     top: -20%;
     left: -10%;
-    width: 120vw;
-    height: 120vh;
+    width: 120%;
+    height: 120%;
     background: radial-gradient(circle at 60% 40%, #7877c6 0%, transparent 70%),
       radial-gradient(circle at 30% 80%, #ff77c6 0%, transparent 70%),
       radial-gradient(circle at 80% 20%, #78dbff 0%, transparent 70%);

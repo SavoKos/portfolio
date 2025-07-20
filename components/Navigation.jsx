@@ -33,7 +33,7 @@ const Navigation = () => {
       if (navRef.current) {
         navRef.current.style.backdropFilter = scrollY > 30 ? 'blur(12px) saturate(1.1)' : 'blur(0px)';
       }
-    }, 16), // ~60fps
+    }, 32), // Reduced from 16ms to 32ms for better performance
     []
   );
 
@@ -241,8 +241,9 @@ const NavContainer = styled.nav`
   box-shadow: 0 2px 24px 0 rgba(120,119,198,0.08);
   backdrop-filter: blur(12px) saturate(1.1);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.3s, box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s;
+  transition: background 0.3s, box-shadow 0.3s, border 0.3s;
   will-change: backdrop-filter;
+  transform: translateZ(0);
 `;
 
 const NavContent = styled.div`

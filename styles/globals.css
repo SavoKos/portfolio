@@ -16,6 +16,7 @@ html, body {
   color: #fff;
   min-height: 100vh;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 body::before {
@@ -25,9 +26,9 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background: linear-gradient(120deg, #7877c6 0%, #a855f7 50%, #06b6d4 100%);
-  opacity: 0.18;
+  opacity: 0.15;
   filter: blur(60px) saturate(1.1);
-  animation: bgGradientMove 20s ease-in-out infinite alternate;
+  animation: bgGradientMove 25s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -37,17 +38,17 @@ body::after {
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.18) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.13) 0%, transparent 60%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.10) 0%, transparent 60%);
-  opacity: 0.7;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.10) 0%, transparent 60%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.08) 0%, transparent 60%);
+  opacity: 0.6;
   filter: blur(30px);
   will-change: transform;
 }
 
 @keyframes bgGradientMove {
   0% { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(10px) translateY(10px); }
+  100% { transform: translateX(5px) translateY(5px); }
 }
 
 a {
@@ -186,11 +187,6 @@ a {
   outline-offset: 2px;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Performance optimizations */
 * {
   -webkit-font-smoothing: antialiased;
@@ -211,5 +207,27 @@ html {
   .pulse-glow,
   .gradient-animate {
     animation: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize scrolling performance */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Improve scroll performance on mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body::before,
+  body::after {
+    animation: none;
   }
 }
