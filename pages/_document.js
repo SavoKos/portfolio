@@ -38,7 +38,10 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           
           {/* Favicon and App Icons */}
-          <link key="favicon" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link key="favicon-16" rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg" />
+          <link key="favicon-32" rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
+          <link key="favicon-default" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link key="apple-touch-icon" rel="apple-touch-icon" type="image/svg+xml" sizes="180x180" href="/apple-touch-icon.svg" />
           <link key="manifest" rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#7877c6" />
           

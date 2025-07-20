@@ -70,11 +70,63 @@ const Navigation = () => {
             <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="gradient-text gradient-animate micro-pop"
-              style={{ fontSize: '1.6rem', fontWeight: '800', letterSpacing: '-1px' }}
+              className="micro-pop"
               transition={{ duration: 0.2 }}
+              style={{ display: 'flex', alignItems: 'center' }}
             >
-              Savo Kos
+              <svg 
+                width="32" 
+                height="32" 
+                viewBox="0 0 32 32" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
+              >
+                <defs>
+                  <linearGradient id="navGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#7877c6" stopOpacity="1" />
+                    <stop offset="50%" stopColor="#ff77c6" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#78dbff" stopOpacity="1" />
+                  </linearGradient>
+                  <filter id="navGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <rect width="32" height="32" rx="8" fill="url(#navGradient)" opacity="0.9"/>
+                <rect width="30" height="30" x="1" y="1" rx="7" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5"/>
+                
+                <text 
+                  x="16" 
+                  y="22" 
+                  fontFamily="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+                  fontSize="12" 
+                  fontWeight="800" 
+                  textAnchor="middle" 
+                  fill="white"
+                  filter="url(#navGlow)"
+                  letterSpacing="-0.5px"
+                >
+                  SK
+                </text>
+                
+                <text 
+                  x="16" 
+                  y="21.5" 
+                  fontFamily="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+                  fontSize="12" 
+                  fontWeight="800" 
+                  textAnchor="middle" 
+                  fill="rgba(255,255,255,0.3)"
+                  letterSpacing="-0.5px"
+                >
+                  SK
+                </text>
+              </svg>
             </motion.div>
           </Link>
         </Logo>
