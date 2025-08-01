@@ -66,7 +66,7 @@ const ProjectsPage = () => {
       image: '/mockups/kalem.jpg',
       liveUrl: 'https://kalem.savokos.com',
       githubUrl: 'https://github.com/savokos/kalem',
-      technologies: ['React', 'NextJS'],
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
       features: [
         'Content management system',
         'User authentication',
@@ -100,7 +100,7 @@ const ProjectsPage = () => {
       image: '/mockups/autoklik.jpg',
       liveUrl: 'https://autoklik.savokos.com',
       githubUrl: 'https://github.com/savokos/autoklik',
-      technologies: ['React', 'NextJS'],
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
       features: [
         'Service booking system',
         'Customer profiles',
@@ -134,7 +134,7 @@ const ProjectsPage = () => {
       image: '/mockups/drill.jpg',
       liveUrl: 'https://drill.savokos.com',
       githubUrl: 'https://github.com/savokos/drill',
-      technologies: ['React', 'NextJS', 'NodeJS', 'MongoDB'],
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
       features: [
         'Product catalog & search',
         'Shopping cart & checkout',
