@@ -62,7 +62,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'Kalem',
-      description: 'A creative writing platform and blog with content management, user engagement features, and modern publishing tools.',
+      description: 'A creative hotel booking platform with content management, user engagement features, and modern publishing tools.',
       image: '/mockups/kalem.jpg',
       liveUrl: 'https://kalem.savokos.com',
       githubUrl: 'https://github.com/savokos/kalem',
@@ -79,7 +79,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'Essenza',
-      description: 'A luxury lifestyle and wellness platform featuring premium content, user profiles, and personalized recommendations.',
+      description: 'A luxury furniture platform featuring premium furniture, and personalized recommendations.',
       image: '/mockups/essenza.jpg',
       liveUrl: 'https://essenza.savokos.com',
       githubUrl: 'https://github.com/savokos/essenza',
@@ -130,7 +130,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'Drill',
-      description: 'An industrial equipment and tools e-commerce platform with advanced product catalog, search, and ordering system.',
+      description: 'An fitness platform with advanced product catalog, fitness plans and workout tracking.',
       image: '/mockups/drill.jpg',
       liveUrl: 'https://drill.savokos.com',
       githubUrl: 'https://github.com/savokos/drill',
