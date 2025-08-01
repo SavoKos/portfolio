@@ -326,7 +326,7 @@ const HomePage = () => {
               <p>Client Satisfaction</p>
             </div>
             <div className="stat-card glass">
-              <h3 className="gradient-text">3+</h3>
+              <h3 className="gradient-text">5+</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-card glass">

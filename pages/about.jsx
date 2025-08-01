@@ -47,7 +47,7 @@ const AboutPage = () => {
     <>
       <SEO 
         title="About Savo Kos - Expert Front-End Developer | React, Next.js Specialist"
-        description="Learn about Savo Kos - Expert Front-End Developer from Bosnia and Herzegovina. Specializing in React, Next.js, and modern web technologies with 3+ years of experience creating exceptional digital experiences."
+        description="Learn about Savo Kos - Expert Front-End Developer from Bosnia and Herzegovina. Specializing in React, Next.js, and modern web technologies with 5+ years of experience creating exceptional digital experiences."
         keywords={[
           'about savo kos',
           'front-end developer biography',

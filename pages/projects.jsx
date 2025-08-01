@@ -12,7 +12,7 @@ const ProjectsPage = () => {
     {
       title: 'Kobalt',
       description: 'A comprehensive food delivery platform with full e-commerce functionality, user authentication, admin panel, and payment processing.',
-      image: '/kobalt.png',
+      image: '/mockups/kobalt.jpg',
       liveUrl: 'https://kobalt.savokos.com',
       githubUrl: 'https://github.com/savokos/kobalt',
       technologies: ['NextJS', 'NodeJS', 'MongoDB', 'Express'],
@@ -29,7 +29,7 @@ const ProjectsPage = () => {
     {
       title: 'Game Portal',
       description: 'A comprehensive gaming discovery platform with over 245,000 game titles, advanced filtering, and detailed game information.',
-      image: '/game-portal.png',
+      image: '/mockups/game-portal.jpg',
       liveUrl: 'https://gameportal.savokos.com',
       githubUrl: 'https://github.com/savokos/game-portal',
       technologies: ['React', 'NextJS', 'API Integration'],
@@ -44,26 +44,111 @@ const ProjectsPage = () => {
       icon: <Globe size={24} />
     },
     {
-      title: 'Movie Geek',
-      description: 'A movie and TV show discovery platform with comprehensive information, ratings, and upcoming releases.',
-      image: '/moviegeek.png',
-      liveUrl: 'https://moviegeek.savokos.com',
-      githubUrl: 'https://github.com/savokos/moviegeek',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'API'],
+      title: 'Prodenta',
+      description: 'A modern dental clinic website with appointment booking, patient portal, and comprehensive dental services showcase.',
+      image: '/mockups/prodenta.jpg',
+      liveUrl: 'https://prodenta.savokos.com',
+      githubUrl: 'https://github.com/savokos/prodenta',
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
       features: [
-        'Movie & TV show database',
-        'Upcoming releases tracking',
-        'Detailed information pages',
-        'Search & filtering',
+        'Appointment booking system',
+        'Patient portal & records',
+        'Service showcase',
+        'Contact forms',
         'Responsive design',
-        'Modern UI/UX'
+        'SEO optimized'
       ],
       icon: <Code size={24} />
     },
     {
+      title: 'Kalem',
+      description: 'A creative writing platform and blog with content management, user engagement features, and modern publishing tools.',
+      image: '/mockups/kalem.jpg',
+      liveUrl: 'https://kalem.savokos.com',
+      githubUrl: 'https://github.com/savokos/kalem',
+      technologies: ['React', 'NextJS'],
+      features: [
+        'Content management system',
+        'User authentication',
+        'Blog publishing',
+        'Comment system',
+        'Search functionality',
+        'Responsive design'
+      ],
+      icon: <Sparkles size={24} />
+    },
+    {
+      title: 'Essenza',
+      description: 'A luxury lifestyle and wellness platform featuring premium content, user profiles, and personalized recommendations.',
+      image: '/mockups/essenza.jpg',
+      liveUrl: 'https://essenza.savokos.com',
+      githubUrl: 'https://github.com/savokos/essenza',
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
+      features: [
+        'Premium content access',
+        'User profiles & preferences',
+        'Personalized recommendations',
+        'Content categories',
+        'Subscription management',
+        'Mobile-first design'
+      ],
+      icon: <Zap size={24} />
+    },
+    {
+      title: 'Autoklik',
+      description: 'An automotive services platform with booking system, service history, and customer management features.',
+      image: '/mockups/autoklik.jpg',
+      liveUrl: 'https://autoklik.savokos.com',
+      githubUrl: 'https://github.com/savokos/autoklik',
+      technologies: ['React', 'NextJS'],
+      features: [
+        'Service booking system',
+        'Customer profiles',
+        'Service history tracking',
+        'Appointment management',
+        'Payment integration',
+        'Mobile responsive'
+      ],
+      icon: <Globe size={24} />
+    },
+    {
+      title: 'Horizont',
+      description: 'A travel and tourism platform with destination guides, booking capabilities, and travel planning tools.',
+      image: '/mockups/horizont.jpg',
+      liveUrl: 'https://horizont.savokos.com',
+      githubUrl: 'https://github.com/savokos/horizont',
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
+      features: [
+        'Destination guides',
+        'Travel booking',
+        'User reviews & ratings',
+        'Travel planning tools',
+        'Interactive maps',
+        'Multi-language support'
+      ],
+      icon: <Globe size={24} />
+    },
+    {
+      title: 'Drill',
+      description: 'An industrial equipment and tools e-commerce platform with advanced product catalog, search, and ordering system.',
+      image: '/mockups/drill.jpg',
+      liveUrl: 'https://drill.savokos.com',
+      githubUrl: 'https://github.com/savokos/drill',
+      technologies: ['React', 'NextJS', 'NodeJS', 'MongoDB'],
+      features: [
+        'Product catalog & search',
+        'Shopping cart & checkout',
+        'User accounts',
+        'Order tracking',
+        'Product reviews',
+        'Inventory management'
+      ],
+      icon: <Database size={24} />
+    },
+    {
       title: 'Greenery',
       description: 'An e-commerce platform for plants with advanced shopping features, user accounts, and secure checkout.',
-      image: '/greenery.png',
+      image: '/mockups/greenery.jpg',
       liveUrl: 'https://greenery.savokos.com',
       githubUrl: 'https://github.com/savokos/greenery',
       technologies: ['React', 'NextJS', 'Redux', 'Firebase'],
@@ -76,40 +161,6 @@ const ProjectsPage = () => {
         'Order management'
       ],
       icon: <Zap size={24} />
-    },
-    {
-      title: 'Excellence',
-      description: 'A comprehensive banking application for managing credit cards, transactions, and financial goals.',
-      image: '/excellence.png',
-      liveUrl: 'https://excellence.savokos.com',
-      githubUrl: 'https://github.com/savokos/excellence',
-      technologies: ['React', 'NextJS', 'Firebase'],
-      features: [
-        'Credit card management',
-        'Transaction tracking',
-        'Money transfers',
-        'Investment goals',
-        'Loan applications',
-        'Financial analytics'
-      ],
-      icon: <Sparkles size={24} />
-    },
-    {
-      title: 'Tasty',
-      description: 'A modern restaurant website with beautiful design, responsive layout, and dark/light mode functionality.',
-      image: '/tasty.png',
-      liveUrl: 'https://tasty.savokos.com',
-      githubUrl: 'https://github.com/savokos/tasty',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      features: [
-        'Responsive design',
-        'Dark/light mode',
-        'Modern UI/UX',
-        'Menu showcase',
-        'Contact integration',
-        'Mobile-friendly'
-      ],
-      icon: <Code size={24} />
     }
   ];
 
@@ -261,20 +312,6 @@ const ProjectsPage = () => {
                       <ExternalLink size={20} />
                       <span>Live Demo</span>
                     </motion.a>
-                    {project.githubUrl && (
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="project-link"
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Github size={20} />
-                        <span>Code</span>
-                      </motion.a>
-                    )}
                   </div>
                 </div>
               </div>
@@ -332,17 +369,17 @@ const ProjectsPage = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="stats-container"
         >
-          <div className="stats-grid">
-            <div className="stat-card glass">
-              <h3 className="gradient-text">6</h3>
-              <p>Projects Completed</p>
-            </div>
+                     <div className="stats-grid">
+             <div className="stat-card glass">
+               <h3 className="gradient-text">9</h3>
+               <p>Projects Completed</p>
+             </div>
             <div className="stat-card glass">
               <h3 className="gradient-text">100%</h3>
               <p>Client Satisfaction</p>
             </div>
             <div className="stat-card glass">
-              <h3 className="gradient-text">3+</h3>
+              <h3 className="gradient-text">5+</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat-card glass">
